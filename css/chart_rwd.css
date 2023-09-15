@@ -1,0 +1,37 @@
+@media (max-width:900px) {
+
+    #main .contentBG p,
+    #container1 text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width:655px) {
+
+    .tableContent .head_bg span:nth-child(4),
+    .tableContent table th:nth-child(4),
+    .tableContent table td:nth-child(4) {
+        display: none;
+    }
+}
+
+@media (max-width:555px) {
+
+    .tableContent .head_bg span:nth-child(5),
+    .tableContent table th:nth-child(5),
+    .tableContent table td:nth-child(5) {
+        display: none;
+    }
+}
+
+@media (max-width:450px) {
+
+    #main .contentBG p,
+    #container1 text tspan {
+        font-size: 1.1rem;
+    }
+
+    #container1 text[text-anchor="start"] tspan {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,21 @@
+<p class="previous"></p>
+<select name="" id="" class="pages">
+</select>
+<p class="next"></p>
+<script>
+  $(document).ready(function () {
+
+    function batch() {
+      $('table td input[type="checkbox"]').change(function () {
+        batchNum =$ (this).parents('table').find('input[type="checkbox"]').filter(':checked').length;
+        if ($(this).parents('table').find('input[type="checkbox"]').filter(':checked').length > 1) {
+          $('.batch').addClass('able');
+        } else {
+          $('.batch').removeClass('able');
+        }
+        alert(batchNum);
+      });
+    }
+
+  });
+</script>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/loading.js"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/mediaApply.css">
+  <link rel="stylesheet" href="css/login.css" type="text/css">
+  <title>登入</title>
+</head>
+
+<body>
+  <div id="main">
+    <div class="middle">
+      <div class="left"></div>
+      <div class="right">
+        <div class="top">
+          <img src="img/index/user.svg" alt="">
+          <p class="title">使用者登入</p>
+        </div>
+        <p class="account">
+          <input type="text" class="account" placeholder="請輸入帳號">
+        </p>
+        <p class="password">
+          <input type="text" class="password" placeholder="請輸入密碼">
+        </p>
+        <div class="flex">
+          <div class="flex start">
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">記住我的登入資訊</label>
+          </div>
+          <p class="purple">忘記密碼</p>
+        </div>
+        <div class="btn purple">登入</div>
+      </div>
+    </div>
+  </div>
+  <div class="popup_bg verify">
+    <div class="popupWP verify small">
+      <div class="swalWP">
+        <img src="img/info.svg" alt="">
+        <p>帳號或密碼錯誤</p>
+        <div class=" btnWP">
+          <div class="btn delete_confirm small">確認</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      let H = $(window).height();
+      let W = $(window).width();
+
+      if ($(window).width() < 600) {
+        let H = $(window).height();
+        $('body').height(H - 10);
+      }
+
+      $('input.account').change(function () {
+        if ($('input.account').val() !== '') {
+          $('p.account').removeClass('show');
+        } else {
+          $('p.account').addClass('show');
+        }
+      });
+
+      $('input.password').change(function () {
+        if ($('input.password').val() !== '') {
+          $('p.password').removeClass('show');
+        } else {
+          $('p.password').addClass('show');
+        }
+      });
+
+      function verify() {
+        if ($('input.account').val() === '') {
+          $('p.account').addClass('show');
+        } else if ($('input.password').val() === '') {
+          $('p.password').addClass('show');
+        } else if ($('input.account').val() === 'admin' && $('input.password').val() === 'admin') {
+          window.location = "https://yowru.github.io/CMS2/chart.html";
+        } else if ($('input.account').val() !== 'admin' || $('input.password').val() !== 'admin') {
+          $('.popup_bg').css({ 'display': 'flex' });
+        }
+      }
+
+      $(document).keyup(function (event) {
+        if (event.which === 13) {
+          verify();
+        }
+      });
+
+      $('.btn.purple').click(function () {
+        verify();
+      });
+
+      //close
+      $('.popup_bg .btnWP .btn').click(function () {
+        $('.popup_bg').fadeOut();
+        window.location.replace(location.href);
+      });
+
+
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_js_materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_css_materialize.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/playSelection.css">
+  <link rel="stylesheet" href="css/mediaList.css">
+  <link rel="stylesheet" href="css/mediaApply.css">
+  <link rel="stylesheet" href="css/mediaApply_rwd.css">
+  <title>素材申請</title>
+</head>
+
+<body>
+  <header></header>
+  <div id="main">
+    <div class="content">
+      <div class="title"></div>
+      <div class="contentBG">
+        <form class="searchBar" name="searchBar">
+          <div class="filter">
+            <div class="flex keyWords">
+              <input type="text" placeholder="輸入關鍵字" class="keyWords">
+            </div>
+            <div class="flex second">
+              <label for="second">秒數 :</label>
+              <select name="second" id="second">
+                <option value="all">全部</option>
+                <option value="30">30</option>
+                <option value="25">25</option>
+                <option value="20">20</option>
+                <option value="15">15</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+            <div class="flex type">
+              <label for="type">格式 :</label>
+              <select name="" id="type">
+                <option value="all">全部</option>
+                <option value="img">圖片</option>
+                <option value="video">影片</option>
+              </select>
+            </div>
+            <div class="flex date">
+              <label for="checkDate1">申請日 :</label>
+              <input type="text" id="checkDate1" name="checkDate1" placeholder="請選擇">
+            </div>
+            <div class="flex date">
+              <label for="checkDate2">審核日 :</label>
+              <input type="text" id="checkDate2" name="checkDate2" placeholder="請選擇">
+            </div>
+          </div>
+          <div class="btn search"><input type="submit" value="查詢" /></div>
+        </form>
+        <div class="textInfo">
+          <span>排序</span><img src="img/table/textInfo.svg" alt=""><div class="info">點選紫色字體可進行排序</div>
+        </div>
+        <div class="btn add" onclick="add()">新增</div>
+        <div class="table-responsive">
+          <div class="head_bg">
+            <span>編號</span>
+            <span>檔名</span>
+            <span>縮圖</span>
+            <span class="sort">秒數</span>
+            <span class="sort">申請日</span>
+            <span class="sort">審核日</span>
+            <span class="sort">狀態</span>
+            <span>操作</span>
+          </div>
+          <div class="tableWp marginTop">
+            <table cellspacing="0" id="mediaList">
+              <thead>
+                <tr>
+                  <th class="">編號</th>
+                  <th>檔名</th>
+                  <th>縮圖</th>
+                  <th class="sort">秒數</th>
+                  <th class="sort">申請日</th>
+                  <th class="sort">審核日</th>
+                  <th class="sort">狀態</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>B000000002</td>
+                  <td class="name">機場宣導</td>
+                  <td class="image"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>15</td>
+                  <td>23.06.18</td>
+                  <td>--</td>
+                  <td class="primaryColor">待審</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onclick="view()">
+                  </td>
+                </tr>
+                <tr>
+                  <td>C000000001</td>
+                  <td class="name">機場宣導</td>
+                  <td class="image"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>15</td>
+                  <td>23.06.18</td>
+                  <td>23.06.26</td>
+                  <td class="red">退回</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" class="edit">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="popup_bg add">
+          <div class="popupWP add">
+            <div class="titleWP">
+              <p class="title">新增素材</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="add_popup popup">
+                <div class="flex">
+                  <p>檔名</p><input type="text" class="fontLevel_1 space_around fileName" placeholder="請輸入檔名" />
+                </div>
+                <div class="flex uploadWP">
+                  <span class="preview">點擊加入檔案</span>
+                  <input type="file" accept=".png,.jpg,.mp4" id="test" onclick="uploadFile()" class="inputFile">
+                  <div class="upload">
+                    <img class="uploadImg" />
+                    <p class="myFile"></p>
+                    <video controls autoplay>Your browser does not support the video tag.</video>
+                  </div>
+                </div>
+                <div class="flex type">
+                  <p>副檔名</p><span class="fontLevel_3">--</span>
+                </div>
+                <div class="flex second">
+                  <p>秒數</p><span class="fontLevel_3">--</span><input type="text" class="fontLevel_1 space_around"
+                    placeholder="請輸入秒數" />
+                </div>
+                <div class="flex byte">
+                  <p>檔案</p><span class="fontLevel_3">--</span>
+                </div>
+                <div class="flex size">
+                  <p>尺寸</p><span class="fontLevel_3">--</span>
+                </div>
+                <div class="flex"><input type="text" class="fontLevel_1 tag" placeholder="多個標籤,請用逗號分開"></div>
+                <div class=" btnWP">
+                  <div class="btn">送出審核</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup_bg edit">
+          <div class="popupWP edit">
+            <div class="titleWP">
+              <p class="title">退回素材</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="edit_popup popup">
+                <div class="flex column">
+                  <p class="red">不同意原因</p>
+                  <span
+                    class="wrap">不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因不同意原因</span>
+                </div>
+                <div class="flex">
+                  <p>編號</p><span class="mac fontLevel_3">D0000000111</span>
+                </div>
+                <div class="flex name">
+                  <p>檔名</p><span class="fontLevel_3">檔案的名稱可能會很長（？</span>
+                </div>
+                <div class="flex img">
+                  <img src="img/media/detail_Img.svg" class="show" alt="">
+                </div>
+                <div class="flex type">
+                  <p>副檔名</p><span class="fontLevel_3">mp4</span>
+                </div>
+                <div class="flex second">
+                  <p>秒數</p><span class="fontLevel_3">20</span>
+                </div>
+                <div class="flex byte">
+                  <p>檔案</p><span class="fontLevel_3">123456 byte</span>
+                </div>
+                <div class="flex size">
+                  <p>尺寸</p><span class="fontLevel_3">450x698</span>
+                </div>
+                <div class="flex"><span class="fontLevel_3">出境,注意事項, 自助, 托運</span></div>
+                <div class="flex">
+                  <p>申請日</p><span class="fontLevel_3">23/06/18</span>
+                </div>
+                <div class="flex">
+                  <p>審核日</p><span>23/06/26</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup_bg view">
+          <div class="popupWP view">
+            <div class="titleWP">
+              <p class="title">素材詳情</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="view_popup popup">
+                <div class="flex">
+                  <p>編號</p><span class="fontLevel_3">A0000000001</span>
+                </div>
+                <div class="flex">
+                  <p>檔名</p><span>機場宣導</span>
+                </div>
+                <div class="flex imageWP show">
+                  <!-- <img src="img/media/detail_Img.svg" class="show" alt=""> -->
+                  <video src="img/cat.mp4" controls ></video>
+                </div>
+                <div class="flex">
+                  <p>副檔名</p><span>mp4</span>
+                </div>
+                <div class="flex">
+                  <p>秒數</p><span>20</span>
+                </div>
+                <div class="flex byte">
+                  <p>檔案</p><span>440000 byte</span>
+                </div>
+                <div class="flex size">
+                  <p>尺寸</p><span>400x600</span>
+                </div>
+                <div class="flex">
+                  <p>出境,注意事項, 自助, 托運</p>
+                </div>
+                <div class="flex">
+                  <p>申請日</p><span>23/06/18</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sideNo">2</div>
+  <script src="js/dateTimepicker.js"></script>
+  <script src="js/dataTable.js"></script>
+  <script>
+
+    //get date time
+    let dayNow = new Date();
+    let day = dayNow.getDate();
+    let month = dayNow.getMonth();
+    let year = dayNow.getFullYear();
+    $('.popupWP.add .swalWP .flex.date span').text(year + '/' + (month + 1) + '/' + day);
+
+    //close
+    $('.popup_bg .titleWP .close').click(function () {
+      $('.popup_bg').fadeOut();
+      $('video').trigger('pause');
+      window.location.replace(location.href);
+    });
+
+    //uploadFile
+    function uploadFile() {
+      let uploadFile = function (event) {
+        let input = event.target;
+        let reader = new FileReader();
+        let upload_file = $('.inputFile')[0].files[0];
+
+        if (input.files[0].type.split('/')[0] === 'image') {
+          $(input).siblings('.upload').find('video').attr('src', '').hide();//video hide
+          $(input).parents('.popup').find('.type span').text('圖片');//type
+          $(input).parents('.popup').find('.second span').hide();//second span hide
+          $(input).parents('.popup').find('.second input').show();//second input
+
+          reader.onload = function () {
+            //get Url
+            let dataURL = reader.result;
+            let name = input.value;
+
+            $(input).siblings('.upload').find('img.uploadImg').attr('src', dataURL);
+            $(input).prev().addClass('hide');
+            $(input).siblings('.upload').find('img.uploadImg').addClass('show');
+            $(input).siblings('.upload').find('.myFile').text(name);
+
+            //img size
+            let image = new Image();
+            image.src = $(input).siblings('.upload').find('img.uploadImg').prop('src');
+            image.onload = function () {
+              $(input).parents('.popup').find('.size span').text(this.width + 'x' + this.height);
+            };
+            //img byte
+            $(input).parents('.popup').find('.byte span').text(input.files[0].size + ' byte');
+          };
+
+          reader.readAsDataURL(input.files[0]);
+
+        } else if (input.files[0].type.split('/')[0] === 'video') {
+
+          $(input).siblings('.upload').find('img.uploadImg').attr('src', '');//img src
+          $(input).siblings('.upload').find('img.uploadImg').hide();//img hide
+          $(input).siblings('.upload').find('.myFile').text(''); //.myFile text
+          $(input).parents('.popup').find('.type span').text('影片');//type
+          $(input).parents('.popup').find('.second input').hide();//second input
+          $(input).parents('.popup').find('.second span').show();
+
+          let file = input.files[0];
+          let blobURL = URL.createObjectURL(file);
+          let video_duration;
+
+
+          $(input).siblings('.upload').find('video').show();
+          $(input).siblings('.upload').find('video').attr('src', blobURL);
+
+          let VIDEO = document.querySelectorAll("video");
+
+          for (let i = 0; i < VIDEO.length; i++) {
+            VIDEO[i].addEventListener('loadedmetadata', function () {
+              //video second
+
+              video_duration = VIDEO[i].duration;
+              let minutes = Math.floor(video_duration / 60);
+              let seconds = Math.floor(video_duration - (minutes * 60));
+
+              $(input).parents('.popup').find('.second span').text(minutes + ':' + seconds);//second
+
+              //video size
+              $(input).parents('.popup').find('.size span').text(VIDEO[i].videoWidth + 'x' + VIDEO[i].videoHeight);
+
+              //video byte
+              $(input).parents('.popup').find('.byte span').text(input.files[0].size + ' byte');
+
+            });
+          }
+
+        }
+
+        $('.popup_bg.edit .uploadWP.edit').siblings('.popup_bg.edit .flex.imageWP.show').hide();
+        $('.popup_bg.edit .uploadWP.edit').addClass('relative');
+
+      }
+
+      $("#test").on("change", uploadFile);
+      $("#test1").on("change", uploadFile);
+
+    }
+
+    //add 
+    function add() {
+      $('.popup_bg.add').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    }
+
+    //edit
+    $('img.edit').click(function () {
+      $('.popup_bg.edit').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+      let name = $('.popup_bg.edit .swalWP .name input').val(),
+        img_src = $('.popup_bg.edit .swalWP img.show').prop('src'),
+        video_src = $('.popup_bg.edit .swalWP video').prop('src'),
+        type = $('.popup_bg.edit .swalWP .flex.type span').text(),
+        second_span = $('.popup_bg.edit .swalWP .second span').text(),
+        second_input = $('.popup_bg.edit .swalWP .second input').val(),
+        tag = $('.popup_bg.edit .swalWP input.tag').val(),
+        newName = name,
+        newImg_src = img_src,
+        newVideo_src = video_src,
+        newSecond_span = second_span,
+        newSecond_input = second_input,
+        newTag = tag;
+
+      $('.popup_bg.edit .swalWP .name input').change(function () {
+        newName = $('.popup_bg.edit .swalWP .name input').val();
+        if (newName !== name) {
+          $('.popup_bg.edit .btnWP .btn').addClass('confirm');
+        } else {
+          $('.popup_bg.edit .btnWP .btn').removeClass('confirm');
+        }
+
+      });
+
+      $('.popup_bg.edit .swalWP img.show').on('DOMSubtreeModified', function () {
+        newImg_src = $('.popup_bg.edit .swalWP img.show').prop('src');
+        if (newImg_src !== img_src) {
+          $('.popup_bg.edit .btnWP .btn').addClass('confirm');
+        } else {
+          $('.popup_bg.edit .btnWP .btn').removeClass('confirm');
+        }
+      });
+
+
+      $('.popup_bg.edit .swalWP video').on('DOMSubtreeModified', function () {
+        newVideo_src = $('.popup_bg.edit .swalWP img.show').prop('src');
+        if (newVideo_src !== video_src) {
+          $('.popup_bg.edit .btnWP .btn').addClass('confirm');
+        } else {
+          $('.popup_bg.edit .btnWP .btn').removeClass('confirm');
+        }
+      });
+
+      $('.popup_bg.edit .swalWP .second span').on('DOMSubtreeModified', function () {
+        newSecond_span = $('.popup_bg.edit .swalWP .second span').text();
+        if (newSecond_span !== second_span) {
+          $('.popup_bg.edit .btnWP .btn').addClass('confirm');
+        } else {
+          $('.popup_bg.edit .btnWP .btn').removeClass('confirm');
+        }
+      });
+
+      $('.popup_bg.edit .swalWP .second input').change(function () {
+        newSecond_input = $('.popup_bg.edit .swalWP .second input').val();
+        if (newSecond_input !== second_input) {
+          $('.popup_bg.edit .btnWP .btn').addClass('confirm');
+        } else {
+          $('.popup_bg.edit .btnWP .btn').removeClass('confirm');
+        }
+      });
+
+      $('.popup_bg.edit .swalWP input.tag').change(function () {
+        newTag = $('.popup_bg.edit .swalWP input.tag').val();
+        if (newTag !== tag) {
+          $('.popup_bg.edit .btnWP .btn').addClass('confirm');
+        } else {
+          $('.popup_bg.edit .btnWP .btn').removeClass('confirm');
+        }
+      });
+
+      //confirm btn
+      $('.popup_bg.edit .btnWP .btn').click(function () {
+        if (name === newName && img_src === newImg_src && video_src === newVideo_src &&
+          second_span === newSecond_span && second_input === newSecond_input && tag === newTag) {
+          Swal.fire('請更新後再審核', '', 'info');
+        } else {
+          $('.popup_bg').fadeOut();
+          $('video').trigger('pause');
+          Swal.fire('已送審', '', 'success');
+          //回傳
+        }
+      });
+
+    });
+
+    //view
+    function view() {
+      $('.popup_bg.view').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    };
+
+    //check edit
+    function check() {
+      let fileName = $('.popup_bg.add .popupWP input.fileName').val(),
+        img_src = $('.popup_bg.add .popupWP .upload img.uploadImg').prop('src'),
+        video_src = $('.popup_bg.add .popupWP .upload video').prop('src'),
+        second_span = $('.popup_bg.add .popupWP .popup .second span').text(),
+        second_input = $('.popup_bg.add .popupWP .popup .second input').val(),
+        tag = $('.popup_bg.add .popupWP input.tag').val();
+
+      if (fileName === '') {
+        Swal.fire('請輸入檔名', '', 'info');
+      } else if ($('.popup_bg.add .popupWP .popup .type span').text() === '--') {
+        Swal.fire('請加入檔案', '', 'info');
+      } else if (second_input === '' && second_span === '--') {
+        Swal.fire('請輸入秒數', '', 'info');
+      } else if (!$.isNumeric(second_input) && second_input !== '') {
+        Swal.fire('秒數請輸入數值', '', 'info');
+      } else if (tag === '') {
+        Swal.fire('請輸入標籤', '', 'info');
+      } else {
+        $('.popup_bg.add .btnWP .btn').addClass('confirm');
+
+        //ajax
+      }
+    }
+
+    //add btn
+    $('.popup_bg.add .btnWP .btn').click(function () {
+
+      if ($(this).hasClass('confirm')) {
+        Swal.fire('已送出申請', '', 'success');
+        window.location.replace(location.href);
+      } else {
+        check();
+      }
+
+    });
+
+    //add change
+    $('.popup_bg.add input').change(function () {
+      check();
+    });
+
+
+
+  </script>
+</body>
+
+</html>

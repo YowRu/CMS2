@@ -1,0 +1,134 @@
+/*sweetalert*/
+.swal2-modal .swal2-close:focus {
+  background-color: transparent;
+}
+
+div:where(.swal2-container).swal2-backdrop-show,
+div:where(.swal2-container).swal2-noanimation {
+  background: rgba(0, 0, 0, .4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 1rem;
+  color: #2F3034;
+  text-align: left;
+  background-color: #F7F7F8;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm:focus,
+div:where(.swal2-container) button:where(.swal2-close):focus {
+  box-shadow: none;
+}
+
+
+.popupWP img {
+  width: 100%;
+  height: 280px;
+  display: none;
+}
+
+.popupWP img.show {
+  display: block;
+}
+
+.popupWP .flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #E1E1E2;
+  padding: 12px 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
+.popupWP .info .flex,
+.popupWP .setting .flex {
+  height: 48px;
+}
+
+.popupWP div.flex.imageWP {
+  height: 300px;
+}
+
+.popupWP .flex p {
+  font-size: 0.85rem;
+  color: #6D6E71;
+}
+
+.popupWP .flex span {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel,
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  border-radius: 2px;
+  font-size: 0.9rem;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel.able {
+  opacity: 1;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  background-color: #D92700;
+}
+
+.swal2-modal .swal2-close:hover {
+  color: #2F3034;
+}
+
+
+
+/*table*/
+.tableWp {
+  position: relative;
+  overflow: scroll;
+  margin-top: -52px;
+}
+
+.batch {
+  position: absolute;
+  bottom: 12px;
+  left: 20px;
+  background-color: #CA3B32;
+  color: #fff;
+  opacity: 0.35;
+  padding: 6.5px 20px;
+  cursor: pointer;
+}
+
+.batch.able {
+  opacity: 1;
+}
+
+.batchDelete {
+  background-color: #CA3B32;
+}
+
+.batchCheck {
+  background-color: #3CBC26;
+}
+
+.dataTable td.blue {
+  color: #5861E2;
+  background-color: transparent !important;
+}
+
+.dataTable td.red {
+  color: #DE716A;
+  background-color: transparent !important;
+}
+
+table.dataTable tbody tr:hover {
+  background-color: rgba(88, 97, 226, 0.06);
+}
+
+

@@ -1,0 +1,66 @@
+@media(max-width:1190px) {
+
+  .searchBar .flex.second,
+  table th:nth-child(6),
+  table td:nth-child(6),
+  .table-responsive .head_bg span:nth-child(6) {
+    display: none;
+  }
+}
+
+@media(max-width:985px) {
+  .table-responsive .head_bg span:nth-child(7) {
+    display: block;
+  }
+}
+
+@media(max-width:985px) {
+
+  .searchBar .flex.type,
+  table th:nth-child(7),
+  table td:nth-child(7),
+  .table-responsive .head_bg span:nth-child(7) {
+    display: none;
+  }
+
+}
+
+@media(max-width:740px) {
+
+  table th:nth-child(2),
+  table td:nth-child(2),
+  .table-responsive .head_bg span:nth-child(2) {
+    display: none;
+  }
+
+  #checkDate1,
+  #checkDate2 {
+    width: 70px;
+  }
+}
+
+
+@media(max-width:550px) {
+
+  table th:nth-child(5),
+  table td:nth-child(5),
+  .table-responsive .head_bg span:nth-child(5) {
+    display: none;
+  }
+}
+
+@media(max-width:600px) {
+
+  .searchBar .flex.date {
+    display: none;
+  }
+}
+
+@media(max-width:430px) {
+
+  table th:nth-child(4),
+  table td:nth-child(4),
+  .table-responsive .head_bg span:nth-child(4) {
+    display: none;
+  }
+}

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_js_materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_css_materialize.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/playSelection.css">
+  <link rel="stylesheet" href="css/mediaList.css">
+  <link rel="stylesheet" href="css/mediaApply.css">
+  <link rel="stylesheet" href="css/mediaList_rwd.css">
+  <title>媒體素材</title>
+</head>
+<body>
+  <header></header>
+  <div id="main">
+    <div class="content">
+      <div class="title"></div>
+      <div class="contentBG">
+        <form class="searchBar" name="searchBar">
+          <div class="filter">
+            <div class="flex keyWords">
+              <input type="text" placeholder="輸入關鍵字" class="keyWords">
+            </div>
+            <div class="flex">
+              <label for="type">格式 :</label>
+              <select name="" id="type">
+                <option value="all">全部</option>
+                <option value="img">圖片</option>
+                <option value="video">影片</option>
+              </select>
+            </div>
+            <div class="flex second">
+              <label for="second">秒數 :</label>
+              <select name="" id="second">
+                <option value="all">全部</option>
+                <option value="30">30</option>
+                <option value="25">25</option>
+                <option value="20">20</option>
+                <option value="15">15</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+            <div class="flex date">
+              <label for="checkDate">審核日 :</label>
+              <input type="text" class="datepicker" id="checkDate" placeholder="請選擇">
+            </div>
+          </div>
+          <div class="btn search"><input type="submit" value="查詢" /></div>
+        </form>
+        <div class="textInfo">
+          <span>排序</span><img src="img/table/textInfo.svg" alt=""><div class="info">點選紫色字體可進行排序</div>
+        </div>
+        <div class="table-responsive">
+          <div class="head_bg">
+            <!-- <span class="check"><input type="checkbox"></span> -->
+            <span class="name">委刊</span>
+            <span class="name">名稱</span>
+            <span class="sort">縮圖</span>
+            <span>副檔名</span>
+            <span class="sort">秒數</span>
+            <span class="sort">審核日</span>
+            <span>操作</span>
+          </div>
+          <div class="tableWp">
+            <table cellspacing="0" id="mediaList">
+              <thead>
+                <tr>
+                  <!-- <th class="check">
+                    <input type="checkbox">
+                  </th> -->
+                  <th>委刊</th>
+                  <th>名稱</th>
+                  <th class="sort">縮圖</th>
+                  <th>格式</th>
+                  <th class="sort">秒數</th>
+                  <th class="sort">審核日</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.06</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.16</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">委刊素材名稱</td>
+                  <td class="name">--</td>
+                  <td class="img"><img src="img/table/smallVideo.png" alt=""></td>
+                  <td>影片</td>
+                  <td>15</td>
+                  <td>23.06.26</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.06</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.16</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">委刊素材名稱</td>
+                  <td class="name">--</td>
+                  <td class="img"><img src="img/table/smallVideo.png" alt=""></td>
+                  <td>影片</td>
+                  <td>15</td>
+                  <td>23.06.26</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.06</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.16</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">委刊素材名稱</td>
+                  <td class="name">--</td>
+                  <td class="img"><img src="img/table/smallVideo.png" alt=""></td>
+                  <td>影片</td>
+                  <td>15</td>
+                  <td>23.06.26</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.06</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">22機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.16</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">22委刊素材名稱</td>
+                  <td class="name">--</td>
+                  <td class="img"><img src="img/table/smallVideo.png" alt=""></td>
+                  <td>影片</td>
+                  <td>15</td>
+                  <td>23.06.26</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">22機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.06</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">22機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.16</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">22委刊素材名稱</td>
+                  <td class="name">--</td>
+                  <td class="img"><img src="img/table/smallVideo.png" alt=""></td>
+                  <td>影片</td>
+                  <td>15</td>
+                  <td>23.06.26</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">22機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.06</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">22機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.16</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">22委刊素材名稱</td>
+                  <td class="name">--</td>
+                  <td class="img"><img src="img/table/smallVideo.png" alt=""></td>
+                  <td>影片</td>
+                  <td>15</td>
+                  <td>23.06.26</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">22機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.06</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">--</td>
+                  <td class="name">22機場宣導</td>
+                  <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
+                  <td>圖片</td>
+                  <td>--</td>
+                  <td>23.06.16</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+                <tr>
+                  <!-- <td class="check"><input type="checkbox"></td> -->
+                  <td class="name">333委刊素材名稱</td>
+                  <td class="name">--</td>
+                  <td class="img"><img src="img/table/smallVideo.png" alt=""></td>
+                  <td>影片</td>
+                  <td>15</td>
+                  <td>23.06.26</td>
+                  <td class="btnImg">
+                    <img src="img/table/Info.svg" alt="" onClick="view()">
+                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="popup_bg view">
+          <div class="popupWP view">
+            <div class="titleWP">
+              <p class="title">素材詳情</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <div class="view_popup popup">
+                <div class="flex">
+                  <p>編號</p><span class="fontLevel_3">A0000000001</span>
+                </div>
+                <div class="flex">
+                  <p>名稱</p><span>機場宣導</span>
+                </div>
+                <div class="flex imageWP show"><img src="img/media/detail_Img.svg" class="show" alt=""></div>
+                <div class="flex">
+                  <p>副檔名</p><span>jpg</span>
+                </div>
+                <div class="flex">
+                  <p>秒數</p><span>20</span>
+                </div>
+                <div class="flex byte">
+                  <p>檔案</p><span>440000 byte</span>
+                </div>
+                <div class="flex size">
+                  <p>尺寸</p><span>400x600</span>
+                </div>
+                <div class="flex">
+                  <p>出境,注意事項, 自助, 托運</p>
+                </div>
+                <div class="flex">
+                  <p>核准</p><span>23/06/06</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup_bg delet">
+          <div class="popupWP delet small">
+            <div class="titleWP">
+              <p class="title">素材編號</p>
+              <p class="close">×</p>
+            </div>
+            <div class="swalWP">
+              <p>確認刪除此素材嗎 ?</p>
+              <div class=" btnWP">
+                <div class="btn delete_confirm small">確認</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="sideNo">1</div>
+  <script src="js/dataTable.js"></script>
+  <script src="js/dateTimepicker.js"></script>
+  <script>
+
+    //view
+    function view() {
+      $('.popup_bg.view').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    };
+
+    //close
+    $('.popup_bg .titleWP .close').click(function () {
+      $('.popup_bg').fadeOut();
+      $('video').trigger('pause');
+      window.location.replace(location.href);
+    });
+
+    //delet
+    function delet() {
+      $('.popup_bg.delet').fadeIn().css({ 'display': 'flex' });
+      $('body').addClass('overflow');
+    };
+
+    //delete_btn
+    $('.delete_confirm').click(function () {
+      Swal.fire('確認刪除', '', 'success');
+      $('.popup_bg').fadeOut();
+    });
+
+    //name ellipsis
+    $('table tr td:nth-child(2), table tr td:nth-child(3)').addClass('name');
+    
+  </script>
+</body>
+
+</html>

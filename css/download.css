@@ -1,0 +1,284 @@
+header .sideWP .side,
+header .toggle {
+    display: none;
+}
+
+header .sideWP {
+    background: transparent;
+    box-shadow: none;
+    border-right: 0;
+    background: transparent;
+}
+
+#main {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 95vh;
+    display: block;
+}
+
+#main .wrapper {
+    border: 1px solid #E1E1E2;
+    border-top: 5px solid #E15487;
+    border-radius: 4px;
+    margin-top: 80px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+#main .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#main .flex.start {
+    margin: 10px auto 0;
+    justify-content: flex-start;
+}
+
+#main .flex .img {
+    background: url('../img/table/downloadImg.svg') no-repeat center;
+    background-size: cover;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+#main .margin {
+    margin-right: 15px;
+}
+
+.mac_address::after {
+    content: ' (Mac address)';
+    font-size: 0.8rem;
+    color: #6D6E71;
+}
+
+.fa-sharp.fa-light.fa-map-pin::before {
+    content: '\f276';
+    font-family: "FontAwesome";
+    font-style: normal;
+}
+
+.area {
+    margin: 0 5px;
+}
+
+#main .flex.start.tagWp {
+    margin: 20px 0;
+}
+
+#main .flex.space_between {
+    justify-content: space-between;
+}
+
+#main .flex.space_between p {
+    font-size: 0.9rem;
+    color: #6D6E71;
+}
+
+#main .flex.space_between .big {
+    font-size: 1.8rem;
+    margin: 10px 0 30px;
+    color: #2F3034;
+}
+
+#main .flex.start.tagWp span {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #e154882e;
+    border-radius: 30px;
+    color: #6D6E71;
+}
+
+#main .tabs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#main .tabs li {
+    width: 94px;
+    height: 34px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border: 1px solid #f7f1ff;
+    border-bottom: 0;
+    text-align: center;
+    padding-top: 5px;
+
+}
+
+#main .tabs li a {
+    color: #6D6E71;
+}
+
+#main .tabs li.active {
+    border: 1px solid #ddd;
+    border-bottom: 4px solid rgb(249, 248, 254);
+    margin-bottom: -3px;
+}
+
+#main .tabs li.active a {
+    color: #6D6E71;
+    border-bottom: 3px solid #d35297;
+    padding-bottom: 4px;
+}
+
+#main #tab1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main .tab_container {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#main .tab_content {
+    min-height: 400px;
+}
+
+
+.btn {
+    width: 56px;
+    height: 36px;
+    line-height: 36px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    font-size: .875rem;
+    font-weight: 300;
+    border-radius: 2px;
+    box-shadow: none;
+    border-radius: 2px;
+    box-shadow: none;
+    border: 1px solid #5861E2;
+    background-color: #5861E2;
+}
+
+.btn:hover {
+    background-color: transparent;
+
+}
+
+.btn:hover span {
+    color: #5861E2;
+}
+
+.btn span {
+    color: #fff;
+    width: 60px;
+    height: 36px;
+}
+
+
+
+#main .downloadImg {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    flex-wrap: wrap;
+    min-height: 400px;
+}
+
+#main .downloadImg.now {
+    display: none;
+}
+
+#main .downloadImg.now.show {
+    display: flex;
+}
+
+#main .downloadImg div {
+    display: block;
+    width: 22%;
+    margin: 10px;
+}
+
+#main .downloadImg div span {
+    display: block;
+    text-align: right;
+    padding-right: 5px;
+    color: #6D6E71;
+}
+
+#main .downloadImg img {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+}
+
+@media (max-width:1100px) {
+    #main {
+        width: 90%;
+    }
+
+    #main .downloadImg {
+        width: 100%;
+    }
+}
+
+@media (max-width:1000px) {
+    #main .downloadImg {
+        flex-wrap: wrap;
+    }
+
+    #main .downloadImg img {
+        display: block;
+        margin: 10px;
+    }
+}
+
+@media (max-width:900px) {
+    #main .flex.space_between .big {
+        font-size: 1.5rem;
+    }
+
+    #main .flex.start.tagWp span {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width:800px) {
+    #main .downloadImg div {
+        width: 33%
+    }
+}
+
+@media (max-width:600px) {
+    #main .downloadImg div {
+        width: 45%
+    }
+}
+
+@media (max-width:500px) {
+    #main .downloadImg div {
+        width: 75%
+    }
+
+    #main .wrapper .flex.space_between {
+        flex-direction: column;
+    }
+
+    #main .flex.start.address {
+        justify-content: flex-end;
+    }
+
+    #main .wrapper .left.flex {
+        margin-top: 0;
+    }
+
+    .mac_address {
+        margin-top: 10px;
+    }
+}

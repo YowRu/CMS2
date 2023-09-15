@@ -1,0 +1,134 @@
+#container1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+  margin-top: 1rem;
+}
+
+#main .contentBG p {
+  text-align: center;
+  font-size: 1.35rem;
+}
+
+text.highcharts-credits {
+  display: none;
+}
+
+text.highcharts-title tspan{
+  font-size: 1.35rem;
+}
+
+#container1 text[text-anchor="start"] tspan{
+  font-size: .955rem;
+}
+
+.chart1 .highcharts-pie-series .highcharts-point {
+  stroke: #fff;
+  stroke-width: 8px;
+}
+
+.highcharts-container {
+  position: relative;
+}
+
+rect.highcharts-background {
+  fill: transparent;
+}
+
+#main .searchBar {
+  position: relative;
+}
+
+.tableWP tr {
+  height: 40px;
+}
+
+.tableContent .head_bg {
+  height: 40px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+align-items: center;
+}
+
+.tableContent .head_bg span {
+  text-align: center;
+  display: block;
+  width: calc(100% / 5);
+  font-size: .95rem;
+  color: rgb(86, 83, 87);
+  font-weight: bolder;
+}
+
+.bown {
+  position: relative;
+}
+
+.detail {
+  position: absolute;
+  right: 20px;
+  top: 71px;
+  height: 28px;
+  line-height: 14px;
+  font-size: 0.9rem;
+  border: 1px solid #6B56EC;
+  color: #6B56EC;
+  padding: 6px 12px;
+  border-radius: 2px;
+  transition: all 0.5s;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.detail:hover {
+  color: #fff;
+  background-color: #6B56EC;
+}
+
+.tableContent {
+  position: relative;
+  margin-top: 20px;
+}
+
+
+.tableContent .tableWP {
+  overflow: auto;
+  height: 200px;
+  width: 100%;
+}
+
+
+.tableContent table {
+  width: 100%;
+  margin-top: -20px;
+}
+
+
+.tableContent table th,
+.tableContent table td {
+  text-align: center;
+  width: calc(100% / 6);
+}
+
+.tableContent table span {
+  position: absolute;
+  top: 18px;
+  z-index: 2;
+  text-align: center;
+}
+
+
+.tableContent table th {
+  width: 100px;
+  height: 0;
+  padding: 0;
+}
+
+@media (max-width:500px) {
+  .tableContent .head_bg span {
+    line-height: normal;
+  }
+}

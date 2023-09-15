@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_js_materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_css_materialize.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/mediaList.css">
+  <link rel="stylesheet" href="css/playSelection.css">
+  <link rel="stylesheet" href="css/playSelection_rwd.css">
+  <title>媒體刊播</title>
+</head>
+
+<body>
+  <header></header>
+  <div id="main">
+    <div class="content">
+      <div class="title"></div>
+      <div class="contentBG ">
+        <ul class="stepFlex">
+          <li class="now">
+            <div class="circle">01</div>
+            <span>刊播時間</span>
+          </li>
+          <li>
+            <div class="circle">02</div>
+            <span>刊播素材</span>
+          </li>
+          <li>
+            <div class="circle">03</div>
+            <span>刊播設備</span>
+          </li>
+          <li>
+            <div class="circle">04</div>
+            <span>刊播內容</span>
+          </li>
+        </ul>
+        <div class="stepContent">
+          <div class="step step1">
+            <div class="bg">
+              <div class="flexrow">
+                <div class="wrapper">
+                  <div class="date">
+                    <p>開始日</p>
+                    <input type="text" class="datepicker" id="startdate">
+                  </div>
+                  <div class="date">
+                    <p>結束日</p>
+                    <input type="text" class="datepicker" id="enddate">
+                  </div>
+                </div>
+                <div class="wrapper">
+                  <div class="time starttime">
+                    <p>開始時間</p>
+                    <input type="text" class="timepicker" id="starttime">
+                  </div>
+                  <div class="time endtime">
+                    <p>結束時間</p>
+                    <input type="text" class="timepicker" id="endtime">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn stepBtn stepBtn1">確認時間</div>
+          </div>
+          <div class="step step2">
+            <div class="searchBar top">
+              <div class="flexrow flex">
+                <label for="mediaName">刊播名稱 :</label>
+                <input type="text" id="mediaName" name="mediaName" placeholder="請輸入刊播名稱">
+              </div>
+              <div class="searchBar">
+                <div class="btn back1 border yellow">返回時間</div>
+                <div class="btn stepBtn stepBtn2">確認素材</div>
+              </div>
+            </div>
+            <div class="searchBar" name="searchBar">
+              <div class="filter">
+                <div class="flex keyWords">
+                  <input type="text" placeholder="輸入關鍵字" class="keyWords">
+                </div>
+                <div class="flex type">
+                  <label for="type">格式 :</label>
+                  <select name="type" id="type">
+                    <option value="all">全部</option>
+                    <option value="img">圖片</option>
+                    <option value="video">影片</option>
+                  </select>
+                </div>
+                <div class="flex second">
+                  <label for="second">秒數 :</label>
+                  <select name="second" id="second">
+                    <option value="all">全部</option>
+                    <option value="30">30</option>
+                    <option value="25">25</option>
+                    <option value="20">20</option>
+                    <option value="15">15</option>
+                    <option value="10">10</option>
+                  </select>
+                </div>
+                <div class="flex mediadate">
+                  <label for="mediadate">上架日期 :</label>
+                  <input type="text" class="datepicker" id="mediadate">
+                </div>
+              </div>
+              <div class="btn search"><input type="submit" value="查詢" /></div>
+            </div>
+            <div class="textInfo">
+              <span>排序</span><img src="img/table/textInfo.svg" alt="">
+              <div class="info">點選紫色字體可進行排序</div>
+            </div>
+            <div class="selectContent">
+              <div class="table-responsive">
+                <div class="head_bg">
+                  <span></span>
+                  <span>縮圖</span>
+                  <span>檔名</span>
+                  <span class="sort">秒數</span>
+                  <span class="sort">審核日</span>
+                </div>
+                <div class="tableWp marginTop">
+                  <table cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th class=""></th>
+                        <th>縮圖</th>
+                        <th>檔名</th>
+                        <th class="sort">秒數</th>
+                        <th class="sort">審核日</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <input type="radio" name="mediaCheck" class="option-input radio">
+                        </td>
+                        <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                        <td class="name">機場宣導</td>
+                        <td class="second">10</td>
+                        <td class="date">23.02.18</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input type="radio" name="mediaCheck" class="option-input radio">
+                        </td>
+                        <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                        <td class="name">機場宣導</td>
+                        <td class="second">25</td>
+                        <td class="date">23.03.18</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input type="radio" name="mediaCheck" class="option-input radio">
+                        </td>
+                        <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
+                        <td class="name">機場宣導</td>
+                        <td class="second">15</td>
+                        <td class="date">23.04.18</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input type="radio" name="mediaCheck" class="option-input radio">
+                        </td>
+                        <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
+                        <td class="name">機場宣導</td>
+                        <td class="second">15</td>
+                        <td class="date">23.05.18</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input type="radio" name="mediaCheck" class="option-input radio">
+                        </td>
+                        <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
+                        <td class="name">機場宣導</td>
+                        <td class="second">15</td>
+                        <td class="date">23.06.18</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input type="radio" name="mediaCheck" class="option-input radio">
+                        </td>
+                        <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                        <td class="name">機場宣導</td>
+                        <td class="second">25</td>
+                        <td class="date">23.07.18</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input type="radio" name="mediaCheck" class="option-input radio">
+                        </td>
+                        <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
+                        <td class="name">機場宣導</td>
+                        <td class="second">30</td>
+                        <td class="date">23.07.28</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step step3">
+            <div class="searchBar top">
+              <div class="btn back2 border yellow">返回素材</div>
+              <div class="btn stepBtn stepBtn3">確認設備</div>
+            </div>
+            <div class="searchBar" name="searchBar">
+              <div class="filter">
+                <div class="flex keyWords">
+                  <input type="text" placeholder="輸入關鍵字" class="keyWords">
+                </div>
+                <div class="flex">
+                  <label for="screen">螢幕 :</label>
+                  <select name="" id="screen">
+                    <option value="all">全部</option>
+                    <option value="horizontal">橫式</option>
+                    <option value="vertical">直式</option>
+                  </select>
+                </div>
+              </div>
+              <div class="btn search"><input type="submit" value="查詢" /></div>
+            </div>
+            <div class="textInfo">
+              <span>排序</span><img src="img/table/textInfo.svg" alt="">
+              <div class="info">點選紫色字體可進行排序</div>
+            </div>
+            <div class="tableWrapper">
+              <div class="table-responsive">
+                <div class="head_bg">
+                  <span><input type="checkbox"></span>
+                  <span class="sort">縣市</span>
+                  <span class="sort">區域</span>
+                  <span>地址</span>
+                  <span>設備名稱</span>
+                  <span class="sort">螢幕</span>
+                  <span class="sort">鏡頭</span>
+                </div>
+                <div class="tableWp">
+                  <table cellspacing="0" id="playSelection_device">
+                    <thead>
+                      <tr>
+                        <th><input type="checkbox"></th>
+                        <th class="sort">縣市</th>
+                        <th class="sort">區域</th>
+                        <th>地址</th>
+                        <th>設備名稱</th>
+                        <th class="sort">螢幕</th>
+                        <th class="sort">鏡頭</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td>台北市</td>
+                        <td>大安區</td>
+                        <td>地址名稱1</td>
+                        <td>設備名稱1</td>
+                        <td>直式</td>
+                        <td>有</td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td>台北市</td>
+                        <td>大安區</td>
+                        <td>地址名稱2</td>
+                        <td>設備名稱1點</td>
+                        <td>直式</td>
+                        <td>有</td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td>台北市</td>
+                        <td>大安區</td>
+                        <td>地址名稱3</td>
+                        <td>設備名稱lalalala</td>
+                        <td>直式</td>
+                        <td>有</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <ul class="pagination" id="pagination4"></ul>
+            </div>
+          </div>
+          <div class="step step4">
+            <div class="searchBar top">
+              <div></div>
+              <div class="btn stepBtn stepBtn4 confirm">確認刊播</div>
+            </div>
+            <div class="accordion">
+              <div class="flexrow margin60">
+                <div>
+                  <div class="flex start">
+                    <img src="img/media/calender.svg" alt="" class="icon">
+                    <p>刊播時間</p>
+                    <img src="img/table/edit.svg" class="small back1" alt="">
+                  </div>
+                  <div class="dateWP">
+                    <div class="date">
+                      <p>日期</p>
+                      <span class="after start"></span>
+                      <span class="end"></span>
+                    </div>
+                  </div>
+                  <div class="timeWP">
+                    <div class="time starttime">
+                      <p>時間</p>
+                      <span class="after start"></span>
+                      <span class="end"></span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex start two">
+                    <img src="img/media/folder.svg" alt="" class="icon">
+                    <p>刊播素材</p>
+                    <img src="img/table/edit.svg" class="small back2" alt="">
+                  </div>
+                  <div class="flex start section">
+                    <img src="" alt="" class="mediaImg_check">
+                    <div class="info">
+                      <p>
+                        <span>刊播名稱:</span>
+                        <span class="mediaName"></span>
+                      </p>
+                      <p>
+                        <span>檔名:</span>
+                        <span class="name"></span>
+                      </p>
+                      <p>
+                        <span>秒數:</span>
+                        <span class="second"></span>
+                      </p>
+                      <p>
+                        <span>審核日:</span>
+                        <span class="date"></span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flexrow">
+                <div class="flex start">
+                  <img src="img/media/device.svg" alt="" class="icon">
+                  <p>刊播設備</p>
+                  <img src="img/table/edit.svg" class="small back3" alt="">
+                </div>
+              </div>
+              <div class="table-responsive">
+                <div class="head_bg">
+                  <span>縣市</span>
+                  <span>區域</span>
+                  <span>地址</span>
+                  <span>設備名稱</span>
+                  <span>螢幕</span>
+                  <span>鏡頭</span>
+                </div>
+                <div class="tableWp">
+                  <table class=" table-striped table-bordered" cellspacing="0">
+                    <thead>
+                      <tr>
+                        <th>縣市</th>
+                        <th>區域</th>
+                        <th>地址</th>
+                        <th>設備名稱</th>
+                        <th>螢幕</th>
+                        <th>鏡頭</th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sideNo">5</div>
+  <script src="js/dataTable.js"></script>
+  <script src="js/dateTimepicker.js"></script>
+  <script>
+
+    $(document).ready(function () {
+      let W = $(window).width();
+      //RWD
+      if (W < 501) {
+        $('.btn.back1.border.yellow').text('返回');
+        $('.stepBtn.stepBtn2').text('確認');
+        $('.searchBar .flex label.active').text('名稱 :');
+        $('.stepBtn').addClass('auto');
+      } else {
+        $('.btn.back1.border.yellow').text('返回時間');
+        $('.stepBtn.stepBtn2').text('確認素材');
+        $('.searchBar .flex label.active').text('刊播名稱 :');
+        $('.stepBtn').removeClass('auto');
+      }
+
+      //back
+      $('.back1').click(function () {
+        $('.step1').show();
+        $('.step1').siblings('.step').hide();
+        $('.stepFlex.step2').removeClass('step2');
+        $('.stepFlex>li').eq(1).removeClass('now');
+        $('.stepFlex>li').eq(0).removeClass('confirm').addClass('now');
+      });
+
+      $('.back2').click(function () {
+        $('.step2').show();
+        $('.step2').siblings('.step').hide();
+        $('.stepFlex.step3').removeClass('step3');
+        $('.stepFlex>li').eq(2).removeClass('now');
+        $('.stepFlex>li').eq(1).removeClass('confirm').addClass('now');
+      });
+
+      $('.back3').click(function () {
+        $('.step3').show();
+        $('.step3').siblings('.step').hide();
+        $('.stepFlex.step4').removeClass('step4');
+        $('.stepFlex>li').eq(3).removeClass('now');
+        $('.stepFlex>li').eq(2).removeClass('confirm').addClass('now');
+      });
+
+      //stepBtn1
+      $('.step1 input').change(function () {
+        if ($('.starttime .timepicker-span-hours').text() != '' && $('.endtime .timepicker-span-hours').text() != '') {
+          $('.stepBtn1').addClass('confirm');
+        } else if ($('#starttime').val() == '' || $('#endtime').val() == '') {
+          $('.stepBtn1').removeClass('confirm');
+        }
+      });
+
+      $('.stepBtn1').click(function () {
+        if ($('.starttime .timepicker-span-hours').text() != '' && $('.endtime .timepicker-span-hours').text() != '') {
+          $('.step1').hide();
+          $('.step2').show();
+          $('.stepFlex').addClass('step2');
+          $('.stepFlex>li').eq(0).removeClass('now').addClass('confirm');
+          $('.stepFlex>li').eq(1).addClass('now');
+
+          //step4 show
+          let startdate = $('#startdate').val();
+          enddate = $('#enddate').val();
+          starttime = $('#starttime').val();
+          endtime = $('#endtime').val();
+
+          $('.step4 .dateWP .date span.start').text(startdate);
+          $('.step4 .dateWP .date span.end').text(enddate);
+          $('.step4 .timeWP .time span.start').text(starttime);
+          $('.step4 .timeWP .time span.end').text(endtime);
+
+          let dateWP_width = $('.dateWP').width();
+          $('.timeWP').width(dateWP_width);
+
+          //rwd
+          if (W < 781) {
+            $('section.flex .listWP .list li, #main .contentBG').addClass('column');
+          }
+
+          //.step2 head span
+          if ($('.stepContent .step2').css('display') === 'block') {
+
+            let th_num = $('div.step2 table th').length;
+            $('div.step2 table td').width(100 / th_num + '%');
+
+            for (let i = 0; i < th_num; i++) {
+              let width = $('div.step2 table td').eq(i).width();
+              if ($('div.step2 .table-responsive .head_bg span').eq(i).hasClass('check')) {
+                $('div.step2 .table-responsive .head_bg span').eq(i).width(60);
+              } else {
+                $('div.step2 .table-responsive .head_bg span').eq(i).width(width + 10);
+              }
+            }
+          }
+        } else {
+          Swal.fire('請確認時間', '', 'info');
+        }
+      });
+
+
+
+      //stepBtn2
+      $('.stepBtn2').click(function () {
+
+        if ($('.step2 input[type="radio"]:checked').length > 0) {
+          if ($('#mediaName').val() !== '') {
+            $('.stepFlex').addClass('step3');//step by step
+            $('.step2').hide();
+            $('.step3').show();
+            $('.stepFlex>li').eq(1).removeClass('now').addClass('confirm');
+            $('.stepFlex>li').eq(2).addClass('now');
+            $('section.flex .listWP .list li, #main .contentBG').removeClass('column');
+
+            //step4 show
+            let mediaName = $('#mediaName').val();
+            src = $('.step2 [type="radio"].option-input:checked').parent('td').siblings('td.image').find(' img').prop('src');
+            name = $('.step2 [type="radio"].option-input:checked').parent('td').siblings('td.name').text();
+            second = $('.step2 [type="radio"].option-input:checked').parent('td').siblings('td.second').text();
+            date = $('.step2 [type="radio"].option-input:checked').parent('td').siblings('td.date').text();
+
+            $('.step4 .flexrow .flex img.mediaImg_check').prop('src', src);
+            $('.step4 .flexrow .info .mediaName').text(mediaName);
+            $('.step4 .flexrow .info .name').text(name);
+            $('.step4 .flexrow .info .second').text(second);
+            $('.step4 .flexrow .info .date').text(date);
+            console.log(mediaName, src, name, second, date);
+
+            //.step3 head span
+            if ($('.stepContent .step3').css('display') === 'block') {
+
+              let th_num = $('div.step3 table th').length;
+              $('div.step3 table td').width(100 / th_num + '%');
+
+              for (let i = 0; i < th_num; i++) {
+                let width = $('div.step3 table td').eq(i).width();
+                if ($('div.step3 .table-responsive .head_bg span').eq(i).hasClass('check')) {
+                  $('div.step3 .table-responsive .head_bg span').eq(i).width(60);
+                } else {
+                  $('div.step3 .table-responsive .head_bg span').eq(i).width(width + 10);
+                }
+              }
+            }
+            //rwd
+            if (W < 700) {
+              $('section.flex .listWP .list li, #main .contentBG').addClass('column');
+            }
+          } else {
+            Swal.fire('請填寫刊播名稱', '', 'info');
+          }
+        } else {
+          Swal.fire('請選擇素材', '', 'info');
+        }
+
+      });
+
+      //stepBtn2 confirm or not
+      $('#mediaName , input[name="mediaCheck"]').change(function () {
+        $(this).parents('tr').siblings('tr').find('input[name="mediaCheck"]').prop("checked", false);
+        if ($('input[name="mediaCheck"]').is(':checked') && $('#mediaName').val() !== '') {
+          $('.stepBtn2').addClass('confirm');
+        } else {
+          $('.stepBtn2').removeClass('confirm');
+        }
+      });
+
+      //stepBtn3
+      $('.stepBtn3').click(function () {
+
+        if ($('.step3 input[type="checkbox"]').is(':checked')) {
+          $('.stepFlex').addClass('step4');
+          $('.step3').hide();
+          $('.step4').show();
+          $('.stepFlex>li').eq(2).removeClass('now').addClass('confirm');
+          $('.stepFlex>li').eq(3).addClass('now');
+
+          //step4 show
+          $('.step4 table tbody').html('');
+          $('.step3 input[type="checkbox"]:checked').parents('tr').clone().appendTo(".step4 table tbody");
+          $('.step4 table tbody tr').each(function () {
+            $(this).find('td:nth-child(1)').remove();
+          });
+          let th_num = $('table th').length;
+          for (let i = 0; i < th_num; i++) {
+            let width = $('.step4 table td').eq(i).width();
+            $('.step4 .table-responsive .head_bg span').eq(i).width(width + 10);
+          }
+
+        } else {
+          Swal.fire('請選擇設備', '', 'info');
+        }
+      });
+
+      //stepBtn3 confirm or not
+      $('.step3 input[type="checkbox"]').change(function () {
+        if ($('.step3 input[type="checkbox"]').is(':checked')) {
+          $('.stepBtn3').addClass('confirm');
+        } else {
+          $('.stepBtn3').removeClass('confirm');
+        }
+      });
+
+
+
+      //.step4 tab2 head span
+      $('.tab2').click(function () {
+        let th_tab2 = $('div.step4 .tab2 table th').length;
+        $('div.step4 .tab2 table td').width(100 / th_tab2 + '%');
+
+        for (let i = 0; i < th_tab2; i++) {
+          let width = $('div.step4 .tab2 table td').eq(i).width();
+          if ($('div.step4 .tab2 .table-responsive .head_bg span').eq(i).hasClass('check')) {
+            $('div.step4 .tab2 .table-responsive .head_bg span').eq(i).width(60);
+          } else {
+            $('div.step4 .tab2 .table-responsive .head_bg span').eq(i).width(width + 10);
+          }
+        }
+      });
+
+      //.step4 tab3 head span
+      $('.tab3').click(function () {
+        let th_tab3 = $('div.step4 .tab3 table th').length;
+        $('div.step4 .tab3 table td').width(100 / th_tab3 + '%');
+
+        for (let i = 0; i < th_tab3; i++) {
+          let width = $('div.step4 .tab3 table td').eq(i).width();
+          if ($('div.step4 .tab3 .table-responsive .head_bg span').eq(i).hasClass('check')) {
+            $('div.step4 .tab3 .table-responsive .head_bg span').eq(i).width(60);
+          } else {
+            $('div.step4 .tab3 .table-responsive .head_bg span').eq(i).width(width + 10);
+          }
+        }
+      });
+
+      //stepBtn4
+      $('.stepBtn4').click(function () {
+        window.location = "https://yowru.github.io/CMS2/playList.html";
+      });
+
+
+
+
+    });
+
+  </script>
+</body>
+
+</html>

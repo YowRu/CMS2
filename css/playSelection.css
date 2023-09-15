@@ -1,0 +1,1031 @@
+.stepFlex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.stepFlex::before {
+  content: '';
+  display: block;
+  width: 80%;
+  height: 1px;
+  position: absolute;
+  left: 10%;
+  top: 54%;
+  border: 1px dashed #E1E1E2;
+  z-index: 1;
+}
+
+.stepFlex::after {
+  content: '';
+  display: block;
+  width: 25%;
+  height: 1px;
+  position: absolute;
+  left: 10%;
+  top: 54%;
+  border: 1px dashed #3CBC26;
+  z-index: 2;
+  opacity: 0;
+}
+
+.stepFlex.step2::after {
+  opacity: 1;
+}
+
+.stepFlex.step3::after {
+  width: 50%;
+}
+
+.stepFlex.step4::after {
+  width: 75%;
+}
+
+.stepFlex li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+  z-index: 3;
+}
+
+.stepFlex li span {
+  margin-top: 4px;
+  color: #E1E1E2;
+}
+
+.stepFlex li.now span {
+  color: #6D6E71;
+  font-weight: 600;
+}
+
+.circle {
+  font-size: .8rem;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid #E1E1E2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  color: #E1E1E2;
+}
+
+.stepFlex li.now .circle {
+  border: 2px solid #3CBC26;
+  color: #3CBC26;
+}
+
+.stepFlex li.confirm .circle {
+  background-color: #3CBC26;
+  border: 1px solid #3CBC26;
+  color: transparent;
+}
+
+.stepFlex li.confirm .circle:before {
+  content: ' ✓';
+  display: block;
+  width: 28px;
+  height: 28px;
+  color: #fff;
+  text-align: right;
+  line-height: 28px;
+  padding-left: 11px;
+  box-sizing: border-box;
+}
+
+.stepFlex li.confirm span {
+  color: #3CBC26;
+}
+
+.stepContent {
+  margin-top: 24px;
+}
+
+.step2 td img,
+.step4 td img {
+  width: 90px;
+  height: 50px;
+  object-fit: cover;
+  margin: 5px auto;
+}
+
+.step2 .table-responsive .head_bg span {
+  width: 20%;
+}
+
+/*datepicker*/
+.datepicker-date-display .date-text {
+  color: #fff;
+  font-size: 2.4rem;
+}
+
+.datepicker-date-display .year-text {
+  font-size: 2rem;
+  color: #fffffff2;
+}
+
+.stepContent table th,
+.stepContent table td {
+  border-bottom: 0;
+}
+
+#main select.datepicker-select {
+  display: none;
+}
+
+/*form*/
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stepContent .bg {
+  width: 80%;
+  margin: 0 auto;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.dateWP,
+.timeWP {
+  border: 1px solid #E1E1E2;
+  margin: 10px;
+  padding: 6px 15px;
+}
+
+.dateWP .date p,
+.timeWP .time p {
+  margin-right: 10px;
+}
+
+.dateWP .date span,
+.timeWP .time span {
+  color: #999;
+}
+
+.dateWP .date span.after,
+.timeWP .time span.after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dateWP .date span.after:after,
+.timeWP .time span.after:after {
+  content: '-';
+  width: 10px;
+  text-align: center;
+  display: block;
+  margin: 0 5px;
+  color: #2F3034;
+}
+
+.stepContent .bg .flexrow .wrapper>div {
+  width: 210px;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #E1E1E2;
+  padding: 6px 15px;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.stepContent .bg .flexrow .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  border: 0;
+}
+
+.stepContent .bg .flexrow p {
+  color: #999;
+  font-size: .95rem;
+}
+
+input.datepicker:not([type]),
+input.datepicker[type=text]:not(.browser-default),
+input.datepicker[type=password]:not(.browser-default),
+input.datepicker[type=email]:not(.browser-default),
+input.datepicker[type=url]:not(.browser-default),
+input.datepicker[type=time]:not(.browser-default),
+input.datepicker[type=date]:not(.browser-default),
+input.datepicker[type=datetime]:not(.browser-default),
+input.datepicker[type=datetime-local]:not(.browser-default),
+input.datepicker[type=tel]:not(.browser-default),
+input.datepicker[type=number]:not(.browser-default),
+input.datepicker[type=search]:not(.browser-default),
+textarea.materialize-textarea {
+  cursor: pointer;
+  font-size: 1rem;
+  color: #2F3034;
+  font-weight: normal;
+  border-bottom: 0;
+}
+
+.searchBar input.datepicker:not([type]),
+.searchBar input.datepicker[type=text]:not(.browser-default),
+.searchBar input.datepicker[type=password]:not(.browser-default),
+.searchBar input.datepicker[type=email]:not(.browser-default),
+.searchBar input.datepicker[type=url]:not(.browser-default),
+.searchBar input.datepicker[type=time]:not(.browser-default),
+.searchBar input.datepicker[type=date]:not(.browser-default),
+.searchBar input.datepicker[type=datetime]:not(.browser-default),
+.searchBar input.datepicker[type=datetime-local]:not(.browser-default),
+.searchBar input.datepicker[type=tel]:not(.browser-default),
+.searchBar input.datepicker[type=number]:not(.browser-default),
+.searchBar input.datepicker[type=search]:not(.browser-default),
+.searchBar textarea.materialize-textarea {
+  font-size: 0.9rem;
+  width: 74px;
+}
+
+/*step1*/
+.step {
+  position: relative;
+  width: 90%;
+  display: none;
+}
+
+.step1 input:not([type]),
+.step1 input[type=text]:not(.browser-default),
+.step1 input[type=password]:not(.browser-default),
+.step1 input[type=email]:not(.browser-default),
+.step1 input[type=url]:not(.browser-default),
+.step1 input[type=time]:not(.browser-default),
+.step1 input[type=date]:not(.browser-default),
+.step1 input[type=datetime]:not(.browser-default),
+.step1 input[type=datetime-local]:not(.browser-default),
+.step1 input[type=tel]:not(.browser-default),
+.step1 input[type=number]:not(.browser-default),
+.step1 input[type=search]:not(.browser-default),
+.step1 textarea.materialize-textarea {
+  width: 50%;
+  font-size: 1rem;
+  font-weight: 500;
+  height: auto;
+  margin-left: 10px;
+  margin-bottom: 0;
+  color: #2F3034;
+
+}
+
+.step1 input[type=text].timepicker {
+  border-bottom: 1px solid #6B56EC;
+}
+
+.step1 {
+  display: block;
+}
+
+/*datetime color*/
+#main .datepicker-date-display,
+#main .timepicker-digital-display {
+  background-color: #5861E2;
+}
+
+#main .datepicker-canvas line,
+#main .timepicker-canvas line {
+  stroke: #5861E2;
+}
+
+#main .datepicker-canvas-bearing,
+#main .timepicker-canvas-bearing {
+  fill: #5861E2;
+}
+
+#main .datepicker-canvas-bg,
+#main .timepicker-canvas-bg {
+  fill: #8087e5;
+}
+
+#main .datepicker-table td.is-today {
+  color: #5861E2;
+  border-radius: 50%;
+}
+
+#main .datepicker-table td.is-selected {
+  background-color: transparent;
+}
+
+#main .datepicker-table td.is-selected button {
+  color: #5861E2;
+  border: 1px solid #5861E2;
+}
+
+.step1 .confirmation-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step1 .confirmation-btns button {
+  margin: 0 5px;
+}
+
+.modal-content.datepicker-container {
+  overflow: hidden;
+}
+
+.datepicker-modal input.select-dropdown.dropdown-trigger {
+  height: auto;
+  line-height: 3rem;
+}
+
+#main .datepicker-cancel,
+#main .datepicker-clear,
+#main .datepicker-today,
+#main .datepicker-done,
+#main .timepicker-close {
+  color: #5861E2;
+  transition: all .3s;
+}
+
+#main .datepicker-cancel:hover,
+#main .datepicker-clear:hover,
+#main .datepicker-today:hover,
+#main .datepicker-done:hover,
+#main .timepicker-close:hover {
+  color: #5861E2;
+  border: 1px solid #5861E2;
+}
+
+.timepicker-tick.active,
+.timepicker-tick:hover {
+  background-color: #8087e556;
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #5861E2;
+  -webkit-box-shadow: 0 1px 0 0 #5861E2;
+  box-shadow: 0 1px 0 0 #5861E2;
+}
+
+/*datetime end*/
+.searchBar .flex label,
+.searchBar .flex input {
+  height: 22px;
+  line-height: 22px;
+  border: 0;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  width: auto;
+}
+
+.searchBar.top {
+  margin-bottom: 12px;
+}
+
+
+
+.btn {
+  color: #fff;
+  background-color: #999;
+  width: auto;
+  cursor: pointer;
+}
+
+.btn.add {
+  position: absolute;
+  right: 20px;
+  border: 1px solid #5861E2;
+  color: #5861E2;
+  background-color: transparent;
+}
+
+.popupWP .btn.notagree {
+  background-color: #CA3B32;
+  opacity: 0.35;
+}
+
+.btn.back1 {
+  margin-right: 10px;
+}
+
+.btn.search {
+  background-color: #5861E2;
+  padding: 0;
+}
+
+.btn:hover {
+  background-color: #EFAE31;
+  box-shadow: none;
+}
+
+.btn.add:hover {
+  background-color: #5861E2;
+  color: #fff;
+}
+
+.btn.back1 {
+  margin-right: 12px;
+}
+
+/* .btn.back1.margin {
+  margin-left: 20%;
+} */
+
+.btn.border.yellow {
+  border: 1px solid #EFAE31;
+  background-color: transparent !important;
+  /*datetime 套件*/
+  color: #EFAE31;
+}
+
+.btn.border.yellow:hover {
+  background-color: #EFAE31 !important;
+  /*datetime 套件*/
+  color: #fff;
+  margin-right: 12px;
+}
+
+.btn.border.yellow {
+  border: 1px solid #EFAE31;
+  background-color: transparent !important;
+  /*datetime 套件*/
+  color: #EFAE31;
+}
+
+.btn.border.yellow:hover {
+  background-color: #EFAE31 !important;
+  /*datetime 套件*/
+  color: #fff;
+}
+
+.stepBtn {
+  width: 90px;
+  box-sizing: border-box;
+}
+
+.stepBtn1 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.stepBtn:hover {
+  background-color: #C7C7C7;
+}
+
+.stepBtn.confirm,
+.stepBtn3.confirm {
+  background-color: #3CBC26;
+}
+
+.stepBtn.confirm:hover,
+.stepBtn3:hover {
+  border: 1px solid #3CBC26;
+  color: #3CBC26;
+  background-color: transparent;
+  width: 92px;
+}
+
+/* step2 */
+section.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0;
+  box-shadow: none;
+  position: relative;
+  margin-top: 14px;
+}
+
+section.flex.fixedHeight {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section.flex .title {
+  border: 0;
+  font-size: 1.1rem;
+  color: #2F3034;
+  margin-bottom: 8px;
+  padding: 0;
+  background-color: transparent;
+}
+
+section.flex .title p {
+  color: #6D6E71;
+  font-size: .9rem;
+}
+
+.stepContent .pagination {
+  position: relative;
+  bottom: 3px;
+  right: 0;
+  margin-top: 8px;
+}
+
+section.flex .listWP {
+  width: 44%;
+  border: 1px solid #E1E1E2;
+  padding: 16px 20px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin: 0;
+  position: relative;
+}
+
+.step3 section.flex .listWP {
+  width: 100%;
+  margin: 0 auto;
+  border: 0;
+}
+
+.step3 section.flex .listWP.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  padding: 0;
+}
+
+.step3 section.flex .listWP.flex ul li {
+  background-color: transparent;
+  border: 0;
+}
+
+section.flex .listWP .title.between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+section.flex .listWP .title.between input.total {
+  width: 2rem;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+section.flex .listWP .title.between input.total:focus {
+  border: 0;
+}
+
+section.flex .listWP .list li {
+  border: 1px solid #F6F6F6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  background-color: #f6f6f6;
+}
+
+section.flex .listWP .list li img {
+  margin-right: 10px;
+  width: 35%;
+  object-fit: contain;
+}
+
+section.flex .listWP .list li .info {
+  width: 85%;
+}
+
+section.flex .listWP .list li .info .fileName {
+  margin-bottom: 2px;
+  font-size: 0.95rem;
+}
+
+section.flex .listWP .list li .info .detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+section.flex .listWP .list li .info .detail .tag {
+  display: none;
+}
+
+section.flex .listWP .list li .info .detail .text,
+section.flex .listWP .list li .info .detail .checkbox span {
+  color: #6D6E71;
+  font-size: 0.9rem;
+}
+
+section.flex .listWP .list li .info .detail .checkbox {
+  width: 70px;
+  position: relative;
+  right: -16px;
+}
+
+.step4 .table-responsive .tableWp {
+  height: 200px;
+  overflow: scroll;
+}
+
+.step4 .flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.step4 .flexrow {
+  align-items: flex-start;
+  position: relative;
+}
+
+.step4 .flexrow.margin60 {
+  margin-bottom: 60px;
+}
+
+.step4 .flexrow .flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.step4 .flexrow .flex img {
+  width: 48px;
+}
+
+.step4 .flexrow .flex.start .small {
+  width: 22px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.step4 .flexrow .flex .mediaImg_check {
+  width: 160px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.step4 .flexrow .flex p {
+  font-size: 1.2rem;
+}
+
+.step4 .flexrow .flex span {
+  font-size: 0.95rem;
+  color: #999;
+}
+
+.step4 .flexrow>div {
+  width: 50%;
+}
+
+.step4 .flexrow .flex.start {
+  justify-content: flex-start;
+  width: 100%;
+  position: relative;
+}
+
+.step4 #playSelection_device th {
+  width: 16.6%;
+}
+
+.step4 table {
+  width: 100%;
+}
+
+
+
+section.flex .listWP .btn {
+  width: 100px;
+  box-shadow: none;
+}
+
+section.flex .listWP .btn.addAll {
+  background-color: #5861E2;
+  border: 1px solid #5861E2;
+  color: #fff;
+}
+
+section.flex .listWP .btn.addAll:hover {
+  background-color: transparent;
+  color: #5861E2;
+}
+
+section.flex .listWP .btn.addAll:hover {
+  background-color: transparent;
+  color: #5861E2;
+}
+
+section.flex .listWP .btn.deleteAll {
+  background-color: #fff;
+  color: #D95685;
+  border: 1px solid #D95685;
+}
+
+section.flex .listWP .btn.deleteAll:hover {
+  background-color: #D95685;
+  color: #fff;
+}
+
+section.flex .listWP .btn.deleteAll:hover {
+  background-color: #D95685;
+  color: #fff;
+}
+
+.flex.paginationWP {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.imgWP {
+  position: absolute;
+  width: 40px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 48%;
+}
+
+.imgWP.mobile {
+  display: none;
+}
+
+.imgWP img {
+  width: 40px;
+  height: 40px;
+  display: block;
+  margin: 16px 0;
+}
+
+section.flex .listWP .list input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+}
+
+[type="checkbox"]+span:not(.lever):before,
+[type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+  border: 1px solid #C7C7C7;
+}
+
+/*step5*/
+.step5 .accordion {
+  margin-top: 20px;
+}
+
+.tabContent {
+  padding: 22px 0;
+}
+
+.tabContentWP.tab .tabContent {
+  padding: 22px 0 0;
+}
+
+
+.step5 .btn {
+  margin-right: 0;
+}
+
+.step5 .flexrow {
+  justify-content: space-between;
+}
+
+.step5 .flexrow .flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexrow,
+.dateWP,
+.dateWP .date,
+.timeWP,
+.timeWP .time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dateWP,
+.timeWP {
+  border: 1px solid #E1E1E2;
+  margin-right: 10px;
+  padding: 6px 15px;
+  width: 240px;
+}
+
+.step4 .dateWP,
+.step4 .timeWP {
+  width: 250px;
+  margin: 10px 0;
+}
+
+.step4 .btn.border.yellow {
+  width: auto;
+  margin: 0 auto;
+  height: 28px;
+  line-height: 28px;
+  font-size: 0.8rem;
+  padding: 0 5px;
+}
+
+.dateWP .date p,
+.timeWP .time p {
+  margin-right: 10px;
+}
+
+.dateWP .date span,
+.timeWP .time span {
+  color: #999;
+  width: 80px;
+}
+
+.dateWP .date span.after,
+.timeWP .time span.after {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 93px;
+}
+
+.dateWP .date span.after:after,
+.timeWP .time span.after:after {
+  content: '-';
+  width: 10px;
+  text-align: center;
+  display: block;
+  margin: 0 5px;
+  color: #2F3034;
+}
+
+.accordion label {
+  cursor: pointer;
+  background-color: #5861E2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 20px;
+  box-sizing: content-box;
+  margin-bottom: 8px;
+  margin-right: 0;
+}
+
+.accordion label .flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion label .icon {
+  margin-right: 12px;
+  width: 24px;
+}
+
+.accordion label span {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.tabContent,
+img.arrowUp,
+img.arrowdown {
+  display: none;
+}
+
+input[type="radio"]:checked+.tabContent {
+  display: block;
+}
+
+.step5 .dataTables_wrapper {
+  margin-top: 40px;
+}
+
+.step5 .dataTables_wrapper .dataTables_length {
+  display: none;
+}
+
+.step5 .tabContentWP {
+  position: relative;
+}
+
+.step5 .tabContentWP .btn.border.yellow {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  margin-right: 0;
+}
+
+.step5 .tabContentWP .btn.border.yellow.relative {
+  position: initial;
+}
+
+.step5 .tabContent .flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step5 .tabContent .flex.column {
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.step5 .tabContent .flex.column img {
+  margin-bottom: 12px;
+}
+
+.step5 .tabContent .flex.column input[type="radio"] {
+  opacity: 1;
+  position: relative;
+  margin-right: 12px;
+  border: 1px solid #E1E1E2;
+  pointer-events: initial;
+}
+
+.step5 .tabContent label {
+  background-color: transparent;
+  margin-bottom: 0;
+}
+
+[type="radio"].option-input {
+  pointer-events: initial;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  height: 22px;
+  width: 22px;
+  transition: all 0.15s ease-out 0s;
+  border: 1px solid #C7C7C7;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+[type="radio"].option-input:checked {
+  position: relative;
+}
+
+[type="radio"].option-input:checked::before {
+  width: 12px;
+  height: 12px;
+  display: flex;
+  border-radius: 50%;
+  content: '';
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background: #6B56EC;
+}
+
+[type="radio"].option-input:checked::after {
+  border: 1px solid #6B56EC;
+  width: 22px;
+  height: 22px;
+  background: transparent;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+[type="radio"].option-input.radio::after {
+  border-radius: 50%;
+}
+
+.timepicker-span-hours,
+.timepicker-span-minutes,
+.timepicker-display-column {
+  font-size: 4rem;
+}
+
+.timepicker-span-am-pm .am-btn,
+.timepicker-span-am-pm .pm-btn{font-size: 1.3rem;}

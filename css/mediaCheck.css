@@ -1,0 +1,38 @@
+  div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+    background-color: #3CBC26;
+  }
+
+  div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm.disable {
+    opacity: 0.35;
+  }
+
+  div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel {
+    background-color: #CA3B32;
+    opacity: 0.35;
+  }
+
+  div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel.enable {
+    opacity: 1;
+  }
+
+  table tr {
+    cursor: pointer;
+  }
+
+  .swal2-popup.swal2-modal.swal2-show input[type=text]:not(.browser-default) {
+    width: 50%;
+    text-align: right;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 48px;
+    height: 48px;
+    border: 0;
+  }
+
+  .swal2-popup.swal2-modal.swal2-show input[type=text]:not(.browser-default).tag {
+    text-align: left;
+  }
+
+  .popupWP .flex.column span {
+    text-align: left;
+  }

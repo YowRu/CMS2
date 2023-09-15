@@ -1,0 +1,68 @@
+input[type="text"].datepicker {
+  width: 120px;
+}
+
+.btnWP {
+  height: 100px;
+}
+
+.btnImg {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.btnImg .flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnImg img {
+  margin: 2px auto;
+}
+
+[type="radio"].option-input {
+  pointer-events: initial;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  height: 22px;
+  width: 22px;
+  transition: all 0.15s ease-out 0s;
+  border: 1px solid #C7C7C7;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+[type="radio"].option-input:checked::after {
+  border: 0;
+}
+
+.popup_bg.clone table tr, .popup_bg.replace table tr {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.popup_bg.clone table td,
+.popup_bg.replace table td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 0;
+}
+
+.popup_bg .popupWP.big {
+  height: 98vh;
+}

@@ -1,0 +1,91 @@
+.popupWP div.flex.height100 {
+  height: 100px;
+}
+
+.popupWP div.flex.height90 {
+  height: 90px;
+}
+
+.popupWP.width600 .popup {
+  border: 0;
+  align-items: flex-start;
+  padding: 30px 20px;
+}
+
+.popupWP .setting .flex.start {
+  justify-content: flex-start;
+  width: auto;
+  margin-bottom: 0;
+  padding-right: 0;
+  border: 0;
+}
+
+.popupWP .setting .flex.start span {
+  margin: 0 5px;
+}
+
+#contract_end,
+#contract_start {
+  width: 70px;
+  text-align: center;
+  height: auto;
+  border-bottom: 0;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+}
+
+.contractWP {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contractWP p {
+  margin: 0 5px;
+}
+
+.detailClose {
+  cursor: pointer;
+}
+
+tr.detail {
+  display: none;
+  transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+}
+
+.detailContent {
+  max-width: 450px;
+}
+
+.detailContent tr,
+.detailContent th,
+.detailContent td {
+  border-bottom: 0;
+}
+
+.detailContent th {
+  font-weight: 200;
+  color: #999999;
+}
+
+.detailContent th,
+.detailContent td {
+  width: calc(100%/3);
+  height: 28px;
+}
+
+.btnImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.btnImg img {
+  margin: 2px auto;
+}
+
+.popupWP .flex .fontLevel_1.address{width: 85%;}

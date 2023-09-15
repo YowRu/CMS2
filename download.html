@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/sweetalert2.css">
+    <link rel="stylesheet" href="css/layout.css" type="text/css">
+    <link rel="stylesheet" href="css/download.css" type="text/css">
+    <title>設備截圖</title>
+</head>
+
+<body>
+    <header></header>
+    <div id="main">
+        <div class="wrapper">
+            <div class="flex space_between">
+                <div class="left flex">
+                    <div class="img margin"></div>
+                    <span class="name">北醫LF2</span>
+                </div>
+                <span class="mac_address">1213r24tr43</span>
+            </div>
+            <div class="flex start address">
+                <i class="fa-sharp fa-light fa-map-pin margin"></i>
+                <p>台北市</p>
+                <p class="area">信義區</p>
+                <p>吳興街</p>
+            </div>
+        </div>
+        <div class="flex start tagWp">
+            <span>大學</span>
+            <span>圖書館</span>
+        </div>
+        <div class="flex space_between">
+            <p class="big">截圖顯示</p>
+            <p>共<span>6</span>張</p>
+        </div>
+        <ul class="tabs">
+            <li><a href="#tab1">目前截圖</a></li>
+            <li><a href="#tab2">歷史截圖</a></li>
+        </ul>
+        <ul class="tab_container">
+            <li id="tab1" class="tab_content">
+                <div class="btn"><span>截圖</span></div>
+                <div class="downloadImg now">
+                    <div><img src="img/download/1.jpg" alt=""><span>2023.09.01 13:42</span></div>
+                    <div><img src="img/download/2.jpg" alt=""><span>2023.09.01 13:42</span></div>
+                    <div><img src="img/download/3.jpg" alt=""><span>2023.09.01 13:42</span></div>
+                    <div><img src="img/download/4.jpg" alt=""><span>2023.09.01 13:42</span></div>
+                    <div><img src="img/download/1.jpg" alt=""><span>2023.09.01 13:42</span></div>
+                </div>
+            </li>
+            <li id="tab2" class="tab_content">
+                <div class="downloadImg">
+                    <div><img src="img/download/1.jpg" alt=""><span>2023.09.01 13:42</span></div>
+                    <div><img src="img/download/2.jpg" alt=""><span>2023.09.01 13:42</span></div>
+                    <div><img src="img/download/3.jpg" alt=""><span>2023.09.01 13:42</span></div>
+                    <div><img src="img/download/4.jpg" alt=""><span>2023.09.01 13:42</span></div>
+                    <div><img src="img/download/1.jpg" alt=""><span>2023.09.01 13:42</span></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $(function(){
+        // 預設顯示第一個 Tab
+        var _showTab = 0;
+        $('#main').each(function(){
+            // 目前的頁籤區塊
+            var $tab = $(this);
+
+            var $defaultLi = $('.tabs li', $tab).eq(_showTab).addClass('active');
+            $($defaultLi.find('a').attr('href')).siblings().hide();
+            
+            // 當 li 頁籤被點擊時...
+            // 若要改成滑鼠移到 li 頁籤就切換時, 把 click 改成 mouseover
+            $('.tabs li', $tab).click(function() {
+                // 找出 li 中的超連結 href(#id)
+                var $this = $(this),
+                    _clickTab = $this.find('a').attr('href');
+                // 把目前點擊到的 li 頁籤加上 .active
+                // 並把兄弟元素中有 .active 的都移除 class
+                $this.addClass('active').siblings('.active').removeClass('active');
+                // 淡入相對應的內容並隱藏兄弟元素
+                $(_clickTab).stop(false, true).fadeIn().siblings().hide();
+
+                return false;
+            }).find('a').focus(function(){
+                this.blur();
+            });
+        });
+
+        $('.btn').click(function(){
+            $(this).hide();
+            $('#main .downloadImg.now').addClass('show');
+        });
+
+    
+    });
+    </script>
+</body>
+
+</html>

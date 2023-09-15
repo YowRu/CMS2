@@ -1,0 +1,81 @@
+.blue {
+  background-color: transparent !important;
+}
+
+.popupWP {
+  overflow: scroll;
+  height: 70vh;
+}
+
+.popup_bg .swalWP {
+  padding-bottom: 0;
+  height: 70vh;
+  overflow: visible;
+}
+
+@media(max-width:1150px) {
+
+  .searchBar .flex.state,
+  table th:nth-child(7),
+  .table-responsive table td:nth-child(7),
+  .table-responsive .head_bg span:nth-child(7) {
+    display: none;
+  }
+}
+
+@media(max-width:1030px) {
+
+  .searchBar .flex.area,
+  table th:nth-child(5),
+  .table-responsive table td:nth-child(5),
+  .table-responsive .head_bg span:nth-child(5) {
+    display: none;
+  }
+
+}
+
+@media(max-width:1000px) {
+
+  table th:nth-child(4),
+  .table-responsive table td:nth-child(4),
+  .table-responsive .head_bg span:nth-child(4) {
+    display: none;
+  }
+
+}
+
+@media(max-width:750px) {
+
+  .searchBar .flex.city,
+  table th:nth-child(6),
+  .table-responsive table td:nth-child(6),
+  .table-responsive .head_bg span:nth-child(6) {
+    display: none;
+  }
+}
+
+
+@media(max-width:620px) {
+
+  .searchBar .flex.onlineDate,
+  table th:nth-child(9),
+  .table-responsive table td:nth-child(9),
+  .table-responsive .head_bg span:nth-child(9) {
+    display: none;
+  }
+}
+
+@media(max-width:450px) {
+
+  table th:nth-child(8),
+  .table-responsive table td:nth-child(8),
+  .table-responsive .head_bg span:nth-child(8) {
+    display: none;
+  }
+}
+
+@media(max-width:414px) {
+  .searchBar .flex.offlineDate {
+    display: none;
+  }
+}

@@ -1,0 +1,41 @@
+.swal2-modal input[type=text]:not(.browser-default) {
+  width: 50%;
+  height: auto;
+  border-bottom: 0;
+  font-size: 0.85rem;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+.popupWP .flex .datepicker-date-display span.year-text {
+  font-size: 2rem;
+  color: #fffffff2;
+  text-align: left;
+}
+
+.popupWP .flex .datepicker-date-display span.date-text {
+  color: #fff;
+  font-size: 2.4rem;
+  text-align: left;
+}
+
+.popupWP div.flex.contractWP {
+  border: 0;
+  padding: 0;
+  width: 160px;
+}
+
+.flex.macAddress {
+  padding-left: 18px;
+  font-size: 1.3rem;
+}
+
+.flex.macAddress span {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.flex.macAddress span:after {
+  content: '(mac address)';
+  font-size: 0.9rem;
+}
