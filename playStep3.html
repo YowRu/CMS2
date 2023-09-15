@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_js_materialize.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_css_materialize.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/mediaList.css">
+  <link rel="stylesheet" href="css/playSelection.css">
+  <link rel="stylesheet" href="css/playSelection_rwd.css">
+  <title>媒體刊播</title>
+</head>
+<body>
+  <header></header>
+  <div id="main">
+    <div class="content">
+      <div class="title"></div>
+      <div class="contentBG ">
+        <ul class="stepFlex">
+          <li class="confirm">
+            <div class="circle">01</div>
+            <span>刊播時間</span>
+          </li>
+          <li class="confirm">
+            <div class="circle">02</div>
+            <span>刊播素材</span>
+          </li>
+          <li class="now">
+            <div class="circle">03</div>
+            <span>刊播設備</span>
+          </li>
+          <li>
+            <div class="circle">04</div>
+            <span>刊播內容</span>
+          </li>
+        </ul>
+        <div class="stepContent">
+          <div class="step step3">
+            <div class="searchBar top">
+              <div class="btn back2 border yellow">返回素材</div>
+              <div class="btn stepBtn stepBtn3">確認設備</div>
+            </div>
+            <div class="searchBar" name="searchBar">
+              <div class="filter">
+                <div class="flex keyWords">
+                  <input type="text" placeholder="輸入關鍵字" class="keyWords">
+                </div>
+                <div class="flex">
+                  <label for="screen">螢幕 :</label>
+                  <select name="" id="screen">
+                    <option value="all">全部</option>
+                    <option value="horizontal">橫式</option>
+                    <option value="vertical">直式</option>
+                  </select>
+                </div>
+              </div>
+              <div class="btn search"><input type="submit" value="查詢" /></div>
+            </div>
+            <div class="textInfo">
+              <span>排序</span><img src="img/table/textInfo.svg" alt="">
+              <div class="info">點選紫色字體可進行排序</div>
+            </div>
+            <div class="tableWrapper">
+              <div class="table-responsive">
+                <div class="head_bg">
+                  <span><input type="checkbox"></span>
+                  <span class="sort">縣市</span>
+                  <span class="sort">區域</span>
+                  <span>地址</span>
+                  <span>設備名稱</span>
+                  <span class="sort">螢幕</span>
+                  <span class="sort">鏡頭</span>
+                </div>
+                <div class="tableWp">
+                  <table cellspacing="0" id="playSelection_device">
+                    <thead>
+                      <tr>
+                        <th><input type="checkbox"></th>
+                        <th class="sort">縣市</th>
+                        <th class="sort">區域</th>
+                        <th>地址</th>
+                        <th>設備名稱</th>
+                        <th class="sort">螢幕</th>
+                        <th class="sort">鏡頭</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td>台北市</td>
+                        <td>大安區</td>
+                        <td>地址名稱1</td>
+                        <td>設備名稱1</td>
+                        <td>直式</td>
+                        <td>有</td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td>台北市</td>
+                        <td>大安區</td>
+                        <td>地址名稱2</td>
+                        <td>設備名稱1點</td>
+                        <td>直式</td>
+                        <td>有</td>
+                      </tr>
+                      <tr>
+                        <td><input type="checkbox"></td>
+                        <td>台北市</td>
+                        <td>大安區</td>
+                        <td>地址名稱3</td>
+                        <td>設備名稱lalalala</td>
+                        <td>直式</td>
+                        <td>有</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <ul class="pagination" id="pagination4"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sideNo">5</div>
+  <script src="js/dataTable.js"></script>
+  <script src="js/dateTimepicker.js"></script>
+  <script>
+
+    $(document).ready(function () {
+      let W = $(window).width();
+      //RWD
+      if (W < 501) {
+        $('.btn.back1.border.yellow').text('返回');
+        $('.stepBtn.stepBtn2').text('確認');
+        $('.searchBar .flex label.active').text('名稱 :');
+        $('.stepBtn').addClass('auto');
+      } else {
+        $('.btn.back1.border.yellow').text('返回時間');
+        $('.stepBtn.stepBtn2').text('確認素材');
+        $('.searchBar .flex label.active').text('刊播名稱 :');
+        $('.stepBtn').removeClass('auto');
+      }
+
+      //back
+      $('.back2').click(function () {
+        window.location = "https://yowru.github.io/CMS2/playStep2.html";
+      });
+
+      //stepBtn3
+      $('.stepBtn3').click(function () {
+        if ($('.step3 input[type="checkbox"]').is(':checked')) {
+          window.location = "https://yowru.github.io/CMS2/playStep4.html";
+        } else {
+          Swal.fire('請選擇設備', '', 'info');
+        }
+      });
+
+      //stepBtn3 confirm or not
+      $('.step3 input[type="checkbox"]').change(function () {
+        if ($('.step3 input[type="checkbox"]').is(':checked')) {
+          $('.stepBtn3').addClass('confirm');
+        } else {
+          $('.stepBtn3').removeClass('confirm');
+        }
+      });
+
+    });
+
+  </script>
+</body>
+
+</html>
