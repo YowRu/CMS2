@@ -436,15 +436,22 @@
 
       //stepBtn1
       $('.step1 input').change(function () {
-        if ($('.starttime .timepicker-span-hours').text() != '' && $('.endtime .timepicker-span-hours').text() != '') {
+        if ($('#starttime').val() != '' && $('#endtime').val() != '' && $('#enddate').val()!='' && $('#startdate').val() < $('#enddate').val() && $('#starttime').val() < $('#endtime').val()) {
           $('.stepBtn1').addClass('confirm');
-        } else if ($('#starttime').val() == '' || $('#endtime').val() == '') {
+        } else {
           $('.stepBtn1').removeClass('confirm');
         }
       });
 
       $('.stepBtn1').click(function () {
-        if ($('.starttime .timepicker-span-hours').text() != '' && $('.endtime .timepicker-span-hours').text() != '') {
+        if ($('#enddate').val() == '' || $('#starttime').val() == '' || $('#endtime').val() == ''){
+          Swal.fire('資料不完全', '', 'info');
+        }else if($('#startdate').val() > $('#enddate').val()){
+          Swal.fire('起訖日期錯誤', '', 'info');
+        }else if($('#starttime').val()> $('#endtime').val()){
+          console.log($('#starttime').val(),$('#endtime').val());
+          Swal.fire('起訖時間錯誤', '', 'info');
+        }else{
           $('.step1').hide();
           $('.step2').show();
           $('.stepFlex').addClass('step2');
@@ -485,9 +492,7 @@
               }
             }
           }
-        } else {
-          Swal.fire('請確認時間', '', 'info');
-        }
+        } 
       });
 
 
