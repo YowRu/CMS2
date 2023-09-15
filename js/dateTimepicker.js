@@ -130,7 +130,7 @@ $('#starttime').timepicker(
         Swal.fire('時間不可回朔', '', 'info');
         $("#starttime").val(`${hour}:${minutes} ${dpStartTime.amOrPm}`);
       } else {
-        $("#starttime").val(dpStartTime);
+        $("#starttime").val(dpStartTime.time);
       }
     }
   })
@@ -157,7 +157,7 @@ $('#endtime').timepicker(
         Swal.fire('時間不可回朔', '', 'info');
         $('#endtime').val(`${hourText}:${minutesText} ${dpendTime.amOrPm}`);
       } else {
-        $('#endtime').val(dpendTime);
+        $('#endtime').val(dpendTime.time);
       }
     }
   })
