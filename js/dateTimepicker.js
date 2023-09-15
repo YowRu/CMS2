@@ -105,11 +105,13 @@ let time_i18n = {
 let time_options = {
   autoClose: true,
   format: "HH:mm",
-  defaultTime: 'now',
-  twelveHour: true,
+  // defaultTime: 'now',
+  twelveHour: false,
   vibrate: true,
   i18n: time_i18n.zh
 };
+
+
 
 
 
@@ -130,7 +132,7 @@ $('#starttime').timepicker(
         Swal.fire('時間不可回朔', '', 'info');
         $("#starttime").val(`${hour}:${minutes} ${dpStartTime.amOrPm}`);
       } else {
-        $("#starttime").val(dpStartTime.time);
+        $("#starttime").val(`${dpStartTime.time} ${dpStartTime.amOrPm}`);
       }
     }
   })
@@ -154,10 +156,10 @@ $('#endtime').timepicker(
         }else{
           minutesText= (minutesText+5 < 10 ? '0' : '') + minutesText;
         }
-        Swal.fire('時間不可回朔', '', 'info');
-        $('#endtime').val(`${hourText}:${minutesText} ${dpendTime.amOrPm}`);
+      Swal.fire('時間不可回朔', '', 'info');
+        // $('#endtime').val(`${hourText}:${minutesText} ${dpendTime.amOrPm}`);
       } else {
-        $('#endtime').val(dpendTime.time);
+        $('#endtime').val(`${dpendTime.time} ${dpendTime.amOrPm}`);
       }
     }
   })
