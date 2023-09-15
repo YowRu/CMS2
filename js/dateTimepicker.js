@@ -141,24 +141,17 @@ $('#starttime').timepicker(
 $('#endtime').timepicker(
   $.extend({}, time_options, {
     onCloseEnd: function (e) {
-
+      let dpstartTime = M.Timepicker.getInstance($("#starttime"));
       let dpendTime = M.Timepicker.getInstance($("#endtime"));
       let dayNow = new Date();
       let hour = dayNow.getHours();
       let minutes = dayNow.getMinutes();
 
-      if ($('#enddate').val() === $('#startdate').val() && dpendTime.time < $('#starttime').val()) {
-        let hourText = (dayNow.getHours() < 10 ? '0' : '') + dayNow.getHours();
-        let minutesText = minutes + 5;
-        console.log(minutesText);
-        if(minutesText>60){
-          minutesText= ((minutesText-60)< 10 ? '0' : '') + minutesText;
-        }else{
-          minutesText= (minutesText+5 < 10 ? '0' : '') + minutesText;
-        }
-      Swal.fire('時間不可回朔', '', 'info');
-        // $('#endtime').val(`${hourText}:${minutesText} ${dpendTime.amOrPm}`);
-      } else {
+      if ($('#enddate').val() === $('#startdate').val() && dpendTime.time < dpstartTime.time) {
+        console.log(dpstartTime.time);
+        Swal.fire('時間不可回朔', '', 'info');
+        $('#endtime').val('');
+      }else{
         $('#endtime').val(`${dpendTime.time} ${dpendTime.amOrPm}`);
       }
     }
