@@ -258,7 +258,6 @@ textarea.materialize-textarea {
 .step {
   position: relative;
   width: 90%;
-  display: none;
 }
 
 .step1 input:not([type]),
