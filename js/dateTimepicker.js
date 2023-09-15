@@ -41,6 +41,14 @@ $("#startdate").datepicker(
 
         Swal.fire('日期不可倒轉', '', 'info');
         $("#startdate").val($('#enddate').val());
+         //stepBtn1
+      $('.step1 input').change(function () {
+        if ($('#starttime').val() == '' || $('#endtime').val() == '' || $('#enddate').val() =='' || $('#startdate').val() > $('#enddate').val() || ($('#startdate').val() == $('#enddate').val() && $('#starttime').val() > $('#endtime').val()) ) {
+          $('.stepBtn1').removeClass('confirm');
+        } else {
+          $('.stepBtn1').addClass('confirm');
+        }
+      });
       }
     }
   })
@@ -60,7 +68,6 @@ $("#startplay").datepicker(
 
 $("#enddate").datepicker(
   $.extend({}, dp_options, {
-    // defaultDate: today,
     minDate: today,
     i18n: dp_i18n.zh,
     onClose: function (e) {
@@ -70,6 +77,14 @@ $("#enddate").datepicker(
       if (dpendDate.date <  dpstartDate.date) {
         Swal.fire('日期不可倒轉', '', 'info');
         $("#enddate").val($('#startdate').val());
+         //stepBtn1
+      $('.step1 input').change(function () {
+        if ($('#starttime').val() == '' || $('#endtime').val() == '' || $('#enddate').val() =='' || $('#startdate').val() > $('#enddate').val() || ($('#startdate').val() == $('#enddate').val() && $('#starttime').val() > $('#endtime').val()) ) {
+          $('.stepBtn1').removeClass('confirm');
+        } else {
+          $('.stepBtn1').addClass('confirm');
+        }
+      });
       }
     }
   })
@@ -126,14 +141,24 @@ $('#starttime').timepicker(
       let hour = (dayNow.getHours() < 10 ? '0' : '') + dayNow.getHours();
       let minutes = (dayNow.getMinutes() < 10 ? '0' : '') + dayNow.getMinutes();
       let nowTime = String(`${hour}:${minutes}`);
-      console.log(dpStartTime, dpStartTime.time < nowTime);
+      console.log(dpStartTime.time, typeof dpStartTime.time);
 
-      if ($('#enddate').val() === $('#startdate').val() && dpStartTime.time < nowTime) {
+      if (($('#enddate').val() && $('#startdate').val()== dayNow) && dpStartTime.time < nowTime) {
         Swal.fire('時間不可回朔', '', 'info');
-        $("#starttime").val(`${hour}:${minutes} ${dpStartTime.amOrPm}`);
-      } else {
-        $("#starttime").val(`${dpStartTime.time} ${dpStartTime.amOrPm}`);
+        $("#starttime").val(`${hour}:${minutes} `);
+      } else if(dpStartTime.time == undefined){
+        $('#starttime').val('');
+      }else {
+        $("#starttime").val(`${dpStartTime.time} `);
       }
+       //stepBtn1
+       $('.step1 input').change(function () {
+        if ($('#starttime').val() == '' || $('#endtime').val() == '' || $('#enddate').val() =='' || $('#startdate').val() > $('#enddate').val() || ($('#startdate').val() == $('#enddate').val() && $('#starttime').val() > $('#endtime').val()) ) {
+          $('.stepBtn1').removeClass('confirm');
+        } else {
+          $('.stepBtn1').addClass('confirm');
+        }
+      });
     }
   })
 );
@@ -151,9 +176,19 @@ $('#endtime').timepicker(
         console.log(dpstartTime.time);
         Swal.fire('時間不可回朔', '', 'info');
         $('#endtime').val('');
+      }else if(dpendTime.time == undefined){
+        $('#endtime').val('');
       }else{
-        $('#endtime').val(`${dpendTime.time} ${dpendTime.amOrPm}`);
+        $('#endtime').val(`${dpendTime.time} `);
       }
+       //stepBtn1
+       $('.step1 input').change(function () {
+        if ($('#starttime').val() == '' || $('#endtime').val() == '' || $('#enddate').val() =='' || $('#startdate').val() > $('#enddate').val() || ($('#startdate').val() == $('#enddate').val() && $('#starttime').val() > $('#endtime').val()) ) {
+          $('.stepBtn1').removeClass('confirm');
+        } else {
+          $('.stepBtn1').addClass('confirm');
+        }
+      });
     }
   })
 );
