@@ -60,7 +60,7 @@ $("#startplay").datepicker(
 
 $("#enddate").datepicker(
   $.extend({}, dp_options, {
-    defaultDate: today,
+    // defaultDate: today,
     minDate: today,
     i18n: dp_i18n.zh,
     onClose: function (e) {
