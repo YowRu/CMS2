@@ -167,7 +167,7 @@ input.space_around {
   margin-bottom: 0;
   border-bottom: 0;
   height: auto;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   position: relative;
 }
 
@@ -264,14 +264,13 @@ div:where(.swal2-container).swal2-center>.swal2-popup.width600 .popupWP {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 1;
 }
 
 .popup_bg .swalWP {
   position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
     overflow: scroll;
     height: 95vh;
     width: 100%;

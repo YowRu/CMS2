@@ -118,8 +118,8 @@
                   <td>mac address</td>
                   <td>台北市</td>
                   <td>信義區</td>
-                  <td>仁愛路四段505號</td>
-                  <td>設備1314</td>
+                  <td>仁愛路四段505號1樓</td>
+                  <td>國父紀念館</td>
                   <td>直式</td>
                   <td>有</td>
                   <td>出租</td>
@@ -159,7 +159,7 @@
                   <td>台北市</td>
                   <td>信義區</td>
                   <td>信義路五段7號89樓</td>
-                  <td>設備12345</td>
+                  <td>101景觀台</td>
                   <td>直式</td>
                   <td>有</td>
                   <td>售出</td>
@@ -199,7 +199,7 @@
                   <td>新北市</td>
                   <td>板橋區</td>
                   <td>縣民大道二段7號</td>
-                  <td>設備名稱隨便取</td>
+                  <td>新北耶誕城</td>
                   <td>直式</td>
                   <td>有</td>
                   <td>售出</td>
@@ -330,6 +330,31 @@
         <div class="edit_popup popup flex">
           <div class="info">
             <div class="flex">
+              <p>公司</p><input type="text" class="fontLevel_1 space_around" placeholder="請輸入公司" value="宇豐光電股份有限公司" />
+            </div>
+            <div class="flex contract">
+              <p>合約</p>
+              <div class="contractWP">
+                <input type="text" class="datepicker" placeholder="2023/09/15" id="contract_start" />
+                <p>-</p>
+                <input type="text" class="datepicker" placeholder="2024/09/15" id="contract_end" />
+              </div>
+            </div>
+            <div class="flex state">
+              <p>狀態</p>
+              <select name="" id="state3">
+                <option value="">請選擇</option>
+                <option value="" selected="selected">出租</option>
+                <option value="">售出</option>
+                <option value="">報廢</option>
+              </select>
+            </div>
+            <div class="flex">
+              <p>設備上架</p>
+              <div class="switch switch__2"><input id="switch-2" type="checkbox" checked><label for="switch-2"></label>
+              </div>
+            </div>
+            <div class="flex">
               <p>縣市</p><input type="text" class="fontLevel_1 space_around" placeholder="請輸入地址" value="台北市" />
             </div>
             <div class="flex">
@@ -338,29 +363,12 @@
             <div class="flex">
               <p>地址</p><input type="text" class="fontLevel_1 space_around address" placeholder="請輸入地址" value="地址" />
             </div>
-            <div class="flex">
-              <p>公司</p><input type="text" class="fontLevel_1 space_around" placeholder="請輸入公司" value="公司公司公司公司公司" />
-            </div>
-            <div class="flex"><textarea name="" id="" cols="30" rows="1" placeholder="多個標籤,請用逗號分開">台大,公館,誠品A區</textarea>
-            </div>
-            <div class="flex state">
-              <p>狀態</p><select name="" id="state3">
-                <option value="">請選擇</option>
-                <option value="">出租</option>
-                <option value="">售出</option>
-                <option value="">報廢</option>
-              </select>
-            </div>
-            <div class="flex contract">
-              <p>合約</p>
-              <div class="contractWP"><input type="text" class="datepicker" placeholder="起始日" id="contract_start" />
-                <p>-</p><input type="text" class="datepicker" placeholder="結束日" id="contract_end" />
-              </div>
-            </div>
           </div>
           <div class="setting">
             <div class="flex">
               <p>設備名稱</p><input type="text" class="fontLevel_1 space_around" placeholder="請自訂設備名稱" value="公館誠品A區" />
+            </div>
+            <div class="flex"><textarea name="" id="" cols="30" rows="1" placeholder="多個標籤,請用逗號分開">台大,公館,誠品A區</textarea>
             </div>
             <div class="flex">
               <p>螢幕</p><select name="" id="">
@@ -424,11 +432,6 @@
                   <option value="22">22點</option>
                   <option value="23">23點</option>
                 </select>
-              </div>
-            </div>
-            <div class="flex">
-              <p>設備上架</p>
-              <div class="switch switch__2"><input id="switch-2" type="checkbox" checked><label for="switch-2"></label>
               </div>
             </div>
             <div class="flex">

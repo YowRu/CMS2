@@ -135,7 +135,7 @@
   border-bottom: 0;
 }
 
-#main select.datepicker-select {
+select.datepicker-select {
   display: none;
 }
 
@@ -293,36 +293,36 @@ textarea.materialize-textarea {
 }
 
 /*datetime color*/
-#main .datepicker-date-display,
-#main .timepicker-digital-display {
+.datepicker-date-display,
+.timepicker-digital-display {
   background-color: #5861E2;
 }
 
-#main .datepicker-canvas line,
-#main .timepicker-canvas line {
+ .datepicker-canvas line,
+ .timepicker-canvas line {
   stroke: #5861E2;
 }
 
-#main .datepicker-canvas-bearing,
-#main .timepicker-canvas-bearing {
+ .datepicker-canvas-bearing,
+.timepicker-canvas-bearing {
   fill: #5861E2;
 }
 
-#main .datepicker-canvas-bg,
-#main .timepicker-canvas-bg {
+.datepicker-canvas-bg,
+.timepicker-canvas-bg {
   fill: #8087e5;
 }
 
-#main .datepicker-table td.is-today {
+.datepicker-table td.is-today {
   color: #5861E2;
   border-radius: 50%;
 }
 
-#main .datepicker-table td.is-selected {
+.datepicker-table td.is-selected {
   background-color: transparent;
 }
 
-#main .datepicker-table td.is-selected button {
+.datepicker-table td.is-selected button {
   color: #5861E2;
   border: 1px solid #5861E2;
 }
@@ -346,20 +346,20 @@ textarea.materialize-textarea {
   line-height: 3rem;
 }
 
-#main .datepicker-cancel,
-#main .datepicker-clear,
-#main .datepicker-today,
-#main .datepicker-done,
-#main .timepicker-close {
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done,
+.timepicker-close {
   color: #5861E2;
   transition: all .3s;
 }
 
-#main .datepicker-cancel:hover,
-#main .datepicker-clear:hover,
-#main .datepicker-today:hover,
-#main .datepicker-done:hover,
-#main .timepicker-close:hover {
+.datepicker-cancel:hover,
+.datepicker-clear:hover,
+.datepicker-today:hover,
+.datepicker-done:hover,
+.timepicker-close:hover {
   color: #5861E2;
   border: 1px solid #5861E2;
 }
