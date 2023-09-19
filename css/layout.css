@@ -142,7 +142,7 @@ header .wrapper h1 a:after {
 }
 
 header .wrapper h1 a.smallLogo {
-  background: url('../img/menu/logoSmall.png') no-repeat 8px center;
+  background: url('../img/menu/logoSmall.svg') no-repeat 8px center;
   background-size: 32px;
   padding: 0 20px;
 }
