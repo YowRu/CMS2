@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/loading.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/mediaApply.css">
+  <link rel="stylesheet" href="css/login.css" type="text/css">
+  <title>註冊</title>
+</head>
+
+<body>
+  <div id="main">
+    <div class="middle">
+      <div class="left"></div>
+      <div class="right signup">
+        <div class="top">
+          <img src="img/index/user.svg" alt="">
+          <p class="title">註冊</p>
+        </div>
+        <p class="account">
+          <input type="text" class="account" placeholder="請輸入手機或電子信箱">
+        </p>
+        <p class="password text">
+          <input type="password" class="password first" placeholder="請輸入密碼">
+          <i class="fa-solid fa-eye-slash"></i>
+          <i class="fa-solid fa-eye"></i>
+        </p>
+        <p class="password again">
+          <input type="password" class="password again" placeholder="請再次確認密碼">
+          <i class="fa-solid fa-eye-slash"></i>
+          <i class="fa-solid fa-eye"></i>
+        </p>
+        <div class="flex">
+          <div class="flex start">
+            <input type="checkbox" name="remember" id="remember">
+            <label for="remember">本人已閱讀並同意</label>
+            <a class="terms">使用者條款</a>
+          </div>
+        </div>
+        <div class="btn purple">註冊</div>
+        <div class="flex end">
+          <span>已有帳號?</span>
+          <a href="index.html">立即登入</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup_bg">
+    <div class="popupWP">
+      <div class="titleWP">
+        <p class="title">使用者條款</p>
+        <p class="close">×</p>
+      </div>
+      <div class="swalWP">
+        <ol>
+          <li>委刊客戶保證所提供之資料或材料是符合相關之法令或規章。並保證若有涉法將自負一切責任，若因此而致旭邦受有損害者，委刊客戶應負責賠償；若旭邦有應訟之必要時，也應由委刊客戶出面處裡並負擔一切費用。</li>
+          <li>若因前條之情事而致有著作權人向旭邦主張權利時，應由委刊客戶負責處理應訟及一切費用與賠償。</li>
+          <li>
+            以上交易委刊內容為契約構成部分，與契約具同等效力，雙方應遵守並確實履行全部條文與約定；旭邦與委刊客戶同意本契約之履約爭議以台灣台北地方法院為第一審訴訟法院。委刊客戶保證所提供之資料或材料是符合相關之法令或規章。並保證若有涉法將自負一切責任，若因此而致旭邦受有損害者，委刊客戶應負責賠償；若旭邦有應訟之必要時，也應由委刊客戶出面處裡並負擔一切費用。
+          </li>
+          <li>若因前條之情事而致有著作權人向旭邦主張權利時，應由委刊客戶負責處理應訟及一切費用與賠償。</li>
+          <li>以上交易委刊內容為契約構成部分，與契約具同等效力，雙方應遵守並確實履行全部條文與約定；旭邦與委刊客戶同意本契約之履約爭議以台灣台北地方法院為第一審訴訟法院。</li>
+          <li>如遇不可抗拒因素如颱風、國定連假等情事不另行補檔。</li>
+          <li>廣告內容不得播放含有色情、性暗示、暴力或者教唆犯罪內容等廣告。</li>
+          <li>如遇不可抗拒因素如颱風、國定連假等情事不另行補檔。</li>
+        </ol>
+        <div class="btnWP">
+          <div class="btn">確認</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+      let H = $(window).height();
+      let W = $(window).width();
+
+      if ($(window).width() < 600) {
+        let H = $(window).height();
+        $('body').height(H - 10);
+      }
+
+      //change
+      $('input.account').change(function(){
+        if ($('input.account').val() === '') {
+          $('p.password').addClass('show');
+        }else if (!$('input.account').val().match(/[0-9]/) && !$('input.account').val().match(/[a-zA-Z]/)) {
+          $('p.account').addClass('text');
+        }else if( $('input.account').val().match(/[a-zA-Z]/) && !$('input.account').val().match(/(\w)+[@]{1}(\S)+[.]{1}(\D)+/) ){
+          $('p.account').addClass('email');
+        }else if( $('input.account').val().match(/[0-9]/) && !$('input.account').val().match(/09\d{8}/)  ){
+          $('p.account').addClass('num');
+        }else{
+          $('p.account').removeClass('show text email num');
+
+        }
+      });
+
+      $('input.password').change(function () {
+        if ($('input.password').val() === '') {
+          $('p.password').addClass('show');
+        } else if ($('input.password').val() !== '') {
+          $('p.password').removeClass('show');
+        } 
+      });
+
+      $('input.password.first').change(function () {
+        if (6 > $(this).val().length) {
+          $('p.password.text').addClass('atless');
+        } else {
+          $('p.password.text').removeClass('atless');
+        }
+      });
+
+      $('input.password.again').change(function () {
+        if ($(this).val() !== $('input.password.first').val()) {
+          $('p.password.again').addClass('atless');
+        } else {
+          $('p.password.again').removeClass('atless');
+        }
+      });
+
+      //password eye toggle
+      $('i.fa-eye-slash').click(function () {
+        $(this).hide();
+        $(this).siblings('i.fa-eye').show();
+        $(this).siblings('input').attr('type', 'text');
+      });
+
+      $('i.fa-eye').click(function () {
+        $(this).hide();
+        $(this).siblings('i.fa-eye-slash').show();
+        $(this).siblings('input').attr('type', 'password');
+      });
+
+      function verify() {
+        if ($('input.account').val() === '') {
+          $('p.account').addClass('show');
+        } else if (!$('input.account').val().match(/[0-9]/) && !$('input.account').val().match(/[a-zA-Z]/)) {
+          $('.account').addClass('text');
+        }else if( $('input.account').val().match(/[a-zA-Z]/) && !$('input.account').val().match(/(\w)+[@]{1}(\S)+[.]{1}(\D)+/) ){
+          $('.account').addClass('email');
+        }else if( $('input.account').val().match(/[0-9]/) && !$('input.account').val().match(/09\d{8}/) ){
+          $('.account').addClass('num');
+        } else if ($('input.password.first').val() === '') {
+          $('p.password.text').addClass('show');
+        } else if (6 > $('input.password.first').val().length) {
+          $('p.password.text').addClass('atless');
+        } else if ($('input.password.again').val() === '') {
+          $('p.password.again').addClass('show');
+        } else if ($('input.password.again').val() !== $('input.password.first').val()) {
+          $('p.password.again').addClass('atless');
+        } else if ($('#remember').prop('checked') !== true) {
+          $('.right .flex.start').addClass('text');
+        } else {
+          Swal.fire('已註冊', '', 'success');
+          window.location = "https://yowru.github.io/CMS/index.html";
+        }
+      }
+
+      $(document).keyup(function (event) {
+        if (event.which === 13) {
+          verify();
+        }
+      });
+
+      $('.btn.purple').click(function () {
+        verify();
+      });
+
+      $('.terms').click(function () {
+        $('.popup_bg').css({ 'display': 'flex' });
+        $('body').addClass('overflow');
+      });
+
+      //close
+      $('.close').click(function () {
+        $('.popup_bg').css({ 'display': 'none' });
+        $('body').removeClass('overflow');
+      });
+
+      $('.popup_bg .btn').click(function () {
+        $('.popup_bg').css({ 'display': 'none' });
+        $('body').removeClass('overflow');
+      });
+
+    });
+  </script>
+</body>
+
+</html>

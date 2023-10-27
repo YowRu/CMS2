@@ -8,19 +8,21 @@
   <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script src="js/loading.js"></script>
-  <script src="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_js_materialize.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script src="js/rangepicker.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_css_materialize.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/rangepicker.css">
   <link rel="stylesheet" href="css/sweetalert2.css">
   <link rel="stylesheet" href="css/layout.css" type="text/css">
   <link rel="stylesheet" href="css/table.css">
   <link rel="stylesheet" href="css/mediaList.css">
   <link rel="stylesheet" href="css/playSelection.css">
   <link rel="stylesheet" href="css/playSelection_rwd.css">
+  <link rel="stylesheet" href="css/selectOption.css">
   <title>媒體刊播</title>
-</head>
+
 <body>
   <header></header>
   <div id="main">
@@ -45,390 +47,520 @@
             <span>刊播內容</span>
           </li>
         </ul>
-        <div class="stepContent">
+        <div class="stepContent step1">
           <div class="step step1">
-            <div class="bg">
-              <div class="flexrow">
-                <div class="wrapper">
-                  <div class="date">
-                    <p>開始日</p>
-                    <input type="text" class="datepicker" id="startdate">
-                  </div>
-                  <div class="date">
-                    <p>結束日</p>
-                    <input type="text" class="datepicker" id="enddate">
-                  </div>
-                </div>
-                <div class="wrapper">
-                  <div class="time starttime">
-                    <p>開始時間</p>
-                    <input type="text" class="timepicker" id="starttime">
-                  </div>
-                  <div class="time endtime">
-                    <p>結束時間</p>
-                    <input type="text" class="timepicker" id="endtime">
-                  </div>
-                </div>
-              </div>
+            <div class="flexrow">
+              <div class="datePicker"><input type="text" name="datetimes" id="rangeDateTime" /></div>
             </div>
-            <div class="btn stepBtn stepBtn1">確認時間</div>
-          </div>
-          <!-- <div class="step step2">
-            <div class="searchBar top">
-              <div class="flexrow flex">
-                <label for="mediaName">刊播名稱 :</label>
-                <input type="text" id="mediaName" name="mediaName" placeholder="請輸入刊播名稱">
-              </div>
-              <div class="searchBar">
-                <div class="btn back1 border yellow">返回時間</div>
-                <div class="btn stepBtn stepBtn2">確認素材</div>
-              </div>
+            <div class="hasInfo">
+              <input type="text" class="startDate" value="2023/11/01" />
+              <input type="text" class="endDate" value="2024/01/31" />
+              <input type="text" class="startTime" value="全天" />
+              <input type="text" class="endTime" value="全天" />
+              <input type="text" class="cycle" value="0,5,6">
             </div>
-            <div class="searchBar" name="searchBar">
-              <div class="filter">
-                <div class="flex keyWords">
-                  <input type="text" placeholder="輸入關鍵字" class="keyWords">
-                </div>
-                <div class="flex type">
-                  <label for="type">格式 :</label>
-                  <select name="type" id="type">
-                    <option value="all">全部</option>
-                    <option value="img">圖片</option>
-                    <option value="video">影片</option>
-                  </select>
-                </div>
-                <div class="flex second">
-                  <label for="second">秒數 :</label>
-                  <select name="second" id="second">
-                    <option value="all">全部</option>
-                    <option value="30">30</option>
-                    <option value="25">25</option>
-                    <option value="20">20</option>
-                    <option value="15">15</option>
-                    <option value="10">10</option>
-                  </select>
-                </div>
-                <div class="flex mediadate">
-                  <label for="mediadate">上架日期 :</label>
-                  <input type="text" class="datepicker" id="mediadate">
-                </div>
-              </div>
-              <div class="btn search"><input type="submit" value="查詢" /></div>
-            </div>
-            <div class="textInfo">
-              <span>排序</span><img src="img/table/textInfo.svg" alt="">
-              <div class="info">點選紫色字體可進行排序</div>
-            </div>
-            <div class="selectContent">
-              <div class="table-responsive">
-                <div class="head_bg">
-                  <span></span>
-                  <span>縮圖</span>
-                  <span>檔名</span>
-                  <span class="sort">秒數</span>
-                  <span class="sort">審核日</span>
-                </div>
-                <div class="tableWp marginTop">
-                  <table cellspacing="0">
-                    <thead>
-                      <tr>
-                        <th class=""></th>
-                        <th>縮圖</th>
-                        <th>檔名</th>
-                        <th class="sort">秒數</th>
-                        <th class="sort">審核日</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <input type="radio" name="mediaCheck" class="option-input radio">
-                        </td>
-                        <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
-                        <td class="name">機場宣導</td>
-                        <td class="second">10</td>
-                        <td class="date">23.02.18</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <input type="radio" name="mediaCheck" class="option-input radio">
-                        </td>
-                        <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
-                        <td class="name">機場宣導</td>
-                        <td class="second">25</td>
-                        <td class="date">23.03.18</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <input type="radio" name="mediaCheck" class="option-input radio">
-                        </td>
-                        <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
-                        <td class="name">機場宣導</td>
-                        <td class="second">15</td>
-                        <td class="date">23.04.18</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <input type="radio" name="mediaCheck" class="option-input radio">
-                        </td>
-                        <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
-                        <td class="name">機場宣導</td>
-                        <td class="second">15</td>
-                        <td class="date">23.05.18</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <input type="radio" name="mediaCheck" class="option-input radio">
-                        </td>
-                        <td class="image"><img src="img/media/mediaImg.svg" alt=""></td>
-                        <td class="name">機場宣導</td>
-                        <td class="second">15</td>
-                        <td class="date">23.06.18</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <input type="radio" name="mediaCheck" class="option-input radio">
-                        </td>
-                        <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
-                        <td class="name">機場宣導</td>
-                        <td class="second">25</td>
-                        <td class="date">23.07.18</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <input type="radio" name="mediaCheck" class="option-input radio">
-                        </td>
-                        <td class="image"><img src="img/table/smallVideo.png" alt=""></td>
-                        <td class="name">機場宣導</td>
-                        <td class="second">30</td>
-                        <td class="date">23.07.28</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
+            <div class="submitInfo">
+              <input type="text" class="startDate">
+              <input type="text" class="endDate">
+              <input type="text" class="startTime">
+              <input type="text" class="endTime">
+              <input type="text" class="cycle">
             </div>
           </div>
-          <div class="step step3">
-            <div class="searchBar top">
-              <div class="btn back2 border yellow">返回素材</div>
-              <div class="btn stepBtn stepBtn3">確認設備</div>
-            </div>
-            <div class="searchBar" name="searchBar">
-              <div class="filter">
-                <div class="flex keyWords">
-                  <input type="text" placeholder="輸入關鍵字" class="keyWords">
-                </div>
-                <div class="flex">
-                  <label for="screen">螢幕 :</label>
-                  <select name="" id="screen">
-                    <option value="all">全部</option>
-                    <option value="horizontal">橫式</option>
-                    <option value="vertical">直式</option>
-                  </select>
-                </div>
-              </div>
-              <div class="btn search"><input type="submit" value="查詢" /></div>
-            </div>
-            <div class="textInfo">
-              <span>排序</span><img src="img/table/textInfo.svg" alt="">
-              <div class="info">點選紫色字體可進行排序</div>
-            </div>
-            <div class="tableWrapper">
-              <div class="table-responsive">
-                <div class="head_bg">
-                  <span><input type="checkbox"></span>
-                  <span class="sort">縣市</span>
-                  <span class="sort">區域</span>
-                  <span>地址</span>
-                  <span>設備名稱</span>
-                  <span class="sort">螢幕</span>
-                  <span class="sort">鏡頭</span>
-                </div>
-                <div class="tableWp">
-                  <table cellspacing="0" id="playSelection_device">
-                    <thead>
-                      <tr>
-                        <th><input type="checkbox"></th>
-                        <th class="sort">縣市</th>
-                        <th class="sort">區域</th>
-                        <th>地址</th>
-                        <th>設備名稱</th>
-                        <th class="sort">螢幕</th>
-                        <th class="sort">鏡頭</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>台北市</td>
-                        <td>大安區</td>
-                        <td>地址名稱1</td>
-                        <td>設備名稱1</td>
-                        <td>直式</td>
-                        <td>有</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>台北市</td>
-                        <td>大安區</td>
-                        <td>地址名稱2</td>
-                        <td>設備名稱1點</td>
-                        <td>直式</td>
-                        <td>有</td>
-                      </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>台北市</td>
-                        <td>大安區</td>
-                        <td>地址名稱3</td>
-                        <td>設備名稱lalalala</td>
-                        <td>直式</td>
-                        <td>有</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <ul class="pagination" id="pagination4"></ul>
-            </div>
-          </div>
-          <div class="step step4">
-            <div class="searchBar top">
-              <div></div>
-              <div class="btn stepBtn stepBtn4 confirm">確認刊播</div>
-            </div>
-            <div class="accordion">
-              <div class="flexrow margin60">
-                <div>
-                  <div class="flex start">
-                    <img src="img/media/calender.svg" alt="" class="icon">
-                    <p>刊播時間</p>
-                    <img src="img/table/edit.svg" class="small back1" alt="">
-                  </div>
-                  <div class="dateWP">
-                    <div class="date">
-                      <p>日期</p>
-                      <span class="after start"></span>
-                      <span class="end"></span>
-                    </div>
-                  </div>
-                  <div class="timeWP">
-                    <div class="time starttime">
-                      <p>時間</p>
-                      <span class="after start"></span>
-                      <span class="end"></span>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div class="flex start two">
-                    <img src="img/media/folder.svg" alt="" class="icon">
-                    <p>刊播素材</p>
-                    <img src="img/table/edit.svg" class="small back2" alt="">
-                  </div>
-                  <div class="flex start section">
-                    <img src="" alt="" class="mediaImg_check">
-                    <div class="info">
-                      <p>
-                        <span>刊播名稱:</span>
-                        <span class="mediaName"></span>
-                      </p>
-                      <p>
-                        <span>檔名:</span>
-                        <span class="name"></span>
-                      </p>
-                      <p>
-                        <span>秒數:</span>
-                        <span class="second"></span>
-                      </p>
-                      <p>
-                        <span>審核日:</span>
-                        <span class="date"></span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="flexrow">
-                <div class="flex start">
-                  <img src="img/media/device.svg" alt="" class="icon">
-                  <p>刊播設備</p>
-                  <img src="img/table/edit.svg" class="small back3" alt="">
-                </div>
-              </div>
-              <div class="table-responsive">
-                <div class="head_bg">
-                  <span>縣市</span>
-                  <span>區域</span>
-                  <span>地址</span>
-                  <span>設備名稱</span>
-                  <span>螢幕</span>
-                  <span>鏡頭</span>
-                </div>
-                <div class="tableWp">
-                  <table class=" table-striped table-bordered" cellspacing="0">
-                    <thead>
-                      <tr>
-                        <th>縣市</th>
-                        <th>區域</th>
-                        <th>地址</th>
-                        <th>設備名稱</th>
-                        <th>螢幕</th>
-                        <th>鏡頭</th>
-                      </tr>
-                    </thead>
-                    <tbody></tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
   </div>
   <div class="sideNo">5</div>
   <script src="js/dataTable.js"></script>
-  <script src="js/dateTimepicker.js"></script>
   <script>
 
     $(document).ready(function () {
+
       let W = $(window).width();
-      //RWD
-      if (W < 501) {
-        $('.btn.back1.border.yellow').text('返回');
-        $('.stepBtn.stepBtn2').text('確認');
-        $('.searchBar .flex label.active').text('名稱 :');
-        $('.stepBtn').addClass('auto');
-      } else {
-        $('.btn.back1.border.yellow').text('返回時間');
-        $('.stepBtn.stepBtn2').text('確認素材');
-        $('.searchBar .flex label.active').text('刊播名稱 :');
-        $('.stepBtn').removeClass('auto');
+
+      //range picker
+      $('#rangeDateTime').daterangepicker({
+        drops: 'down',
+        opens: 'center',
+        minDate: new Date(),
+        timePicker: true,
+        timePicker24Hour: true,
+        startDate: moment(),
+        endDate: moment(),
+        locale: {
+          format: 'YYYY/MM/DD hh:mm A'
+        }
+      });
+
+      document.getElementById('rangeDateTime').dispatchEvent(new MouseEvent("click"));//auto popup
+
+      let bg_height = $('#main .contentBG').height();
+      bg_width = $('#main .contentBG').outerWidth();
+      pickerWidth = $('.daterangepicker').outerWidth();
+      $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - pickerWidth) / 2 });
+
+      // if (W < 601) {
+      //   console.log('600');
+      //   $('#rangeDateTime').daterangepicker({
+      //     singleDatePicker: true,
+      //     drops: 'down',
+      //     opens: 'center',
+      //     minDate: new Date(),
+      //     timePicker: true,
+      //     timePicker24Hour: true,
+      //     startDate: moment(),
+      //     endDate: moment(),
+      //     locale: {
+      //       format: 'YYYY/MM/DD hh:mm A'
+      //     }
+      //   });
+
+      //   document.getElementById('rangeDateTime').dispatchEvent(new MouseEvent("click"));//auto popup
+      //   $('.daterangepicker .drp-calendar.wrapper, .daterangepicker .drp-calendar.left, .daterangepicker .drp-buttons').addClass('mobile');
+      //   $('.daterangepicker').css({ 'top': 10, 'left': 0 });
+      // } else {
+      //   if (600 < W < 701) {
+      //     console.log('701');
+      //     $('.daterangepicker').css({ 'top': 20, 'left': 0 });
+
+      //   } else if (W < 971) {
+      //     console.log('971');
+      //     $('.daterangepicker').css({ 'top': 20, 'left': (bg_width - pickerWidth - 16) / 2 });
+      //   }
+      // }
+
+
+      const hourMinute = function () {
+
+        //Hour option
+        for (let i = 0; i < 24; i++) {
+          if (i < 10) {
+            $("#startHour, #endHour").append(new Option(`0${i}`, i));
+          } else {
+            $("#startHour, #endHour").append(new Option(i, i));
+          }
+        }
+
+        //minute option 
+        for (let i = 0; i < 12; i++) {
+          let text = $('.drp-calendar select.minuteselect option').eq(i).val();
+          if (text < 10) {
+            $("#startMinute, #endMinute").append(new Option(`0${text}`, text));
+          } else {
+            $("#startMinute, #endMinute").append(new Option(text, text));
+          }
+        }
+
+
       }
 
-      //stepBtn1
-      $('.step1 input').change(function () {
-        if ($('#starttime').val() == '' || $('#endtime').val() == '' || $('#enddate').val() =='' || $('#startdate').val() < $('#enddate').val() || ($('#startdate').val() == $('#enddate').val() && $('#starttime').val() < $('#endtime').val()) ) {
-          $('.stepBtn1').removeClass('confirm');
+      const disableHM = function () {
+        //Hour start disable
+        let startH = new Date().getHours();
+
+        $('#startHour option').eq(startH).attr('selected', 'selected');
+        for (let i = 0; i < startH; i++) {
+          $('#startHour option').eq(i).attr('disabled', 'disabled');
+        }
+        //Hour end disable
+        let endH = $('.drp-calendar.right select.hourselect').val();
+        $('#endHour option').eq(endH).attr('selected', 'selected');
+        for (let i = 0; i < endH; i++) {
+          $('#endHour option').eq(i).attr('disabled', 'disabled');
+        }
+        //minute start disable
+
+        let startM = $('.drp-calendar.left select.minuteselect').val();
+        disabledNUM = 0;
+
+        for (let i = 0; i < 12; i++) {
+          let text = $('.drp-calendar.left select.minuteselect option').eq(i).val();
+          if (text === startM) {
+            disabledNUM = i;
+          }
+        }
+        $('#startMinute option').eq(disabledNUM).attr('selected', 'selected');
+        for (let i = 0; i < disabledNUM; i++) {
+          $('#startMinute option').eq(i).attr('disabled', 'disabled');
+        }
+
+        //minute end disable
+        let endM = $('.drp-calendar.right select.minuteselect').val();
+        disabledendM = 0;
+
+        for (let i = 0; i < 12; i++) {
+          let text = $('.drp-calendar select.minuteselect option').eq(i).val();
+          if (text === endM) {
+            disabledendM = i;
+          }
+        }
+
+        $('#endMinute option').eq(disabledendM).attr('selected', 'selected');
+        for (let i = 0; i < disabledendM; i++) {
+          $('#endMinute option').eq(i).attr('disabled', 'disabled');
+        }
+      }
+
+      hourMinute();
+      disableHM();
+      const defaultDT = function () {
+        //show date time text
+        let dayNow = new Date();
+        let day = dayNow.getDate();
+        let month = dayNow.getMonth();
+        let year = dayNow.getFullYear();
+        let hour = (dayNow.getHours() < 10 ? '0' : '') + dayNow.getHours();
+        let minutes = (dayNow.getMinutes() < 10 ? '0' : '') + dayNow.getMinutes();
+
+        //default date & time
+        $('.startTime .year,.endTime .year').text(year);
+        $('.startTime .monthDay .month,.endTime .monthDay .month').text(`${month + 1}`);
+        $('.startTime .monthDay .day,.endTime .monthDay .day').text(day);
+        $('.step1 .submitInfo .startDate,.step1 .submitInfo .endDate').attr('value',`${year}/${month + 1}/${day}`);
+
+        //week text
+        let startWeekTEXT = $('.startTime .week').text(new Date().getDay());
+        endWeekTEXT = $('.endTime .week').text(new Date().getDay());
+
+        switch (startWeekTEXT[0].innerText) {
+          case '0':
+            $('.startTime .week').text('Sun');
+            break;
+          case '1':
+            $('.startTime .week').text('Mon');
+            break;
+          case '2':
+            $('.startTime .week').text('Tue');
+            break;
+          case '3':
+            $('.startTime .week').text('Wed');
+            break;
+          case '4':
+            $('.startTime .week').text('Thu');
+            break;
+          case '5':
+            $('.startTime .week').text('Fri');
+            break;
+          case '6':
+            $('.startTime .week').text('Sat');
+            break;
+        }
+        switch (endWeekTEXT[0].innerText) {
+          case '0':
+            $('.endTime .week').text('Sun');
+            break;
+          case '1':
+            $('.endTime .week').text('Mon');
+            break;
+          case '2':
+            $('.endTime .week').text('Tue');
+            break;
+          case '3':
+            $('.endTime .week').text('Wed');
+            break;
+          case '4':
+            $('.endTime .week').text('Thu');
+            break;
+          case '5':
+            $('.endTime .week').text('Fri');
+            break;
+          case '6':
+            $('.endTime .week').text('Sat');
+            break;
+        }
+
+      }
+
+      //Hour:56
+      if (new Date().getMinutes() > 55) {
+        let nowH = new Date().getHours();
+
+        $('#startHour option').eq(nowH).attr('disabled', 'disabled');
+        $('#startHour option').eq(nowH + 1).attr('selected', 'selected');
+        $('#startMinute option').each(function () { $(this).attr('disabled', false); });
+      }
+      //23:56
+      if (new Date().getMinutes() > 55 && new Date().getHours() > 22) {
+
+        let D = String(new Date().getDate() + 1);
+        //text
+        $('.startTime .monthDay .day,.endTime .monthDay .day').text(D);
+
+        let lastDay = new Date(new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0)).getDate();
+        if (lastDay == new Date().getDate()) { //last day of month
+          $('.startTime .year,.endTime .year').text(year);
+          $('.startTime .monthDay .month,.endTime .monthDay .month').text(`${month + 2}`);
+          $('.startTime .monthDay .day,.endTime .monthDay .day').text('1');
+        } else if (lastDay == new Date().getDate() && (new Date().getMonth() + 1) == 12) { //last day of year
+          $('.startTime .year,.endTime .year').text(year + 1);
+          $('.startTime .monthDay .month,.endTime .monthDay .month').text('1');
+          $('.startTime .monthDay .day,.endTime .monthDay .day').text('1');
+        } else { //next day 
+          //text 
+          $('.startTime .year,.endTime .year').text(year);
+          $('.startTime .monthDay .month,.endTime .monthDay .month').text(`${month + 1}`);
+          $('.startTime .monthDay .day,.endTime .monthDay .day').text(day + 1);
+          //week
+          let startWeekTEXT = $('.startTime .week').text(new Date().getDay());
+
+          switch (Number(startWeekTEXT[0].innerText) + 1) {
+            case 7:
+              $('.startTime .week, .endTime .week').text('Sun');
+              break;
+            case 1:
+              $('.startTime .week, .endTime .week').text('Mon');
+              break;
+            case 2:
+              $('.startTime .week, .endTime .week').text('Tue');
+              break;
+            case 3:
+              $('.startTime .week, .endTime .week').text('Wed');
+              break;
+            case 4:
+              $('.startTime .week, .endTime .week').text('Thu');
+              break;
+            case 5:
+              $('.startTime .week, .endTime .week').text('Fri');
+              break;
+            case 6:
+              $('.startTime .week, .endTime .week').text('Sat');
+              break;
+          }
+        }
+
+        //td disabled
+        let childNum = 0;
+        $('.daterangepicker td.today.active.start-date.active.end-date.available').addClass('off disabled').attr('disabled', 'disabled').removeClass('today active start-date active end-date available');
+
+        for (let i = 0; i < 42; i++) {
+          if (D === $('.daterangepicker td').eq(i).text()) {
+            childNum = i;
+          }
+        }
+        $('.daterangepicker td').eq(childNum).addClass('today active start-date active end-date available');
+        $('#startHour option, #startMinute option, #endHour option, #endMinute option').each(function () { $(this).attr('disabled', false); });
+
+      }
+
+
+      $('input[type="checkbox"]:checked').parent('label').addClass('checked');
+      $('input[type="checkbox"]:not(:checked)').parent('label').removeClass('checked');
+
+
+      //td width
+      let tdWidth = $('.table-condensed td').width();
+      $('.table-condensed td').outerHeight(tdWidth - 2);
+
+
+      //allDay
+      if ($('.step1 .hasInfo .startDate').val() !== '') {
+        let startTimeText = $('.hasInfo .startTime').val(),
+          endTimeText = $('.hasInfo .endTime').val(),
+          startDateText = $('.hasInfo .startDate').val(),
+          endDateText = $('.hasInfo .endDate').val(),
+          cycleText = $('.hasInfo .cycle').val();
+
+        $('#rangeDateTime').daterangepicker({
+          startDate: startDateText,
+          endDate: endDateText,
+          minDate: new Date(),
+          timePicker: true,
+          timePicker24Hour: true,
+          locale: {
+            format: 'YYYY/MM/DD hh:mm'
+          }
+        });
+        document.getElementById('rangeDateTime').dispatchEvent(new MouseEvent("click"));//auto popup
+
+        //hourMinute
+        hourMinute();
+
+        if (startTimeText !== '全天') {
+
+          $('#allDay').prop('checked', false);
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect').attr('disabled', '');
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect,.daterangepicker .calendar-time, .selectWp, .time img').removeClass('disabled');
+          $('#startHour, #startMinute, #endHour, #endMinute').prop("disabled", false);
+
+          //hourMinute
+          let SHour = startTimeText.split(':')[0],
+            SMinute = startTimeText.split(':')[1],
+            EHour = endTimeText.split(':')[0],
+            EMinute = endTimeText.split(':')[1],
+            SMinute_eq, EMinute_eq;
+
+          $('#startHour option').eq(SHour).attr('selected', 'selected');
+          $('#endHour option').eq(EHour).attr('selected', 'selected');
+
+          //SMinute eq
+          for (i = 0; i < $('#startMinute option').length; i++) {
+            if ($('#startMinute option').eq(i).val() === SMinute) {
+              SMinute_eq = i;
+            }
+          }
+          //EMinute eq
+          for (i = 0; i < $('#endMinute option').length; i++) {
+            if ($('#endMinute option').eq(i).val() === EMinute) {
+              EMinute_eq = i;
+            }
+          }
+
+          $('#startMinute option').eq(SMinute_eq).attr('selected', 'selected');
+          $('#endMinute option').eq(EMinute_eq).attr('selected', 'selected');
+
+
+        } else if (startTimeText === '全天') {
+
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect').attr('disabled', 'disabled');
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect,.daterangepicker .calendar-time, .selectWp, .time img').addClass('disabled');
+          $('.step1 .submitInfo .startTime, .step1 .submitInfo .endTime').attr('value', '全天');
+
+        }
+
+        $('.startTime .year').text(startDateText.split('/')[0]);
+        $('.startTime .monthDay .month').text(startDateText.split('/')[1]);
+        $('.startTime .monthDay .day').text(startDateText.split('/')[2]);
+
+        $('.endTime .year').text(endDateText.split('/')[0]);
+        $('.endTime .monthDay .month').text(endDateText.split('/')[1]);
+        $('.endTime .monthDay .day').text(endDateText.split('/')[2]);
+
+        //week
+        let startWeekTEXT = $('.startTime .week').text(new Date(startDateText).getDay()),
+          endWeekTEXT = $('.endTime .week').text(new Date(endDateText).getDay());
+        switch (Number(endWeekTEXT[0].innerText)) {
+          case 7:
+            $('.endTime .week').text('Sun');
+            break;
+          case 1:
+            $('.endTime .week').text('Mon');
+            break;
+          case 2:
+            $('.endTime .week').text('Tue');
+            break;
+          case 3:
+            $(' .endTime .week').text('Wed');
+            break;
+          case 4:
+            $('.endTime .week').text('Thu');
+            break;
+          case 5:
+            $('.endTime .week').text('Fri');
+            break;
+          case 6:
+            $('.endTime .week').text('Sat');
+            break;
+        }
+        switch (Number(startWeekTEXT[0].innerText)) {
+          case 7:
+            $('.startTime .week').text('Sun');
+            break;
+          case 1:
+            $('.startTime .week').text('Mon');
+            break;
+          case 2:
+            $('.startTime .week').text('Tue');
+            break;
+          case 3:
+            $('.startTime .week').text('Wed');
+            break;
+          case 4:
+            $('.startTime .week').text('Thu');
+            break;
+          case 5:
+            $('.startTime .week').text('Fri');
+            break;
+          case 6:
+            $('.startTime .week').text('Sat');
+            break;
+        }
+
+        //cycle
+        let n = cycleText.split(',');
+        $('.cycle input').prop('checked', false);
+
+        for (i = 0; i < n.length; i++) {
+          $('.cycle>div').eq(n[i]).find('input').prop('checked', 'checked');
+        }
+
+
+
+      } else {
+        defaultDT();
+        $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect').attr('disabled', 'disabled');
+        $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect,.daterangepicker .calendar-time, .selectWp, .time img').addClass('disabled');
+        $('.step1 .submitInfo .startTime, .step1 .submitInfo .endTime').attr('value','全天');
+        //cycle
+        $('.step1 .submitInfo .cycle').attr('value', '0,1,2,3,4,5,6');
+      }
+
+
+
+      let firstDateTime = $('.drp-selected').text();
+
+      $('#allDay').change(function () {
+        if ($('#allDay').prop('checked')) {
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect').attr('disabled', 'disabled');
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect,.daterangepicker .calendar-time, .selectWp, .time img').addClass('disabled');
+          $('.step1 .submitInfo .startTime, .step1 .submitInfo .endTime').attr('value','全天');
         } else {
-          $('.stepBtn1').addClass('confirm');
+          //時間不能選擇
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect').attr('disabled', false);
+          $('.daterangepicker select.hourselect, .daterangepicker select.minuteselect,.daterangepicker .calendar-time, .selectWp, .time img').removeClass('disabled');
+         
+          //fetch new date time
+          if ($('.drp-selected').css('display') == 'none') {
+         
+            $('.step1 .submitInfo .startTime').attr('value', ($('#startHour').val()<10 ? '0'+$('#startHour').val() : $('#startHour').val())+ ':' + ($('#startMinute').val()<10?'0'+$('#startMinute').val():$('#startMinute').val()));
+            $('.step1 .submitInfo .endTime').attr('value', ($('#endHour').val()<10?'0'+$('#endHour').val():$('#endHour').val())+ ':' + ($('#endMinute').val()<10?'0'+$('#endMinute').val():$('#endMinute').val()));
+          }
         }
       });
 
-      $('.stepBtn1').click(function () {
-        if ($('#enddate').val() == '' || $('#starttime').val() == '' || $('#endtime').val() == ''){
-          Swal.fire('資料不完全', '', 'info');
-        }else if($('#startdate').val() > $('#enddate').val()){
-          Swal.fire('起訖日期錯誤', '', 'info');
-        }else if($('#startdate').val() == $('#enddate').val() && $('#starttime').val()> $('#endtime').val()){
-          console.log($('#starttime').val(),$('#endtime').val());
-          Swal.fire('起訖時間錯誤', '', 'info');
-        }else{
-          window.location = "https://yowru.github.io/CMS2/playStep2.html";
+
+      //Hour change
+      $('#startHour').change(function () {
+        $('.step1 .submitInfo .startTime').attr('value',($(this).val()<10?'0'+$(this).val():$(this).val()) + ':' + ($('#startMinute').val()<10?'0'+$('#startMinute').val():$('#startMinute').val()));
+      });
+      $('#endHour').change(function () {
+        $('.step1 .submitInfo .endTime').attr('value',($(this).val()<10?'0'+$(this).val():$(this).val()) + ':' + ($('#endMinute').val()<10?'0'+$('#endMinute').val():$('#endMinute').val()));
+      });
+      //Minute change
+      $('#startMinute').change(function () {
+        $('.step1 .submitInfo .startTime').attr('value',($('#startMinute').val()<10?'0'+$('#startMinute').val():$('#startMinute').val()) + ':' + ($(this).val()<10?'0'+$(this).val():$(this).val()));
+      });
+      $('#endMinute').change(function () {
+        $('.step1 .submitInfo .endTime').attr('value',($('#endMinute').val()<10?'0'+$('#endMinute').val():$('#endMinute').val()) + ':' + ($(this).val()<10?'0'+$(this).val():$(this).val()));
+      });
+
+      //cycle
+      let cycleText = [];
+      $(".cycle input[type='checkbox']").change(function () {
+
+        if ($(".cycle input[type='checkbox']:checked").length < 1) {
+          $('.applyBtn').removeClass('confirm');
+        } else if ($(".cycle input[type='checkbox']:checked").length > 0 && $('span.end.time').text() !== '') {
+          $('.applyBtn').addClass('confirm');
+        }
+        cycleText = [];
+        $(".cycle input[type='checkbox']:checked").each(function () {
+          cycleText.push($(this).val());
+        });
+        $('.step1 .submitInfo .cycle').attr('value', cycleText);
+      });
+
+
+
+      //applyBtn
+      $('.applyBtn').click(function () {
+        if ( $(".cycle input[type='checkbox']:checked").length > 0) {
+          window.location = "https://yowru.github.io/CMS/playStep2.html";
+        } else {
+          Swal.fire('週一至週日，至少擇一', '', 'info');
         }
       });
+
     });
 
   </script>

@@ -1,7 +1,4 @@
 //date 
-$('.datepicker').datepicker();
-$('.timepicker').timepicker();
-
 let dp_i18n = {
   zh: {
     cancel: "取消",
@@ -102,7 +99,7 @@ $("#endplay").datepicker(
   })
 );
 
-$("#chartDate, #checkDate, #checkDate1, #checkDate2, #applyDate, #mediadate, #mediadate_clone, #onlineDate, #offlineDate,#contract_start,#contract_end").datepicker(
+$("#chartDate, #checkDate, #checkDate1, #checkDate2, #applyDate, #mediadate, #mediadate_clone, #onlineDate, #offlineDate,#contract_start,#contract_end,#pointDate").datepicker(
   $.extend({}, dp_options, {
     i18n: dp_i18n.zh,
   })

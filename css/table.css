@@ -1,4 +1,4 @@
-.tableContent .head_bg span.sort {
+.head_bg span.sort {
     color: #6B56EC;
     cursor: pointer;
 }
@@ -25,9 +25,20 @@
     align-items: center;
 }
 
+#tab2 .searchBar .flex,
+#tab3 .searchBar .flex,
+#tab5 .searchBar .flex {
+    background-color: transparent;
+    box-shadow: none;
+    border: 0;
+    padding-left: 0;
+}
+
 .searchBar .flex {
     margin-right: 10px;
-    border: 1px solid #E1E1E2;
+    border: 1px solid #f6f6ff;
+    background-color: #fff;
+    box-shadow: 0px 0px 1px 1px #F4F3FD;
     padding: 6px 12px;
     display: flex;
     justify-content: flex-start;
@@ -37,6 +48,25 @@
 
 .searchBar .flex.keyWords {
     width: 114px;
+}
+
+#tab2 .searchBar,
+#tab3 .searchBar,
+#tab5 .searchBar {
+    margin-top: 20px;
+}
+
+#tab2 .searchBar .flex.keyWords>input.keyWords,
+#tab3 .searchBar .flex.keyWords>input.keyWords,
+#tab5 .searchBar .flex.keyWords>input.keyWords {
+    width: 200px;
+    margin: 0 10px 0 0;
+}
+
+#tab2 .searchBar .flex.keyWords input,
+#tab3 .searchBar .flex.keyWords input,
+#tab5 .searchBar .flex.keyWords input {
+    width: 60px;
 }
 
 .searchBar .flex.keyWords input {
@@ -152,13 +182,14 @@ table th {
     height: 44px;
     color: #2F3034;
     text-align: center;
+    opacity: 0;
 }
 
 table td {
     height: 44px;
     color: #595959;
     text-align: center;
-    padding: 0 5px;
+    padding: 3px 5px;
     box-sizing: border-box;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -180,6 +211,10 @@ table th,
 table td {
     border-bottom: 1px solid #EFEFEF;
     font-size: 0.95rem;
+}
+
+.datepicker-table td {
+    border-bottom: 0;
 }
 
 table td.scroll {
@@ -333,6 +368,87 @@ p.previous {
     cursor: pointer;
 }
 
+.btnImg i {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 3px;
+    color: #5861E2;
+}
+
+.btnImg i.delet {
+    color: #D92700;
+}
+
+/* 
+.btnImg i::before {
+    content: '';
+    font-size: 0.9rem;
+    background-color: #bfc3f7;
+    color: #5861E2;
+    position: absolute;
+    right: 26px;
+    top: 1px;
+
+}
+
+.btnImg i.edit:hover::before {
+    content: '編輯';
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.btnImg i.info:hover::before {
+    content: '詳情';
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.btnImg i.screenshot:hover::before {
+    content: '截圖';
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.btnImg i.detail:hover::before {
+    content: '歷程';
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.btnImg i.clone:hover::before {
+    content: '複製';
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.btnImg i.delet:hover::before {
+    content: '刪除';
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.btnImg i.play:hover::before {
+    content: '播放';
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.btnImg i.stop:hover::before {
+    content: '暫停';
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.btnImg i.replace:hover::before {
+    content: '替換';
+    padding: 1px 4px;
+    border-radius: 2px;
+} */
+
 table td.img img {
     width: 66px;
     object-fit: cover;
@@ -372,6 +488,14 @@ table.dataTable.no-footer {
 
 .stepContent .tabContentWP.tab .table-responsive {
     margin-top: 32px;
+}
+
+.tab_content .table-responsive .head_bg {
+    background-color: rgb(253, 248, 255);
+}
+
+.tab_content .table-responsive {
+    margin-top: 6px;
 }
 
 .table-responsive .head_bg {
@@ -531,7 +655,6 @@ table.dataTable>thead>tr>td {
     justify-content: flex-end;
     align-items: center;
     color: #6B56EC;
-    cursor: pointer;
     transition: all 0.8s;
 }
 
@@ -540,11 +663,14 @@ table.dataTable>thead>tr>td {
     margin-left: 5px;
 }
 
+.textInfo img,
+.textInfo span {
+    cursor: pointer;
+}
 
-.textInfo .info,
-.textInfo:hover::before {
-    content: '點選紫色字體可進行排序';
-    display: block;
+.textInfo .info {
+    /* content: '點選紫色字體可進行排序'; */
+    display: none;
     color: #6B56EC;
     border: 1px solid #E1E1E2;
     border-radius: 4px;
@@ -552,14 +678,14 @@ table.dataTable>thead>tr>td {
     padding: 10px;
     bottom: -40px;
     right: 0;
-    z-index: 9;
     background-color: #e1ddf6eb;
-}
-
-.textInfo .info {
-    display: none;
     z-index: 12;
 }
+
+.textInfo .info.show {
+    display: block;
+}
+
 
 @media(max-width:600px) {
     .table-responsive {

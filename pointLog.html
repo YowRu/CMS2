@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script src="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_js_materialize.min.js"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_css_materialize.min.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/playSelection.css">
+  <link rel="stylesheet" href="css/mediaList.css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/point.css">
+  <title>點數中心</title>
+</head>
+
+<body>
+  <header></header>
+  <div id="main">
+    <div class="accordionWP">
+      <div class="accordion">
+        <ul class="tabs">
+          <li><a href="topUp_admin.html">線下給點</a></li>
+          <li><a href="topUpLog_admin.html">儲值紀錄</a></li>
+          <li><a href="pointLog_admin.html">使用紀錄</a></li>
+          <li><a href="topUp.html">儲值</a></li>
+          <li class="active"><a href="pointLog.html">紀錄</a></li>
+        </ul>
+        <ul class="tab_container">
+          <li id="tab5" class="tab_content">
+            <div class="textInfo">
+              <span>排序</span><img src="img/table/textInfo.svg" alt=""><div class="info">點選紫色字體可進行排序</div>
+            </div>
+            <div class="table-responsive">
+              <div class="head_bg">
+                <span>交易序號</span>
+                <span>方式</span>
+                <span>類型</span>
+                <span>儲值點數</span>
+                <span class="sort">剩餘點數</span>
+                <span>使用期限</span>
+                <span>儲值日期</span>
+                <span>狀態</span>
+                <span>備註</span>
+              </div>
+              <div class="tableWp">
+                <table cellspacing="0" id="mediaList">
+                  <thead>
+                    <tr>
+                      <th>交易序號</th>
+                      <th>方式</th>
+                      <th>類型</th>
+                      <th>儲值點數</th>
+                      <th class="sort">剩餘點數</th>
+                      <th>使用期限</th>
+                      <th>儲值日期</th>
+                      <th>狀態</th>
+                      <th>備註</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1234</td>
+                      <td>線下給點</td>
+                      <td>購買</td>
+                      <td>350</td>
+                      <td>2606</td>
+                      <td></td>
+                      <td>23.08.24</td>
+                      <td>付款完成</td>
+                      <td>因單價調整系統二度補償贈點</td>
+                    </tr>
+                    <tr>
+                      <td>1234</td>
+                      <td>線下給點</td>
+                      <td>購買</td>
+                      <td>350</td>
+                      <td>2606</td>
+                      <td></td>
+                      <td>23.08.24</td>
+                      <td>付款完成</td>
+                      <td>因單價調整系統二度補償贈點</td>
+                    </tr>
+                    <tr>
+                      <td>1234</td>
+                      <td>線下給點</td>
+                      <td>購買</td>
+                      <td>350</td>
+                      <td>2606</td>
+                      <td></td>
+                      <td>23.08.11</td>
+                      <td>付款完成</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>1234</td>
+                      <td>線下給點</td>
+                      <td>註冊獎勵</td>
+                      <td>350</td>
+                      <td>2606</td>
+                      <td></td>
+                      <td>23.08.11</td>
+                      <td>付款完成</td>
+                      <td>因單價調整系統二度補償贈點</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="js/dataTable.js"></script>
+</body>
+
+</html>

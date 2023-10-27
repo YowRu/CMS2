@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script src="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_js_materialize.min.js"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_css_materialize.min.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/playSelection.css">
+  <link rel="stylesheet" href="css/point.css">
+  <title>點數中心</title>
+</head>
+<body>
+  <header></header>
+  <div id="main">
+    <div class="accordionWP">
+      <div class="accordion">
+        <ul class="tabs">
+          <li><a href="topUp_admin.html">線下儲值</a></li>
+          <li><a href="topUpLog_admin.html">儲值紀錄</a></li>
+          <li><a href="pointLog_admin.html">使用紀錄</a></li>
+          <li  class="active"><a href="topUp.html">儲值</a></li>
+          <li><a href="pointLog.html">紀錄</a></li>
+        </ul>
+        <ul class="tab_container">
+          <li id="tab4" class="tab_content">
+            <div class="nowValue">
+              <div class="left">
+                <span>現有點數</span>
+                <p>180</p>
+              </div>
+              <div class="middle">
+                <span>贈送點數</span>
+                <p>0</p>
+              </div>
+              <div class="right">
+                <span>使用期限</span>
+                <p><img src="img/deadline.svg" alt=""></p>
+              </div>
+            </div>
+            <div class="textInfo">
+              <span>說明</span>
+              <img src="img/table/textInfo.svg" alt="">
+              <ul class="info">
+                <li>購買10點加贈5點，贈送點數使用期限為一個月</li>
+                <li>購買100點加贈100點，贈送點數使用期限為三個月</li>
+                <li>使用點數時，將優先扣取贈送點數(依贈送時間較早的點數先扣)</li>
+              </ul>
+            </div>
+            <div class="wrapper">
+              <div class="item">
+                <p><span>$35/點</span> <span class="red">單次購買上限為3000點</span></p>
+              </div>
+              <div class="item">
+                <input type="text" class="point" placeholder="請輸入購買點數" />
+              </div>
+              <div class="item flex">
+                <p>贈送</p><span>0</span><p>點</p>
+              </div>
+              <div class="item flex">
+                <p>應付(含稅) $</p><span>0</span><p class="per">元</p>
+              </div>
+              <div class="item">
+                <input type="text" class="taxId" placeholder="請輸入統一編號" />
+              </div>
+              <div class="item">
+                <input type="text" class="company" placeholder="請輸入發票抬頭" />
+              </div>
+              <div class="item">
+                <input type="text" class="email" placeholder="請輸入email，以寄送發票" />
+              </div>
+              <div class="btn">儲值</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="js/dataTable.js"></script>
+  <script>
+      $('.btn').click(function () {
+        if ($('.point').val() == '') {
+          Swal.fire('請輸入購買點數', '', 'info');
+        } else if (!$('.point').val().match(/[0-9]/)) {
+          Swal.fire('點數請輸入數字', '', 'info');
+        } else if ($('.taxId').val() == '') {
+          Swal.fire('請輸入統一編號', '', 'info');
+        } else if ($('.company').val() !== '' ) {
+          Swal.fire('請輸入發票抬頭', '', 'info');
+        } else if ($('.email').val() == '') {
+          Swal.fire('請輸入email', '', 'info');
+        }else if ($('.email').val().match(/[a-zA-Z]/) && !$('input.account').val().match(/(\w)+[@]{1}(\S)+[.]{1}(\D)+/)) {
+          Swal.fire('請確認email格式', '', 'info');
+        }  else {
+          Swal.fire('已送出', '', 'success');
+        }
+
+      });
+  </script>
+</body>
+
+</html>

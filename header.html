@@ -1,7 +1,6 @@
 <div class="wrapper">
   <div class="btnWP">
     <!-- <a href="member.html" class="icon member"></a> -->
-    <a href="index.html" class="icon logout"></a> <!--登出-->
     <!-- <select>
       <option value="taiwan">台灣</option>
       <option value="english">English</option>
@@ -10,6 +9,8 @@
       <span class="text">Hi, BIGBOSS</span>
       <span class="time">23.06.21 14:14</span>
     </a>
+    <a href="topUp_admin.html" class="icon point"></a><!--點數-->
+    <a href="index.html" class="icon logout"></a><!--登出-->
   </div>
   <img src="img/menu/logo.svg" class="logoSmall" alt="">
   <nav>
@@ -168,14 +169,15 @@
       $('header .btnWP .hello .time').text(`${year}/${month + 1}/${day} ${hour}:${minutes}`);
     }
     time();
-    window.setInterval(( () => time() ), 1000);
+    window.setInterval((() => time()), 60000);
+
     $('.toggle').click(function () {
       count++;
       if (count % 2 == 0) {
-        $('.sideWP ,header .wrapper h1, header .side, header .side a, header .toggle, header .side>a span, .content').removeClass('hided');
+        $('.sideWP ,header .wrapper h1, header .side, header .side a, header .toggle, header .side>a span, .content, .daterangepicker').removeClass('hided');
         $('header .wrapper h1 a').removeClass('smallLogo');
       } else {
-        $('.sideWP, header .wrapper h1, header .side a, header .toggle, header .side>a span, .content').addClass('hided');
+        $('.sideWP, header .wrapper h1, header .side a, header .toggle, header .side>a span, .content, .daterangepicker').addClass('hided');
         $('header .wrapper h1 a').addClass('smallLogo');
       }
     });

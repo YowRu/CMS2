@@ -63,7 +63,9 @@ body {
   width: 100%;
   font-family: 'Noto Sans TC', '微軟正黑', sans-serif;
   position: relative;
-  background: #f2f2fd;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f4f4fd+0,f9f1ff+100 */
+  background: linear-gradient(to right, rgba(244, 244, 253, 1) 14%, rgba(249, 241, 255, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 body.overflow {
@@ -74,6 +76,7 @@ body.overflow {
 header {
   position: fixed;
   left: 0;
+  top: 0;
   z-index: 99;
   width: 100%;
 }
@@ -86,7 +89,6 @@ header:after {
   height: 50px;
   top: 0;
   left: 0;
-  background: #f2f2fd;
   border-bottom: 1px solid #e3e3e3;
 }
 
@@ -102,12 +104,11 @@ header .wrapper {
 }
 
 header .wrapper h1 {
-  width: 145px;
+  width: 160px;
   height: 52px;
   text-align: center;
   box-shadow: 0px 10px 70px #F5E8FF;
   background-color: #FCF6FF;
-  border-right: 1px solid #F5F5F5;
   position: relative;
   z-index: 3;
   margin: 0;
@@ -127,7 +128,7 @@ header .wrapper h1 a {
   padding: 0 70px;
   height: 48px;
   background: url('../img/menu/logo.svg') no-repeat center;
-  background-size: 68%;
+  background-size: 85%;
   position: relative;
 }
 
@@ -142,8 +143,8 @@ header .wrapper h1 a:after {
 }
 
 header .wrapper h1 a.smallLogo {
-  background: url('../img/menu/logoSmall.svg') no-repeat 8px center;
-  background-size: 32px;
+  background: url('../img/menu/logoSmall.svg') no-repeat 0 center;
+  background-size: 41px;
   padding: 0 20px;
 }
 
@@ -198,11 +199,38 @@ header .btnWP .icon {
   color: #6D6E71;
 }
 
+header .btnWP .point,
 header .btnWP .logout {
   width: 20px;
   height: 20px;
   background: url('../img/menu/logout.svg') no-repeat center;
   background-size: contain;
+  position: relative;
+}
+
+header .btnWP .point:hover:after,
+header .btnWP .logout:hover:after {
+  content: '登出';
+  color: #6D6E71;
+  font-size: 0.9rem;
+  position: absolute;
+  bottom: -24px;
+  left: -5px;
+  width: 38px;
+  background-color: #F8F0FF;
+  padding: 1px 3px;
+}
+
+header .btnWP .point:hover:after {
+  content: '點數';
+}
+
+header .btnWP .point {
+  background: url('../img/menu/dice.svg') no-repeat center;
+  background-size: contain;
+  margin: 1rem 0.5rem 1rem 1rem;
+  width: 24px;
+  height: 24px;
 }
 
 header .btnWP .member {
@@ -306,18 +334,22 @@ header .wrapper .menu {
 
 /*side*/
 header .sideWP {
-  width: 145px;
+  width: 160px;
   height: 99vh;
   padding: 0;
   position: fixed;
   top: 0;
   left: 0;
   overflow: visible;
-  border-right: 1px solid #F5F5F5;
   box-shadow: 0px 10px 70px #F5E8FF;
   background: linear-gradient(to bottom, #ffffff 0%, #fdfdfd 100%);
-  /* transition: all .3s linear 0s; */
   overflow: hidden;
+  background: url('../img/menu/side1.svg') no-repeat center bottom;
+  background-size: cover;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,e8e3fd+100 */
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 50%, rgba(232, 227, 253, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
 }
 
 header .sideWP.hided {
@@ -326,7 +358,7 @@ header .sideWP.hided {
 
 header .toggle {
   position: fixed;
-  left: 131px;
+  left: 149px;
   top: 12px;
   z-index: 3;
 }
@@ -358,20 +390,20 @@ header .side a {
   color: #2D3142;
   box-sizing: border-box;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-around;
   align-items: center;
-  padding: 16px 20px;
+  padding: 18px 20px;
   border-left: 4px solid transparent;
 }
 
 header .side a.hided {
-  padding: 6px 20px 2px;
+  padding: 6px 10px 6px 15px;
+  justify-content: flex-start;
 }
 
 header .side a img {
   width: 24px;
   height: 24px;
-  margin-right: 10px;
 }
 
 header .side a:hover {
@@ -392,7 +424,7 @@ header .side a:hover span {
 
 header .side a.current {
   border-left: 4px solid #5861E2;
-  background-color: #f7f1ffea;
+  background: linear-gradient(to right, #f4efff 20%, #ffffff 100%)
 }
 
 header .side a.current span {
@@ -434,8 +466,20 @@ header .side a.current img.active {
   padding-top: 0;
   box-sizing: border-box;
   margin-left: 0;
-  padding-left: 160px;
+  padding-left: 195px;
   transition: all .3s linear 0s;
+}
+
+#main .content:before {
+  content: '';
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,f3f4fd+100 */
+  background: linear-gradient(to bottom, #ffffff 0%, #f3f4fd 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  width: 100%;
+  height: 88vh;
+  position: absolute;
+  top: 61px;
+  left: 0%;
 }
 
 #main .content.hided {
@@ -444,11 +488,20 @@ header .side a.current img.active {
 
 #main .content>.title,
 #main .content>.title_breadCrumbs {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #2F3034;
-  background-color: transparent;
-  padding: 16px 0;
+  background-color: #fff;
+  padding: 8px 0 24px;
+  width: 98px;
+  text-align: center;
+  margin-top: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#main .content>.title_breadCrumbs {
+  width: 169px;
 }
 
 #main .content>.title_breadCrumbs a {
@@ -457,13 +510,16 @@ header .side a.current img.active {
 
 #main .contentBG {
   width: 100%;
-  height: 86vh;
+  height: 82vh;
   min-height: 735px;
+  margin-top: 15px;
   border-radius: 12px;
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 14px 20px;
   box-sizing: border-box;
   position: relative;
+  box-shadow: 0 0px 3px 0px #f1f1ff;
+  /* border: 1px solid #fafaffd7; */
 }
 
 /*sideNO*/
@@ -473,10 +529,28 @@ header .side a.current img.active {
   display: none;
 }
 
+@media (max-width:1100px) {
+  header .sideWP {
+    width: 140px;
+  }
+
+  header .toggle {
+    left: 127px;
+  }
+
+  header .wrapper h1 a {
+    height: 43px;
+    background: url(../img/menu/logo.svg) no-repeat 20% center;
+    background-size: 77%;
+  }
+}
+
 @media(max-width:900px) {
   header .logoSmall {
     display: block;
-    height: 24px;
+    height: 36px;
+    left: 18px;
+    top: 7.5px;
   }
 
   header .sideWP,
@@ -561,7 +635,8 @@ header .side a.current img.active {
     margin-right: 10px;
   }
 
-  #main .content>.title, #main .contentBG p, #container1 text {
+  #main .contentBG p,
+  #container1 text {
     font-size: 1.2rem;
   }
 

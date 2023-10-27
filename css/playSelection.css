@@ -3,13 +3,13 @@
   justify-content: space-around;
   align-items: center;
   position: relative;
+  margin-top: 20px;
 }
 
 .stepFlex::before {
   content: '';
   display: block;
   width: 80%;
-  height: 1px;
   position: absolute;
   left: 10%;
   top: 54%;
@@ -103,7 +103,7 @@
   color: #3CBC26;
 }
 
-.stepContent {
+.stepContent, .stepContent.step1 {
   margin-top: 24px;
 }
 
@@ -122,7 +122,7 @@
 /*datepicker*/
 .datepicker-date-display .date-text {
   color: #fff;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 }
 
 .datepicker-date-display .year-text {
@@ -145,16 +145,6 @@ select.datepicker-select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.stepContent .bg {
-  width: 80%;
-  margin: 0 auto;
-  height: 40vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
 }
 
 
@@ -190,31 +180,6 @@ select.datepicker-select {
   display: block;
   margin: 0 5px;
   color: #2F3034;
-}
-
-.stepContent .bg .flexrow .wrapper>div {
-  width: 210px;
-  margin: 0 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #E1E1E2;
-  padding: 6px 15px;
-  box-sizing: border-box;
-  border-radius: 2px;
-}
-
-.stepContent .bg .flexrow .wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  border: 0;
-}
-
-.stepContent .bg .flexrow p {
-  color: #999;
-  font-size: .95rem;
 }
 
 input.datepicker:not([type]),
@@ -257,7 +222,7 @@ textarea.materialize-textarea {
 /*step1*/
 .step {
   position: relative;
-  width: 90%;
+  width: 98%;
 }
 
 .step1 input:not([type]),
@@ -283,26 +248,120 @@ textarea.materialize-textarea {
 
 }
 
-.step1 input[type=text].timepicker {
-  border-bottom: 1px solid #6B56EC;
+.step1 input.timepicker:not([type]) {
+  width: 33%;
+}
+
+#rangeDateTime {
+  opacity: 0;
 }
 
 .step1 {
-  display: block;
+  margin: 0 auto 10px;
+}
+
+.step1 .flexrow {
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.step1 .hasInfo, .step1 .submitInfo {
+  display: none;
+}
+
+.step1 .dateTimeWP {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 88%;
+}
+
+.step1 .cycle [type="checkbox"]:not(:checked), .step1 .cycle [type="checkbox"]:checked {
+  display: none;
+}
+
+.step1 [type="checkbox"]+span,
+.step1 [type="checkbox"]:checked+span {
+  border: 1px solid #b1b6ef;
+  background-color: transparent;
+  color: #2F3034;
+  border-radius: 4px;
+  padding: 2px;
+  width: 32px;
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+}
+
+.step1 [type="checkbox"]:checked+span {
+  border: 1px solid #b1b6ef;
+  background-color: #5861E2;
+  color: #fff;
+  box-shadow:
+    -1px -1px 3px 0px #dfdfff, -1px 0px 3px 0px #dcdcf8, 1px 1px 2px 0px #c8c8f2, 1px 1px 2px 0px #cacafa
+}
+
+.step1 .flexrow .flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.step1 .flexrow .flex span.wp {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 4px;
+}
+
+.step1 .flexrow .flex:nth-child(3) span.wp {
+  width: auto;
+}
+
+.step1 .flexrow .flex span.wp span {
+  padding: 6.75px 8px;
+  width: 84px;
+  text-align: center;
+  font-size: 0.9rem;
+  height: 20.5px;
+}
+
+.step1 .flexrow .flex span.wp span:nth-child(1) {
+  /* background-color: #daddff; */
+  color: #2F3034;
+  border: 1px solid #daddff;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: 0;
+  width: 58px;
+}
+
+.step1 .flexrow .flex span.wp span:nth-child(2) {
+  border: 1px solid #E1E1E2;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: 0;
+  width: 102px;
 }
 
 /*datetime color*/
+.datepicker-table {
+  border-collapse: separate;
+}
+
 .datepicker-date-display,
 .timepicker-digital-display {
   background-color: #5861E2;
 }
 
- .datepicker-canvas line,
- .timepicker-canvas line {
+.datepicker-canvas line,
+.timepicker-canvas line {
   stroke: #5861E2;
 }
 
- .datepicker-canvas-bearing,
+.datepicker-canvas-bearing,
 .timepicker-canvas-bearing {
   fill: #5861E2;
 }
@@ -314,6 +373,7 @@ textarea.materialize-textarea {
 
 .datepicker-table td.is-today {
   color: #5861E2;
+  border: 1px solid #5861E2;
   border-radius: 50%;
 }
 
@@ -322,8 +382,9 @@ textarea.materialize-textarea {
 }
 
 .datepicker-table td.is-selected button {
-  color: #5861E2;
-  border: 1px solid #5861E2;
+  color: #fff;
+  background-color: #5861E2;
+  border-radius: 50%;
 }
 
 .step1 .confirmation-btns {
@@ -360,7 +421,10 @@ textarea.materialize-textarea {
 .datepicker-done:hover,
 .timepicker-close:hover {
   color: #5861E2;
-  border: 1px solid #5861E2;
+}
+
+.btn-flat:focus {
+  background-color: #d3d5f9;
 }
 
 .timepicker-tick.active,
@@ -401,6 +465,9 @@ textarea.materialize-textarea:focus:not([readonly]) {
   margin-bottom: 12px;
 }
 
+.step4 .searchBar.top {
+  justify-content: flex-end;
+}
 
 
 .btn {
@@ -430,6 +497,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .btn.search {
   background-color: #5861E2;
   padding: 0;
+  margin: 0;
 }
 
 .btn:hover {
@@ -480,12 +548,6 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .stepBtn {
   width: 90px;
   box-sizing: border-box;
-}
-
-.stepBtn1 {
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 
 .stepBtn:hover {
@@ -786,6 +848,18 @@ section.flex .listWP .list input[type="checkbox"] {
   border: 1px solid #C7C7C7;
 }
 
+.step4 [type="checkbox"]+span:not(.lever):before,
+.step4 [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+  display: none;
+}
+
+.step4 label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
 /*step5*/
 .step5 .accordion {
   margin-top: 20px;
@@ -836,6 +910,7 @@ section.flex .listWP .list input[type="checkbox"] {
 .step4 .timeWP {
   width: 250px;
   margin: 10px 0;
+  border: 0;
 }
 
 .step4 .btn.border.yellow {
@@ -1027,4 +1102,6 @@ input[type="radio"]:checked+.tabContent {
 }
 
 .timepicker-span-am-pm .am-btn,
-.timepicker-span-am-pm .pm-btn{font-size: 1.3rem;}
+.timepicker-span-am-pm .pm-btn {
+  font-size: 1.3rem;
+}

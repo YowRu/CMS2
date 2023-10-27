@@ -6,21 +6,42 @@ input[type="text"].datepicker {
   height: 100px;
 }
 
+.btn {
+  width: 56px;
+  margin: 0 auto;
+}
+
 .btnImg {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  padding-top: 1px;
 }
 
 .btnImg .flex {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
+.btnImg i:nth-child(1) {
+  margin-right: 0;
+}
+
+.btnImg .flex:nth-child(1) {
+  margin-right: 5px;
+}
+
 .btnImg img {
-  margin: 2px auto;
+  margin: 2px auto 0;
+  width: 24px;
+  height: 24px;
+}
+
+.btnImg img.push {
+  width: 20px;
+  height: 20px;
 }
 
 [type="radio"].option-input {
@@ -49,10 +70,12 @@ input[type="text"].datepicker {
   border: 0;
 }
 
-.popup_bg.clone table tr, .popup_bg.replace table tr {
+.popup_bg.clone table tr,
+.popup_bg.replace table tr {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 56px;
 }
 
 .popup_bg.clone table td,

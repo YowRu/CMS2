@@ -53,8 +53,8 @@
                 <input type="text" id="mediaName" name="mediaName" placeholder="請輸入刊播名稱">
               </div>
               <div class="searchBar">
-                <div class="btn back1 border yellow">返回時間</div>
-                <div class="btn stepBtn stepBtn2">確認素材</div>
+                <div class="btn back1 border yellow">上一步</div>
+                <div class="btn stepBtn stepBtn2">下一步</div>
               </div>
             </div>
             <div class="searchBar" name="searchBar">
@@ -194,21 +194,21 @@
     $(document).ready(function () {
       let W = $(window).width();
       //RWD
-      if (W < 501) {
-        $('.btn.back1.border.yellow').text('返回');
-        $('.stepBtn.stepBtn2').text('確認');
-        $('.searchBar .flex label.active').text('名稱 :');
-        $('.stepBtn').addClass('auto');
-      } else {
-        $('.btn.back1.border.yellow').text('返回時間');
-        $('.stepBtn.stepBtn2').text('確認素材');
-        $('.searchBar .flex label.active').text('刊播名稱 :');
-        $('.stepBtn').removeClass('auto');
-      }
+      // if (W < 501) {
+      //   $('.btn.back1.border.yellow').text('返回');
+      //   $('.stepBtn.stepBtn2').text('確認');
+      //   $('.searchBar .flex label.active').text('名稱 :');
+      //   $('.stepBtn').addClass('auto');
+      // } else {
+      //   $('.btn.back1.border.yellow').text('返回時間');
+      //   $('.stepBtn.stepBtn2').text('確認素材');
+      //   $('.searchBar .flex label.active').text('刊播名稱 :');
+      //   $('.stepBtn').removeClass('auto');
+      // }
 
      //back
      $('.back1').click(function () {
-        window.location = "https://yowru.github.io/CMS2/playStep1.html";
+        window.location = "https://yowru.github.io/CMS/playStep1.html";
       });
 
       //stepBtn2
@@ -221,7 +221,7 @@
             if (W < 700) {
               $('section.flex .listWP .list li, #main .contentBG').addClass('column');
             }
-            window.location = "https://yowru.github.io/CMS2/playStep3.html";
+            window.location = "https://yowru.github.io/CMS/playStep3.html";
           } else {
             Swal.fire('請填寫刊播名稱', '', 'info');
           }

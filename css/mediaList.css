@@ -25,6 +25,16 @@ div:where(.swal2-container) button:where(.swal2-close):focus {
   box-shadow: none;
 }
 
+.btnImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1px;
+}
+
+.btnImg i:nth-child(1) {
+  margin-right: 5px;
+}
 
 .popupWP img {
   width: 100%;
@@ -130,5 +140,3 @@ div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
 table.dataTable tbody tr:hover {
   background-color: rgba(88, 97, 226, 0.06);
 }
-
-

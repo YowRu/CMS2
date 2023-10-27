@@ -37,24 +37,6 @@
             <div class="flex keyWords">
               <input type="text" placeholder="輸入關鍵字" class="keyWords">
             </div>
-            <div class="flex city">
-              <label for="city">縣市 :</label>
-              <select name="" id="city">
-                <option value="all">全部</option>
-                <option value="Taipei">台北市</option>
-                <option value="New Taipei City">新北市</option>
-              </select>
-            </div>
-            <div class="flex area">
-              <label for="area">區域 :</label>
-              <select name="" id="area">
-                <option value="all">全部</option>
-                <option value="100">中正區</option>
-                <option value="105">松山區</option>
-                <option value="106">大安區</option>
-                <option value="110">信義區</option>
-              </select>
-            </div>
             <div class="flex screen">
               <label for="screen">螢幕 :</label>
               <select name="" id="screen">
@@ -83,10 +65,8 @@
         <div class="btn add" onClick="add()">新增</div>
         <div class="table-responsive">
           <div class="head_bg">
-            <span></span>
+            <span class="check"></span>
             <span>mac address</span>
-            <span class="sort">縣市</span>
-            <span class="sort">區域</span>
             <span>地址</span>
             <span>設備名稱</span>
             <span class="sort">螢幕</span>
@@ -100,8 +80,6 @@
                 <tr>
                   <th></th>
                   <th>mac address</th>
-                  <th class="sort">縣市</th>
-                  <th class="sort">區域</th>
                   <th>地址</th>
                   <th>設備</th>
                   <th class="sort">螢幕</th>
@@ -116,37 +94,47 @@
                     <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
                   </td>
                   <td>mac address</td>
-                  <td>台北市</td>
-                  <td>信義區</td>
-                  <td>仁愛路四段505號1樓</td>
+                  <td>台北市信義區仁愛路四段505號1樓</td>
                   <td>國父紀念館</td>
                   <td>直式</td>
                   <td>有</td>
                   <td>出租</td>
-                  <td><p class="btnImg">
-                    <img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">
-                    <img src="img/table/screenshot.svg" alt="" class="edit"
-                      onclick="window.open('download.html', '_blank')" ;>
-                      <img src="img/table/detail.svg" alt="" class="edit"
-                    onclick="window.location = 'deviceLog.html'" ;></p>
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <span class="flex">
+                        <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
+                        <i class="detail"><img src="img/table/detail.svg" alt="" class="detail"
+                            onclick="window.location = 'deviceLog.html'">歷程</i>
+                      </span>
+                      <span><i class="screenshot"><img src="img/table/screenshot.svg" alt="" class="screenshot"
+                            onclick="window.open('download.html', '_blank')">截圖</i></span>
+                    </p>
                   </td>
                 </tr>
                 <tr class="detail">
                   <td colspan="10">
                     <table class="detailContent">
                       <tr>
+                        <th></th>
                         <th class="num">刊播編號</th>
                         <th>刊播名稱</th>
                         <th class="img">縮圖</th>
                         <th class="second">秒數</th>
+                        <th class="dateStart">開始日</th>
+                        <th class="dateEnd">結束日</th>
+                        <th>狀態</th>
                       </tr>
                       <tr>
+                        <td></td>
                         <td class="num">A123456789</td>
                         <td>uhioho1</td>
                         <td class="img">
                           <img src="img/table/smallPhoto.png" alt="">
                         </td>
                         <td class="second">20</td>
+                        <td class="dateStart">2023-09-21 17:56</td>
+                        <td class="dateEnd">2023-10-31 17:56</td>
+                        <td class="prepare">準備中</td>
                       </tr>
                     </table>
                   </td>
@@ -156,37 +144,47 @@
                     <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
                   </td>
                   <td>mac address</td>
-                  <td>台北市</td>
-                  <td>信義區</td>
-                  <td>信義路五段7號89樓</td>
+                  <td>台北市信義區信義路五段7號89樓</td>
                   <td>101景觀台</td>
                   <td>直式</td>
                   <td>有</td>
                   <td>售出</td>
-                  <td><p class="btnImg">
-                    <img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">
-                    <img src="img/table/screenshot.svg" alt="" class="edit"
-                      onclick="window.open('download.html', '_blank')" ;>
-                      <img src="img/table/detail.svg" alt="" class="edit"
-                    onclick="window.location = 'deviceLog.html'" ;></p>
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <span class="flex">
+                        <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
+                        <i class="detail"><img src="img/table/detail.svg" alt="" class="detail"
+                            onclick="window.location = 'deviceLog.html'">歷程</i>
+                      </span>
+                      <span><i class="screenshot"><img src="img/table/screenshot.svg" alt="" class="screenshot"
+                            onclick="window.open('download.html', '_blank')">截圖</i></span>
+                    </p>
                   </td>
                 </tr>
                 <tr class="detail">
                   <td colspan="10">
                     <table class="detailContent">
                       <tr>
+                        <th></th>
                         <th class="num">刊播編號</th>
                         <th>刊播名稱</th>
                         <th class="img">縮圖</th>
                         <th class="second">秒數</th>
+                        <th class="dateStart">開始日</th>
+                        <th class="dateEnd">結束日</th>
+                        <th>狀態</th>
                       </tr>
                       <tr>
+                        <td></td>
                         <td class="num">A123456789</td>
                         <td>刊播11111</td>
                         <td class="img">
                           <img src="img/table/smallPhoto.png" alt="">
                         </td>
                         <td class="second">20</td>
+                        <td class="dateStart">2023-09-01 07:56</td>
+                        <td class="dateEnd">2023-09-01 17:56</td>
+                        <td class="endplay">已結束</td>
                       </tr>
                     </table>
                   </td>
@@ -196,53 +194,71 @@
                     <img src="img/table/close.svg" alt="" class="detailClose" onclick="detail(this)">
                   </td>
                   <td>mac address</td>
-                  <td>新北市</td>
-                  <td>板橋區</td>
-                  <td>縣民大道二段7號</td>
+                  <td>新北市板橋區縣民大道二段7號</td>
                   <td>新北耶誕城</td>
                   <td>直式</td>
                   <td>有</td>
                   <td>售出</td>
-                  <td><p class="btnImg">
-                    <img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">
-                    <img src="img/table/screenshot.svg" alt="" class="edit"
-                      onclick="window.open('download.html', '_blank')" ;>
-                    <img src="img/table/detail.svg" alt="" class="edit"
-                    onclick="window.location = 'deviceLog.html'" ;></p>
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <span class="flex">
+                        <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
+                        <i class="detail"><img src="img/table/detail.svg" alt="" class="detail"
+                            onclick="window.location = 'deviceLog.html'">歷程</i>
+                      </span>
+                      <span><i class="screenshot"><img src="img/table/screenshot.svg" alt="" class="screenshot"
+                            onclick="window.open('download.html', '_blank')">截圖</i></span>
+                    </p>
                   </td>
                 </tr>
                 <tr class="detail">
                   <td colspan="10">
                     <table class="detailContent">
                       <tr>
+                        <th></th>
                         <th class="num">刊播編號</th>
                         <th>刊播名稱</th>
                         <th class="img">縮圖</th>
                         <th class="second">秒數</th>
+                        <th class="dateStart">開始日</th>
+                        <th class="dateEnd">結束日</th>
+                        <th>狀態</th>
                       </tr>
                       <tr>
+                        <td></td>
                         <td class="num">A123456789</td>
                         <td>吃飽睡好</td>
                         <td class="img">
                           <img src="img/table/smallPhoto.png" alt="">
                         </td>
                         <td class="second">20</td>
+                        <td class="dateStart">2023-09-01 17:56</td>
+                        <td class="dateEnd">2023-10-01 17:56</td>
+                        <td class="playing">刊播中</td>
                       </tr>
                       <tr>
+                        <td></td>
                         <td class="num">A123456789</td>
                         <td>吃飽睡飽，人生美好</td>
                         <td class="img">
                           <img src="img/table/smallPhoto.png" alt="">
                         </td>
                         <td class="second">20</td>
+                        <td class="dateStart">2023-09-01 17:56</td>
+                        <td class="dateEnd">2023-10-01 17:56</td>
+                        <td class="playing">刊播中</td>
                       </tr>
                       <tr>
+                        <td></td>
                         <td class="num">A123456789</td>
                         <td>我想睡到自然醒</td>
                         <td class="img">
                           <img src="img/table/smallPhoto.png" alt="">
                         </td>
                         <td class="second">20</td>
+                        <td class="dateStart">2023-09-01 17:56</td>
+                        <td class="dateEnd">2023-10-01 17:56</td>
+                        <td class="playing">刊播中</td>
                       </tr>
                     </table>
                   </td>
@@ -251,7 +267,6 @@
             </table>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -323,128 +338,210 @@
   <div class="popup_bg edit">
     <div class="popupWP width600 edit">
       <div class="titleWP">
-        <p class="title">mac address</p>
+        <ul class="tabs">
+          <li><a href="#tab1">關於設備</a></li>
+          <li><a href="#tab2">控制中心</a></li>
+          <li><a href="#tab3">合約相關</a></li>
+        </ul>
         <p class="close">×</p>
       </div>
-      <div class="swalWP">
-        <div class="edit_popup popup flex">
-          <div class="info">
-            <div class="flex">
-              <p>公司</p><input type="text" class="fontLevel_1 space_around" placeholder="請輸入公司" value="宇豐光電股份有限公司" />
-            </div>
-            <div class="flex contract">
-              <p>合約</p>
-              <div class="contractWP">
-                <input type="text" class="datepicker" placeholder="2023/09/15" id="contract_start" />
-                <p>-</p>
-                <input type="text" class="datepicker" placeholder="2024/09/15" id="contract_end" />
+      <ul class="swalWP tab_container">
+        <li id="tab1" class="tab_content">
+          <div class="edit_popup popup flex">
+            <div class="info">
+              <div class="flex">
+                <p>機型名稱</p><span>機型名稱</span>
               </div>
-            </div>
-            <div class="flex state">
-              <p>狀態</p>
-              <select name="" id="state3">
-                <option value="">請選擇</option>
-                <option value="" selected="selected">出租</option>
-                <option value="">售出</option>
-                <option value="">報廢</option>
-              </select>
-            </div>
-            <div class="flex">
-              <p>設備上架</p>
-              <div class="switch switch__2"><input id="switch-2" type="checkbox" checked><label for="switch-2"></label>
+              <div class="flex">
+                <p>機型型號</p><span>機型型號</span>
               </div>
-            </div>
-            <div class="flex">
-              <p>縣市</p><input type="text" class="fontLevel_1 space_around" placeholder="請輸入地址" value="台北市" />
-            </div>
-            <div class="flex">
-              <p>區域</p><input type="text" class="fontLevel_1 space_around" placeholder="請輸入地址" value="大安區" />
-            </div>
-            <div class="flex">
-              <p>地址</p><input type="text" class="fontLevel_1 space_around address" placeholder="請輸入地址" value="地址" />
+              <div class="flex">
+                <p>mac address</p><span>mac address</span>
+              </div>
+              <div class="flex gps">
+                <p>經緯度</p>
+                <span>121.564101,25.033493</span>
+              </div>
+              <div class="flex">
+                <p>螢幕</p>
+                <div class="screenWP">
+                  <span>1280</span>
+                  <span>x</span>
+                  <span>832</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="setting">
-            <div class="flex">
-              <p>設備名稱</p><input type="text" class="fontLevel_1 space_around" placeholder="請自訂設備名稱" value="公館誠品A區" />
+        </li>
+        <li id="tab2" class="tab_content">
+          <div class="edit_popup popup flex">
+            <div class="info">
+              <div class="flex">
+                <p>設備名稱</p><input type="text" class="fontLevel_1 space_around" placeholder="請自訂設備名稱" value="公館誠品A區" />
+              </div>
+              <div class="flex"><textarea name="" id="" cols="30" rows="1"
+                  placeholder="多個標籤,請用逗號分開">台大,公館,誠品A區</textarea>
+              </div>
+              <div class="flex">
+                <p>息屏</p>
+                <div class="closeTime">
+                  <select name="" id="">
+                    <option value="0">00點</option>
+                    <option value="1">01點</option>
+                    <option value="2">02點</option>
+                    <option value="3">03點</option>
+                    <option value="4">04點</option>
+                    <option value="5">05點</option>
+                    <option value="6">06點</option>
+                    <option value="7">07點</option>
+                    <option value="8">08點</option>
+                    <option value="9">09點</option>
+                    <option value="10">10點</option>
+                    <option value="11">11點</option>
+                    <option value="12">12點</option>
+                    <option value="13">13點</option>
+                    <option value="14">14點</option>
+                    <option value="15">15點</option>
+                    <option value="16">16點</option>
+                    <option value="17">17點</option>
+                    <option value="18">18點</option>
+                    <option value="19">19點</option>
+                    <option value="20">20點</option>
+                    <option value="21">21點</option>
+                    <option value="22">22點</option>
+                    <option value="23">23點</option>
+                  </select>
+                  <span>到</span>
+                  <select name="" id="">
+                    <option value="0">00點</option>
+                    <option value="1">01點</option>
+                    <option value="2">02點</option>
+                    <option value="3">03點</option>
+                    <option value="4">04點</option>
+                    <option value="5">05點</option>
+                    <option value="6">06點</option>
+                    <option value="7">07點</option>
+                    <option value="8">08點</option>
+                    <option value="9">09點</option>
+                    <option value="10">10點</option>
+                    <option value="11">11點</option>
+                    <option value="12">12點</option>
+                    <option value="13">13點</option>
+                    <option value="14">14點</option>
+                    <option value="15">15點</option>
+                    <option value="16">16點</option>
+                    <option value="17">17點</option>
+                    <option value="18">18點</option>
+                    <option value="19">19點</option>
+                    <option value="20">20點</option>
+                    <option value="21">21點</option>
+                    <option value="22">22點</option>
+                    <option value="23">23點</option>
+                  </select>
+                </div>
+              </div>
+              <div class="flex">
+                <p>立即重開</p>
+                <div class="button" onclick="reboot()">確認</div>
+              </div>
+              <div class="flex">
+                <p>分割畫面</p>
+                <div class="multiselect">
+                  <div class="selectBox" onclick="showCheckboxes()">
+                    <select>
+                      <option checked>全畫面</option>
+                      <option>橫式雙畫面</option>
+                      <option>橫式三畫面</option>
+                      <option>直式雙畫面</option>
+                      <option>直式三畫面</option>
+                    </select>
+                    <div class="overSelect"></div>
+                  </div>
+                  <div id="checkboxes">
+                    <div class="flex">
+                      <label for="one"><input type="radio" name="splitScreen" id="one" value="1" checked /></label>
+                      <img src="img/device/all.png" alt="">
+                    </div>
+                    <div class="flex">
+                      <label for="two"><input type="radio" name="splitScreen" id="two" value="2"/></label>
+                      <img src="img/device/horizontal2.png" alt="">
+                    </div>
+                    <div class="flex">
+                      <label for="three"><input type="radio" name="splitScreen" id="three" value="3"/></label>
+                      <img src="img/device/horizontal3.png" alt="">
+                    </div>
+                    <div class="flex">
+                      <label for="four">
+                        <input type="radio" name="splitScreen" id="four" value="4"/>
+                      </label><img src="img/device/vertical2.png" alt="">
+                    </div>
+                    <div class="flex">
+                      <label for="five">
+                        <input type="radio" name="splitScreen" id="five" value="5"/>
+                      </label>
+                      <img src="img/device/vertical3.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex">
+                <p>音量</p><input type="text" class="fontLevel_1 space_around" placeholder="請輸入0-10" value="10" />
+              </div>
+              <span class="sound">最小音量:0 ,最大音量:10</span>
             </div>
-            <div class="flex"><textarea name="" id="" cols="30" rows="1" placeholder="多個標籤,請用逗號分開">台大,公館,誠品A區</textarea>
-            </div>
-            <div class="flex">
-              <p>螢幕</p><select name="" id="">
-                <option value="">1280x832</option>
-                <option value="">832x1280</option>
-              </select>
-            </div>
-            <div class="flex">
-              <p>息屏</p>
-              <div class="flex start time">
-                <select name="" id="">
-                  <option value="0">00點</option>
-                 <option value="1">01點</option>
-                  <option value="2">02點</option>
-                  <option value="3">03點</option>
-                  <option value="4">04點</option>
-                  <option value="5">05點</option>
-                  <option value="6">06點</option>
-                  <option value="7">07點</option>
-                  <option value="8">08點</option>
-                  <option value="9">09點</option>
-                  <option value="10">10點</option>
-                  <option value="11">11點</option>
-                  <option value="12">12點</option>
-                  <option value="13">13點</option>
-                  <option value="14">14點</option>
-                  <option value="15">15點</option>
-                  <option value="16">16點</option>
-                  <option value="17">17點</option>
-                  <option value="18">18點</option>
-                  <option value="19">19點</option>
-                  <option value="20">20點</option>
-                  <option value="21">21點</option>
-                  <option value="22">22點</option>
-                  <option value="23">23點</option>
-                </select>
-                <span>到</span>
-                <select name="" id="">
-                  <option value="0">00點</option>
-                 <option value="1">01點</option>
-                  <option value="2">02點</option>
-                  <option value="3">03點</option>
-                  <option value="4">04點</option>
-                  <option value="5">05點</option>
-                  <option value="6">06點</option>
-                  <option value="7">07點</option>
-                  <option value="8">08點</option>
-                  <option value="9">09點</option>
-                  <option value="10">10點</option>
-                  <option value="11">11點</option>
-                  <option value="12">12點</option>
-                  <option value="13">13點</option>
-                  <option value="14">14點</option>
-                  <option value="15">15點</option>
-                  <option value="16">16點</option>
-                  <option value="17">17點</option>
-                  <option value="18">18點</option>
-                  <option value="19">19點</option>
-                  <option value="20">20點</option>
-                  <option value="21">21點</option>
-                  <option value="22">22點</option>
-                  <option value="23">23點</option>
+          </div>
+          <div class=" btnWP">
+            <div class="btn confirm small">確認</div>
+          </div>
+        </li>
+        <li id="tab3" class="tab_content">
+          <div class="edit_popup popup flex">
+            <div class="info">
+              <div class="flex">
+                <p>公司</p><input type="text" class="fontLevel_1 space_around" placeholder="請輸入公司" value="宇豐光電股份有限公司" />
+              </div>
+              <div class="flex">
+                <p>地址</p>
+                <div class="addressWP">
+                  <select name="">
+                    <option value="">台北市</option>
+                  </select>
+                  <select name="">
+                    <option value="">大安區</option>
+                  </select>
+                  <input type="text" class="fontLevel_1 space_around address" placeholder="請輸入地址" value="新湖二路257號5樓" />
+                </div>
+              </div>
+              <div class="flex contract">
+                <p>合約</p>
+                <div class="contractWP">
+                  <input type="text" class="datepicker" placeholder="2023/09/15" id="contract_start" />
+                  <p>-</p>
+                  <input type="text" class="datepicker" placeholder="2024/09/15" id="contract_end" />
+                </div>
+              </div>
+              <div class="flex state">
+                <p>狀態</p>
+                <select name="" id="state3">
+                  <option value="">請選擇</option>
+                  <option value="" selected="selected">出租</option>
+                  <option value="">售出</option>
+                  <option value="">報廢</option>
                 </select>
               </div>
+              <div class="flex">
+                <p>設備上架</p>
+                <div class="switch switch__2"><input id="switch-2" type="checkbox" checked><label
+                    for="switch-2"></label>
+                </div>
+              </div>
             </div>
-            <div class="flex">
-              <p>立即重開</p>
-              <div class="button" onclick="reboot()">確認</div>
-            </div>
-            <div class="flex">
-              <p>音量</p><input type="text" class="fontLevel_1 space_around" placeholder="請輸入0-10" value="10" />
-            </div>
-            <span class="sound">最小音量:0 ,最大音量:10</span>
           </div>
-        </div>
-      </div>
+          <div class=" btnWP">
+            <div class="btn confirm small">確認</div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
   <div class="popup_bg reopen">
@@ -538,10 +635,9 @@
     }
 
     //close
-    $('.popup_bg .titleWP .close').click(function () {
+    $('.popup_bg .titleWP .close, .btn.confirm.small').click(function () {
       $(this).parents('.popup_bg').hide();
       $('video').trigger('pause');
-      // window.location.replace(location.href);
     });
 
     //detail
@@ -671,10 +767,77 @@
       $('body').addClass('overflow');
     }
 
+    //next btn
     $('.popup_bg.changeMedia .btn').click(function () {
-      window.location = "https://yowru.github.io/CMS2/playSelection.html";
+      window.location = "https://yowru.github.io/CMS/playStep4.html";
     });
 
+    //tab
+    $(function () {
+      // 預設顯示第一個 Tab
+      var _showTab = 0;
+      $('.popup_bg.edit .popupWP').each(function () {
+        // 目前的頁籤區塊
+        var $tab = $(this);
+
+        var $defaultLi = $('.tabs li', $tab).eq(_showTab).addClass('active');
+        $($defaultLi.find('a').attr('href')).siblings().hide();
+
+        // 當 li 頁籤被點擊時...
+        // 若要改成滑鼠移到 li 頁籤就切換時, 把 click 改成 mouseover
+        $('.tabs li', $tab).click(function () {
+          // 找出 li 中的超連結 href(#id)
+          var $this = $(this),
+            _clickTab = $this.find('a').attr('href');
+          // 把目前點擊到的 li 頁籤加上 .active
+          // 並把兄弟元素中有 .active 的都移除 class
+          $this.addClass('active').siblings('.active').removeClass('active');
+          // 淡入相對應的內容並隱藏兄弟元素
+          $(_clickTab).stop(false, true).fadeIn().siblings().hide();
+
+          return false;
+        }).find('a').focus(function () {
+          this.blur();
+        });
+      });
+    });
+
+
+    //split screen
+    var expanded = false;
+
+    function showCheckboxes() {
+      var checkboxes = document.getElementById("checkboxes");
+      if (!expanded) {
+        checkboxes.style.display = "block";
+        expanded = true;
+      } else {
+        checkboxes.style.display = "none";
+        expanded = false;
+      }
+    }
+    $('#checkboxes input').click(function () {
+      console.log(typeof $('#checkboxes input:checked').val());
+      switch ( $('#checkboxes input:checked').val()) {
+            case '1':
+              $('.multiselect select option').text('全畫面');
+              break;
+            case '2':
+            $('.multiselect select option').text('橫式雙畫面');
+              break;
+            case '3':
+            $('.multiselect select option').text('橫式三畫面');
+              break;
+            case '4':
+            $('.multiselect select option').text('直式雙畫面');
+              break;
+            case '5':
+            $('.multiselect select option').text('直式三畫面');
+              break;
+          }
+    });
+
+  
   </script>
 </body>
 

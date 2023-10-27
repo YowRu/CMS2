@@ -87,6 +87,36 @@ header .btnWP {
   max-width: 396px;
   width: 100%;
   margin-bottom: 23px;
+  position: relative;
+}
+
+.right .flex.validate {
+  background-color: #F7F7F7;
+  position: relative;
+  height: 50px;
+  align-items: flex-start;
+}
+
+.right .flex.validate .get {
+  width: 77px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  color: #9200bb;
+  cursor: pointer;
+}
+
+.right .flex.end {
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.right .flex.end span {
+  margin-right: 5px;
+}
+
+.right .flex.end a {
+  color: #AB31CD;
 }
 
 .right .flex.start {
@@ -94,6 +124,16 @@ header .btnWP {
   align-items: center;
   width: auto;
   margin-bottom: 0;
+  position: relative;
+  width: 100%;
+}
+
+.right .flex.start.text:after {
+  content: '請勾選';
+  font-size: 0.9rem;
+  color: #ef0e0e;
+  position: absolute;
+  left: 232px;
 }
 
 .right .flex.start input {
@@ -109,20 +149,28 @@ header .btnWP {
   background-color: transparent;
 }
 
+.right .flex.start a {
+  font-size: 0.9rem;
+  color: #AB31CD;
+  cursor: pointer;
+}
+
 p {
   color: #6D6D6D;
   font-size: 1rem;
 }
 
-p.purple {
+.purple {
   color: #AB31CD;
   font-size: 1rem;
-  width: auto;
+  width: 77px;
+  cursor: pointer;
 }
 
 p.title {
   font-size: 1.5rem;
   color: #AB31CD;
+  text-align: center;
 }
 
 .popup_bg p.title {
@@ -132,6 +180,27 @@ p.title {
   background-color: #F7F7F8;
   padding: 20px;
   box-sizing: border-box;
+}
+
+.popupWP {
+  color: #6D6D6D;
+}
+
+.popupWP:hover {
+  color: #6D6D6D;
+}
+
+.popup_bg .swalWP ol {
+  list-style-type: decimal;
+  padding: 20px 12px 20px 42px;
+  height: 56vh;
+  overflow: scroll;
+}
+
+.popup_bg .swalWP li {
+  text-align: left;
+  list-style-type: decimal;
+  margin: 6px auto;
 }
 
 label {
@@ -227,6 +296,10 @@ input[type="checkbox"]:checked:before {
   line-height: 60px;
 }
 
+.popup_bg .swalWP .btnWP {
+  margin-top: 20px;
+}
+
 .popupWP.small {
   height: 250px;
 }
@@ -236,12 +309,40 @@ input[type="checkbox"]:checked:before {
   height: 87px;
 }
 
-.account,.password {
+.account, .password {
   position: relative;
   width: 100%;
   max-width: 396px;
 }
 
+.password i.fa-eye-slash,
+.password i.fa-eye {
+  content: '\f070';
+  color: #999;
+  font-family: "FontAwesome";
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  cursor: pointer;
+}
+
+.password.text i.fa-eye-slash,
+.password.text i.fa-eye {
+  content: '\f070';
+  color: #999;
+  font-family: "FontAwesome";
+  position: absolute;
+  right: 16px;
+  top: 39px;
+}
+
+.password i.fa-eye,
+.password.text i.fa-eye {
+  content: '\f06e';
+  display: none;
+}
+
+.validate.show:after,
 .account.show::after,
 .password.show::after {
   content: '請輸入帳號';
@@ -250,17 +351,81 @@ input[type="checkbox"]:checked:before {
   right: 12px;
   top: 12px;
   font-size: 0.85rem;
-  color: #CA3B32;
+  color: #ef0e0e;
 }
+
+.validate.show:after,
 .password.show::after {
   content: '請輸入密碼';
+  right: 36px;
 }
+
+.validate.show:after {
+  content: '請輸入驗證碼';
+  left: 84px;
+  top: 14px;
+}
+
+.account.num::after,
+.account.email::after,
+.account.text::after {
+  content: '請輸入手機或信箱';
+  position: absolute;
+  font-size: 0.9rem;
+  color: #ef0e0e;
+  right: 12px;
+  top: 12px;
+}
+
+.account.num::after {
+  content: '手機號碼有誤';
+}
+
+.account.email::after {
+  content: '信箱格式有誤';
+}
+
+.signup .password.text.show::after,
+.signup .password.text.atless::after {
+  content: '請輸入密碼';
+  right: 37px;
+  top: 36px;
+}
+
+.signup .password.text.atless::after {
+  content: '至少輸入6個字元';
+  position: absolute;
+  font-size: 0.9rem;
+  color: #ef0e0e;
+}
+
+.signup .password.again.show::after {
+  content: '請再次輸入密碼';
+  right: 37px;
+}
+
+.signup .password.again.atless::after {
+  content: '請輸入相同密碼';
+  position: absolute;
+  right: 37px;
+  top: 12px;
+  color: red;
+  font-size: 0.9rem;
+}
+
+.password.text::before {
+  content: '請輸入英文或數字，至少6個字元';
+  color: #9200bb;
+  font-size: 0.85rem;
+  margin-left: 22px;
+}
+
 @media(max-width:1230px) {
 
   .left,
   .right {
     width: 50%;
-    height: 500px;
+    height: 550px;
   }
 }
 
@@ -331,7 +496,7 @@ input[type="checkbox"]:checked:before {
   }
 
   p,
-  p.purple,
+  .purple,
   input {
     font-size: 0.9rem;
   }

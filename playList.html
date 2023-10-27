@@ -7,11 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script src="js/loading.js"></script>
-  <script src="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_js_materialize.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_css_materialize.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/rangepicker.css">
   <link rel="stylesheet" href="css/sweetalert2.css">
   <link rel="stylesheet" href="css/layout.css" type="text/css">
   <link rel="stylesheet" href="css/table.css">
@@ -57,9 +56,9 @@
             <span>刊播名稱</span>
             <span>縮圖</span>
             <span class="sort">狀態</span>
-            <span>公司</span>
-            <span class="sort">刊播日</span>
+            <span class="sort">開始日</span>
             <span class="sort">結束日</span>
+            <span>刊播人</span>
             <span>操作</span>
           </div>
           <div class="tableWp marginTop">
@@ -70,75 +69,81 @@
                   <th class="scroll">刊播名稱</th>
                   <th>縮圖</th>
                   <th class="sort">狀態</th>
-                  <th>公司</th>
-                  <th class="sort">刊播日</th>
+                  <th class="sort">開始日</th>
                   <th class="sort">結束日</th>
+                  <th>刊播人</th>
                   <th>操作</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>A123456789</td>
-                  <td class="scroll">刊播名稱</td>
+                  <td class="scroll" colspan="2">刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td class="prepare">準備</td>
-                  <td class="company">AAAAA公司</td>
                   <td>23.06.06</td>
                   <td>24.06.06</td>
+                  <td class="company">AAAAA公司</td>
                   <td class="btnWP">
                     <p class="btnImg">
                       <span class="flex">
-                        <img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">
-                        <img src="img/table/replace.svg" alt="" class="edit" onClick="replace()">
-                        <img src="img/table/clone.svg" alt="" class="edit" onClick="clone()">
+                        <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
+                        <i class="replace"><img src="img/table/replace.svg" alt="" class="replace" onClick="replace()">替換</i>
+                        <i class="clone"><img src="img/table/clone.svg" alt="" class="clone" onClick="clone()">複製</i>
+                        <i class="push"><img src="img/table/push.svg" alt="" class="push" onClick="push()">推播</i>
                       </span>
                       <span class="flex">
-                        <img src="img/table/stop.svg" alt="" class="edit"  onclick="stop()">
-                        <img src="img/table/delet.svg" alt="" onclick="delet()">
+                        <i class="stop"><img src="img/table/stop.svg" alt="" class="stop"  onclick="stop()">停播</i>
+                        <i class="play"><img src="img/table/play.svg" alt="" class="play"  >播放</i>
+                        <i class="delet"><img src="img/table/delet.svg" alt="" class="delet" onclick="delet()">刪除</i>
                       </span>
                     </p>
                   </td>
                 </tr>
                 <tr>
                   <td>B123456789</td>
-                  <td class="scroll">刊播名稱</td>
+                  <td class="scroll" colspan="2">刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td class="endplay">結束</td>
-                  <td class="company">BBBBBB公司</td>
                   <td>23.06.06</td>
                   <td>24.06.06</td>
+                  <td class="company">BBBBBB公司</td>
                   <td class="btnWP">
                     <p class="btnImg">
                       <span class="flex">
-                        <img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">
-                        <img src="img/table/replace.svg" alt="" class="edit" onClick="replace()">
-                        <img src="img/table/clone.svg" alt="" class="edit" onClick="clone()">
+                        <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
+                        <i class="replace"><img src="img/table/replace.svg" alt="" class="replace" onClick="replace()">替換</i>
+                        <i class="clone"><img src="img/table/clone.svg" alt="" class="clone" onClick="clone()">複製</i>
+                        <i class="push"><img src="img/table/push.svg" alt="" class="push" onClick="push()">推播</i>
                       </span>
                       <span class="flex">
-                        <img src="img/table/stop.svg" alt="" class="edit"  onclick="stop()">
-                        <img src="img/table/delet.svg" alt="" onclick="delet()">
+                        <i class="stop"><img src="img/table/stop.svg" alt="" class="stop"  onclick="stop()">停播</i>
+                        <i class="play"><img src="img/table/play.svg" alt="" class="play"  >播放</i>
+                        <i class="delet"><img src="img/table/delet.svg" alt="" class="delet" onclick="delet()">刪除</i>
                       </span>
                     </p>
                   </td>
                 </tr>
                 <tr>
                   <td>A123456789</td>
-                  <td class="scroll">刊播名稱</td>
+                  <td class="scroll" colspan="2">刊播名稱</td>
                   <td class="img"><img src="img/table/smallPhoto.png" alt=""></td>
                   <td class="playing">刊播</td>
-                  <td class="company">CCCCCC公司</td>
                   <td>23.07.06</td>
                   <td>24.12.21</td>
+                  <td class="company">CCCCCC公司</td>
                   <td class="btnWP">
                     <p class="btnImg">
                       <span class="flex">
-                        <img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">
-                        <img src="img/table/replace.svg" alt="" class="edit" onClick="replace()">
-                        <img src="img/table/clone.svg" alt="" class="edit" onClick="clone()">
+                        <i class="edit"><img src="img/table/edit.svg" alt="" class="edit" onClick="edit()">編輯</i>
+                        <i class="replace"><img src="img/table/replace.svg" alt="" class="replace" onClick="replace()">替換</i>
+                        <i class="clone"><img src="img/table/clone.svg" alt="" class="clone" onClick="clone()">複製</i>
+                        <i class="push"><img src="img/table/push.svg" alt="" class="push" onClick="push()">推播</i>
                       </span>
                       <span class="flex">
-                        <img src="img/table/stop.svg" alt="" class="edit"  onclick="stop()">
-                        <img src="img/table/delet.svg" alt="" onclick="delet()">
+                        <i class="stop"><img src="img/table/stop.svg" alt="" class="stop"  onclick="stop()">停播</i>
+                        <i class="play"><img src="img/table/play.svg" alt="" class="play"  >播放</i>
+                        <i class="delet"><img src="img/table/delet.svg" alt="" class="delet" onclick="delet()">刪除</i>
                       </span>
                     </p>
                   </td>
@@ -469,7 +474,6 @@
   </div>
   <div class="sideNo">6</div>
   <script src="js/dataTable.js"></script>
-  <script src="js/dateTimepicker.js"></script>
   <script>
     //get date time
     let dayNow = new Date();
@@ -507,7 +511,6 @@
           i18n: dp_i18n.zh,
         })
       );
-
     }
 
     function edit() {
@@ -516,18 +519,21 @@
     };
     $('.popup_bg.edit .edite_confirm').click(function () {
       //到刊播
-      window.location = "https://yowru.github.io/CMS2/playStep4.html";
+      window.location = "https://yowru.github.io/CMS/playStep1.html";
     });
     $('.popup_bg.clone .clone_confirm, .popup_bg.replace .replace_confirm').click(function () {
       //到清單列表
       if($(this).parent('.btnWP').siblings('.table-responsive').find('input').filter(':checked').length > 0 ){
-         window.location = "https://yowru.github.io/CMS2/playList.html";
+         window.location = "https://yowru.github.io/CMS/playList.html";
       }else{
         Swal.fire('尚未選擇', '', 'info');
       }
      
     });
 
+    function push() {
+      Swal.fire('已送出', '', 'success');
+    };
 
     function clone() {
       $('.popup_bg.clone').fadeIn().css({ 'display': 'flex' });

@@ -4,9 +4,17 @@ $(document).ready(function () {
   $('.textInfo').click(function(){
     $('.textInfo .info').fadeToggle();
   });
+  $('.textInfo span, .textInfo img').mouseover(function(){
+    $(this).siblings('.info').addClass('show');
+  });
+  $('.textInfo span, .textInfo img').mouseout(function(){
+    $(this).siblings('.info').removeClass('show');
+  });
   //table height
   let contentH = $('#main .contentBG').height();
+      accordionH = $('.accordion').height();
   $('.table-responsive .tableWp').height(contentH - 174);
+  $('#tab2 .table-responsive .tableWp,#tab3 .table-responsive .tableWp,#tab5 .table-responsive .tableWp').height(accordionH - 164);
   $('.step2 .table-responsive .tableWp').height(contentH - 242);
   $('.step3 .tableWrapper .table-responsive .tableWp').height(contentH - 254);
   $('.step4 .table-responsive .tableWp').height(200);
@@ -17,6 +25,7 @@ $(document).ready(function () {
   let th_num = $('table th').length;
   $('table td').width(100 / th_num + '%');
   $('table td.check').width(50);
+  
   if ($('table').not('.detailContent')) {
     for (let i = 0; i < th_num; i++) {
       let width = $('table td').eq(i).width();
@@ -28,11 +37,12 @@ $(document).ready(function () {
     }
   }
 
-  $('.detail td').width('auto');
-
+  let num = $('.detailContent th').length;
+  $('.detailContent th,.detailContent td').css({'width':' calc(100%/'+ num +')'});
   if (W < 420) {
     $('table td.name, table td.company').width(80);
   }
+
 
   //dataTable filter icon
   $('table.dataTable thead>tr>th:before').addClass('fa-solid fa-angle-up');

@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/layout.css" type="text/css">
   <link rel="stylesheet" href="css/mediaApply.css">
   <link rel="stylesheet" href="css/login.css" type="text/css">
-  <title>登入</title>
+  <title>忘記密碼</title>
 </head>
 <body>
   <div id="main">
@@ -23,39 +23,20 @@
       <div class="right">
         <div class="top">
           <img src="img/index/user.svg" alt="">
-          <p class="title">使用者登入</p>
+          <p class="title">手機驗證</p>
         </div>
-        <p class="account">
-          <input type="text" class="account" placeholder="請輸入帳號">
-        </p>
-        <p class="password">
-          <input type="password" class="password" placeholder="請輸入密碼">
-          <i class="fa-solid fa-eye-slash"></i>
-          <i class="fa-solid fa-eye"></i>
-        </p>
-        <div class="flex">
-          <div class="flex start">
-            <input type="checkbox" name="remember" id="remember">
-            <label for="remember">記住我的登入資訊</label>
+          <p class="account">
+            <input type="text" class="account" placeholder="請輸入手機或電子信箱">
+          </p>
+          <p class="flex validate">
+            <input type="text" placeholder="驗證碼" class="validate" name="validate">
+            <a class="get">獲取驗證</a>
+          </p>
+          <div class="btn purple">立即驗證</div>
+          <div class="flex end">
+            <span>記起密碼?</span>
+            <a href="index.html">立即登入</a>
           </div>
-          <a class="purple" href="forget.html">忘記密碼</a>
-        </div>
-        <div class="btn purple">登入</div>
-        <div class="flex end">
-          <span>還沒有帳號?</span>
-          <a href="signup.html">立即註冊</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="popup_bg verify">
-    <div class="popupWP verify small">
-      <div class="swalWP">
-        <img src="img/info.svg" alt="">
-        <p>帳號或密碼錯誤</p>
-        <div class=" btnWP">
-          <div class="btn delete_confirm small">確認</div>
-        </div>
       </div>
     </div>
   </div>
@@ -69,6 +50,27 @@
         $('body').height(H - 10);
       }
 
+      $('input.account').change(function(){
+        if ($('input.account').val() === '') {
+          $('p.password').addClass('show');
+        }else if (!$('input.account').val().match(/[0-9]/) && !$('input.account').val().match(/[a-zA-Z]/)) {
+          $('p.account').addClass('text');
+        }else if( $('input.account').val().match(/[a-zA-Z]/) && !$('input.account').val().match(/(\w)+[@]{1}(\S)+[.]{1}(\D)+/) ){
+          $('p.account').addClass('email');
+        }else if( $('input.account').val().match(/[0-9]/) && !$('input.account').val().match(/09\d{8}/)  ){
+          $('p.account').addClass('num');
+        }else{
+          $('p.account').removeClass('show text email num');
+        }
+      });
+
+      $('input.validate').change(function () {
+        if ($('input.validate').val() !== '') {
+          $('p.validate').removeClass('show');
+        } else {
+          $('p.validate').addClass('show');
+        }
+      });
       $('i.fa-eye-slash').click(function(){
         $(this).hide();
         $(this).siblings('i.fa-eye').show();
@@ -80,33 +82,20 @@
         $(this).siblings('i.fa-eye-slash').show();
         $(this).siblings('input').attr('type','password');
       });
-     
-$('input.account').change(function () {
-        if ($('input.account').val() !== '') {
-          $('p.account').removeClass('show');
-        } else {
-          $('p.account').addClass('show');
-        }
-      });
-
-      $('input.password').change(function () {
-        if ($('input.password').val() !== '') {
-          $('p.password').removeClass('show');
-        } else {
-          $('p.password').addClass('show');
-        }
-      });
-
       function verify() {
         if ($('input.account').val() === '') {
           $('p.account').addClass('show');
-        } else if ($('input.password').val() === '') {
-          $('p.password').addClass('show');
-        } else if ($('input.account').val() === 'admin' && $('input.password').val() === 'admin') {
-          window.location = "https://yowru.github.io/CMS/chart.html";
-        } else if ($('input.account').val() !== 'admin' || $('input.password').val() !== 'admin') {
-          $('.popup_bg').css({ 'display': 'flex' });
-        }
+        } else if (!$('input.account').val().match(/[0-9]/) && !$('input.account').val().match(/[a-zA-Z]/)) {
+          $('.account').addClass('text');
+        }else if( $('input.account').val().match(/[a-zA-Z]/) && !$('input.account').val().match(/(\w)+[@]{1}(\S)+[.]{1}(\D)+/) ){
+          $('.account').addClass('email');
+        }else if( $('input.account').val().match(/[0-9]/) && !$('input.account').val().match(/09\d{8}/) ){
+          $('.account').addClass('num');
+        } else if ($('input.validate').val() === '') {
+          $('p.validate').addClass('show');
+        } else if ($('input.account').val() !== '' && $('input.validate').val() !== '') {
+          window.location = "https://yowru.github.io/CMS/index.html";
+        } 
       }
 
       $(document).keyup(function (event) {
@@ -117,12 +106,6 @@ $('input.account').change(function () {
 
       $('.btn.purple').click(function () {
         verify();
-      });
-
-      //close
-      $('.popup_bg .btnWP .btn').click(function () {
-        $('.popup_bg').fadeOut();
-        window.location.replace(location.href);
       });
 
 

@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script src="js/loading.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
   <script src="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_js_materialize.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
@@ -21,6 +23,7 @@
   <link rel="stylesheet" href="css/mediaList_rwd.css">
   <title>媒體素材</title>
 </head>
+
 <body>
   <header></header>
   <div id="main">
@@ -59,7 +62,8 @@
           <div class="btn search"><input type="submit" value="查詢" /></div>
         </form>
         <div class="textInfo">
-          <span>排序</span><img src="img/table/textInfo.svg" alt=""><div class="info">點選紫色字體可進行排序</div>
+          <span>排序</span><img src="img/table/textInfo.svg" alt="">
+          <div class="info">點選紫色字體可進行排序</div>
         </div>
         <div class="table-responsive">
           <div class="head_bg">
@@ -97,9 +101,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.06</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -110,9 +116,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.16</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -123,9 +131,11 @@
                   <td>影片</td>
                   <td>15</td>
                   <td>23.06.26</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -136,9 +146,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.06</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -149,9 +161,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.16</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -162,9 +176,11 @@
                   <td>影片</td>
                   <td>15</td>
                   <td>23.06.26</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -175,9 +191,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.06</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -188,9 +206,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.16</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -201,9 +221,11 @@
                   <td>影片</td>
                   <td>15</td>
                   <td>23.06.26</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -214,9 +236,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.06</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -227,9 +251,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.16</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -240,9 +266,11 @@
                   <td>影片</td>
                   <td>15</td>
                   <td>23.06.26</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -253,9 +281,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.06</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -266,9 +296,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.16</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -279,9 +311,11 @@
                   <td>影片</td>
                   <td>15</td>
                   <td>23.06.26</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -292,9 +326,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.06</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -305,9 +341,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.16</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -318,9 +356,11 @@
                   <td>影片</td>
                   <td>15</td>
                   <td>23.06.26</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -331,9 +371,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.06</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -344,9 +386,11 @@
                   <td>圖片</td>
                   <td>--</td>
                   <td>23.06.16</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -357,9 +401,11 @@
                   <td>影片</td>
                   <td>15</td>
                   <td>23.06.26</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onClick="view()">
-                    <img src="img/table/delet.svg" alt="" onclick="delet()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                      <i class="delet"><img src="img/table/delet.svg" alt="" onclick="delet()">刪除</i>
+                    </p>
                   </td>
                 </tr>
               </tbody>
@@ -417,7 +463,7 @@
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </div>
@@ -454,7 +500,7 @@
 
     //name ellipsis
     $('table tr td:nth-child(2), table tr td:nth-child(3)').addClass('name');
-    
+
   </script>
 </body>
 

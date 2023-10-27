@@ -1,0 +1,252 @@
+.cycle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 180px;
+  flex-wrap: wrap;
+}
+
+.cycle label {
+  height: auto;
+  line-height: normal;
+  margin: 0 2px;
+}
+
+.selectBox {
+  position: relative;
+  width: 60px;
+  margin-right: 10px;
+  border: 1px solid #f6f6ff;
+  background-color: #fff;
+  box-shadow: 0px 0px 1px 1px #F4F3FD;
+  padding: 6px 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.startDate {
+  display: flex;
+  align-items: center;
+}
+
+.yearWeek {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 8px;
+}
+
+.date {
+  font-size: 2.3rem;
+  color: #7575e9;
+  font-family: sans-serif;
+  width: 90px;
+  text-align: left;
+}
+
+.year {
+  font-size: 0.95rem;
+  color: #595959;
+  margin-bottom: -4px;
+  margin-top: 3px;
+}
+
+.week {
+  font-size: 12px;
+  color: #999;
+  font-family: sans-serif;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+  height: 70px;
+  background: #fff;
+  overflow: scroll;
+}
+
+#checkboxes label {
+  display: block;
+  width: 100%;
+  color: #9da5fc;
+  margin: 5px 0;
+  text-align: center;
+}
+
+#checkboxes label:hover {
+  background-color: #F1F0FE;
+}
+
+#checkboxes [type="checkbox"]:not(:checked),
+#checkboxes [type="checkbox"]:checked {
+  margin-left: 10px;
+}
+
+#allDay,
+#immediately {
+  margin-right: 5px;
+}
+
+#allDay:checked:before,
+#immediately:checked:before,
+#checkboxes input[type="checkbox"]:checked:before {
+  background-color: transparent;
+  color: #5861E2;
+
+}
+
+#checkboxes input[type="checkbox"] {
+  border: 1px solid #b1b6ef;
+}
+
+.dateWp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.timeWp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.timeWp .time select {
+  width: 44px;
+}
+
+.timeWp .time:nth-child(1) {
+  margin-bottom: 20px;
+}
+
+.interval .daterangepicker select.hourselect.disabled,
+.interval .daterangepicker select.hourselect {
+  width: 32px;
+}
+
+.interval,
+.time,
+.selectWp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.interval {
+  margin-right: 5px;
+}
+
+.time img {
+  width: 20px;
+  height: 20px;
+}
+
+.time img.disabled {
+  opacity: 0.3;
+}
+
+label.allDay {
+  width: 32px;
+  line-height: 38px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label.allDay span {
+  font-size: 0.8rem;
+}
+
+.startTime,
+.endTime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.monthDay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #9071CB;
+  font-size: 2rem;
+}
+
+/* .monthDay::before {
+  content: '';
+  border: 1px solid #b188f5;
+  width: 140%;
+  -moz-transform: rotate(127deg);
+  -webkit-transform: rotate(127deg);
+  -o-transform: rotate(127deg);
+  -ms-transform: rotate(127deg);
+  transform: rotate(127deg);
+  position: absolute;
+} */
+
+.monthDay .month, .monthDay .day {
+  font-size: 2rem;
+  /* color: #7575e9;
+  color: #9071CB; */
+}
+
+.startTime .right,
+.endTime .right {
+  margin-left: 10px;
+}
+
+.timeText.small {
+  font-size: 0.9rem;
+  margin-left: 5px;
+  width: 35px;
+}
+
+@media (max-width:660px) {
+
+  .daterangepicker .drp-calendar.right,
+  .daterangepicker .drp-calendar.left {
+    padding: 0;
+  }
+
+  .dateWp {
+    margin: 10px auto;
+  }
+
+  .startTime .right,
+  .endTime .right {
+    margin-left: 20px;
+  }
+
+  .timeText.small {
+    margin-left: 8px;
+  }
+
+  .daterangepicker .drp-buttons .btn {
+    margin-top: 8px;
+  }
+}

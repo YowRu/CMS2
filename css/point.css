@@ -1,0 +1,262 @@
+body {
+  background: url('../img/menu/pointBG.png') no-repeat center;
+  background-size: cover;
+}
+
+header:after {
+  border-bottom: 1px solid #cecece;
+}
+
+header .side {
+  display: none;
+}
+
+header .sideWP {
+  box-shadow: none;
+  background: transparent;
+  position: absolute;
+}
+
+header .wrapper h1 {
+  height: auto;
+  background-color: transparent;
+}
+
+header .toggle {
+  display: none;
+}
+
+#main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  padding: 20px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.wrapper .item {
+  width: 100%;
+}
+
+.wrapper .item.flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+  background-color: #edeafc;
+  margin-bottom: 10px;
+}
+
+.wrapper .item.flex span {
+  color: #5861E2;
+  font-size: 1.5rem;
+  line-height: 40px;
+  margin-left: 5px;
+}
+
+.wrapper p {
+  color: #848383;
+  padding-left: 5px;
+}
+
+.wrapper p.red {
+  background-color: transparent !important;
+}
+
+.wrapper p.red::before {
+  content: '*';
+  color: #ef0e0e;
+}
+
+.wrapper span.red {
+  background-color: transparent !important;
+  color: #ef0e0e;
+}
+
+.accordionWP {
+  border: 1px solid #fff;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.accordion {
+  background-color: #fdf8ff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 1px -1px 0px 20px #ffffff51;
+  position: relative;
+  height: 80vh;
+  width: 80vw;
+}
+
+.accordion .tabs {
+  display: flex;
+  width: 100%;
+  background-color: transparent;
+  height: auto;
+  border-bottom: 1px solid #d3d5f9;
+}
+
+.accordion .tabs li {
+  padding: 7px 5px 0;
+}
+
+.accordion .tabs li.active {
+  border-bottom: 1px solid #fff;
+}
+
+.accordion .tabs li a,
+.accordion .tabs li.active a {
+  cursor: pointer;
+  background-color: #E9E7FA;
+  border: 1px solid #d3d5f9;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 0;
+  color: #5861E2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 20px 8px;
+  box-shadow: 0px 7px 8px 8px #e1ddff;
+}
+
+.accordion .tabs li a {
+  background-color: transparent;
+  color: #a0a5f3;
+  border: 0;
+  box-shadow: none;
+  padding-bottom: 0;
+}
+
+.accordion label .flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion label .icon {
+  margin-right: 12px;
+  width: 24px;
+}
+
+.accordion label span {
+  color: #fff;
+  font-size: 1rem;
+}
+
+input.datepicker[type=text]:not(.browser-default),
+input[type=text]:not(.browser-default) {
+  border: 1px solid #d3d5f9;
+  height: 40px;
+  margin: 5px auto 10px;
+  padding-left: 12px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #d3d5f9;
+  padding: 5px 12px;
+  margin-bottom: 10px;
+  resize: none;
+  border-radius: 4px;
+}
+
+.btn {
+  width: 100px;
+}
+
+#tab2 .searchBar .btn,
+#tab3 .searchBar .btn {
+  width: 60px;
+}
+
+#tab2 .searchBar .btn.report,
+#tab3 .searchBar .btn.report {
+  width: 100px;
+  background-color: transparent;
+  border: 1px solid #d3d5f9;
+  color: #5861E2;
+  border-radius: 4px;
+  box-shadow: -1px 1px 4px -3px #d3d5f9;
+}
+
+.btn:hover {
+  background-color: #c3c3c3;
+}
+
+.btn.purple {
+  background-color: #5861E2 !important;
+}
+
+.datepicker-modal input.select-dropdown.dropdown-trigger {
+  border: 0;
+}
+
+.nowValue {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 400px;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+.nowValue div {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nowValue .middle {
+  border-left: 1px solid #d3d5f9;
+  border-right: 1px solid #d3d5f9;
+}
+
+.nowValue .right p {
+  margin-top: 5px;
+}
+
+.nowValue span {
+  font-size: 0.85rem;
+  color: #6c6c6c;
+}
+
+.nowValue p {
+  font-size: 2rem;
+  color: #5861E2;
+  height: 50px;
+  line-height: 50px;
+}
+
+.nowValue p img {
+  width: 32px;
+  cursor: pointer;
+}
+
+.fa-calendar-days {
+  content: '\f073';
+  font-family: "FontAwesome";
+  display: block;
+  width: 20px;
+  height: 20px;
+  color: #5861E2;
+}
+
+#tab4 .textInfo .info {
+  bottom: -89px;
+}

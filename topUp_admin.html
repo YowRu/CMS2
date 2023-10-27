@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="數享秉持綠能永續經營理念，成為提供差異化服務的世界級RMN公司。我們致力於協助企業追求最高的利潤及成長，幫助企業轉型，規劃並建置完善的跨平台行銷。" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="js/loading.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script src="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_js_materialize.min.js"></script>
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sweetalert2.css">
+  <link rel="stylesheet" href="js/date/cdnjs.cloudflare.com_ajax_libs_materialize_1.0.0_css_materialize.min.css">
+  <link rel="stylesheet" href="css/layout.css" type="text/css">
+  <link rel="stylesheet" href="css/playSelection.css">
+  <link rel="stylesheet" href="css/point.css">
+  <title>點數中心</title>
+</head>
+
+<body>
+  <header></header>
+  <div id="main">
+    <div class="accordionWP">
+      <div class="accordion">
+        <ul class="tabs">
+          <li class="active"><a href="topUp_admin.html">線下儲值</a></li>
+          <li><a href="topUpLog_admin.html">儲值紀錄</a></li>
+          <li><a href="pointLog_admin.html">使用紀錄</a></li>
+          <li><a href="topUp.html">儲值</a></li>
+          <li><a href="pointLog.html">紀錄</a></li>
+        </ul>
+        <ul class="tab_container">
+          <li id="tab1" class="tab_content">
+            <div class="wrapper">
+              <div class="item">
+                <p class="red">儲值帳號</p>
+                <input type="text" class="account" placeholder="請輸入會員帳號" />
+              </div>
+              <div class="item">
+                <p>購買點數</p>
+                <input type="text" class="point" />
+              </div>
+              <div class="item">
+                <p>購買金額</p>
+                <input type="text" class="money" />
+              </div>
+              <div class="item">
+                <p>購買日期</p>
+                <input type="text" class="datepicker" id="pointDate" placeholder="請選擇" />
+              </div>
+              <div class="item">
+                <p>說明</p>
+                <textarea name="" cols="30" rows="10"></textarea>
+              </div>
+              <div class="btn">送出</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="js/dateTimepicker.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $('#tab1 .btn').click(function () {
+        if ($('#tab1 .account').val() == '') {
+          Swal.fire('請輸入儲值帳號', '', 'info');
+        } else if ($('#tab1 .point').val() == '') {
+          Swal.fire('請輸入購買點數', '', 'info');
+        } else if ($('#tab1 .point').val() !== '' && !$('#tab1 .point').val().match(/[0-9]/)) {
+          Swal.fire('點數請輸入數字', '', 'info');
+        } else if ($('#tab1 .money').val() == '') {
+          Swal.fire('請輸入購買金額', '', 'info');
+        } else if ($('#tab1 .money').val() !== '' && !$('#tab1 .money').val().match(/[0-9]/)) {
+          Swal.fire('金額請輸入數字', '', 'info');
+        } else if ($('#tab1 .datepicker').val() == '') {
+          Swal.fire('請選擇日期', '', 'info');
+        } else if ($('#tab1 textarea').val() == '') {
+          Swal.fire('請輸入說明', '', 'info');
+        } else {
+          Swal.fire('已送出', '', 'success');
+        }
+
+      });
+
+    
+    });
+  </script>
+</body>
+
+</html>

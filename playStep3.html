@@ -48,8 +48,8 @@
         <div class="stepContent">
           <div class="step step3">
             <div class="searchBar top">
-              <div class="btn back2 border yellow">返回素材</div>
-              <div class="btn stepBtn stepBtn3">確認設備</div>
+              <div class="btn back2 border yellow">上一步</div>
+              <div class="btn stepBtn stepBtn3">下一步</div>
             </div>
             <div class="searchBar" name="searchBar">
               <div class="filter">
@@ -156,13 +156,13 @@
 
       //back
       $('.back2').click(function () {
-        window.location = "https://yowru.github.io/CMS2/playStep2.html";
+        window.location = "https://yowru.github.io/CMS/playStep2.html";
       });
 
       //stepBtn3
       $('.stepBtn3').click(function () {
         if ($('.step3 input[type="checkbox"]').is(':checked')) {
-          window.location = "https://yowru.github.io/CMS2/playStep4.html";
+          window.location = "https://yowru.github.io/CMS/playStep4.html";
         } else {
           Swal.fire('請選擇設備', '', 'info');
         }

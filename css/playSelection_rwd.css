@@ -6,7 +6,51 @@
   padding-left: 23px;
 }
 
+.step4 [type="checkbox"]+span:not(.lever) {
+  padding-left: 0;
+}
+
+.step1 [type="checkbox"]+span:not(.lever) {
+  padding-left: 2px;
+}
+
+@media(max-width:1450px) {
+  .step1 .flexrow .flex span.wp span:nth-child(2) {
+    width: 88px;
+  }
+}
+
+@media(max-width:1380px) {
+  .step1 .flexrow .flex span.wp span:nth-child(2) {
+    width: 79px;
+  }
+}
+
+@media(max-width:1350px) {
+
+  .step1 .flexrow .flex span.wp span:nth-child(1) {
+    padding: 6.75px 0px;
+  }
+}
+
+@media(max-width:1250px) {
+  .step1 .flexrow .flex span.wp span:nth-child(2).time {
+    width: 56px;
+  }
+}
+
+@media(max-width:1180px) {
+  .step1 .flexrow .flex span.wp span:nth-child(2).time {
+    width: 44px;
+  }
+}
+
 @media(max-width:1150px) {
+  #main .content {
+    padding-right: 20px;
+    padding-left: 184px;
+  }
+
   section.flex .listWP {
     width: 46%;
     padding: 16px;
@@ -19,9 +63,36 @@
   .step {
     width: 98%;
   }
+
+  .step1 {
+    width: 100%;
+  }
 }
 
 @media(max-width:1100px) {
+  .step1 .flexrow .flex {
+    margin-right: 2px;
+  }
+}
+
+@media(max-width:1080px) {
+  .step1 .dateTimeWP {
+    width: 100%;
+  }
+
+  .step1 .flexrow .flex,
+  .step1 .flexrow .flex:nth-child(3) span.wp {
+    margin-right: 0;
+  }
+}
+
+@media(max-width:1010px) {
+  #main .content {
+    padding-left: 164px;
+  }
+}
+
+@media(max-width:1000px) {
 
   .stepContent .step1 .bg .flexrow {
     flex-direction: column;
@@ -34,6 +105,26 @@
   section.flex .listWP {
     padding: 14px;
   }
+
+  .step1 .flexrow .flex span.wp span {
+    padding: 6.75px 2px;
+  }
+
+  .step1 {
+    margin-top: 0;
+  }
+
+  .step1 .flexrow .flex {
+    justify-content: space-between;
+  }
+
+  .step1 .stepBtn {
+    align-self: flex-end;
+  }
+
+  #main .content {
+    padding-left: 159px;
+  }
 }
 
 @media(max-width:970px) {
@@ -42,15 +133,64 @@
   }
 
   #main .content {
-    padding: 20px 20px 20px 160px;
+    padding-left: 173px;
+    padding-right: 12px;
+  }
+
+  .step1 .flexrow .flex span.wp span:nth-child(1) {
+    width: 68px;
+  }
+
+}
+
+@media(max-width:970px) {
+  .daterangepicker {
+    width: 98%;
+  }
+}
+
+@media (max-width:770px) {
+
+  .step1 .dateTimeWP,
+  .step1 .flexrow:nth-child(2) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .step1 .dateTimeWP .flex:nth-child(1) {
+    margin-bottom: 10px;
+  }
+
+  .step1 .flexrow .flex span.wp span:nth-child(2),
+  .step1 .flexrow .flex span.wp span:nth-child(2).time {
+    width: 120px;
+  }
+
+  .step1 .flexrow .flex span.wp span:nth-child(1) {
+    width: 78px;
+  }
+
+  .step1 .flexrow .flex span.wp {
+    width: 100%;
+  }
+
+  .step1 .flexrow .cycle p {
+    margin-top: 0;
+  }
+
+  .daterangepicker {
+    width: 100%;
   }
 }
 
 @media(max-width:900px) {
   #main .content {
-    padding: 20px;
+    padding: 0 20px;
   }
 
+  #main .contentBG .step1 p {
+    font-size: 0.9rem;
+  }
 }
 
 @media(max-width:780px) {
@@ -82,6 +222,24 @@
     display: none;
   }
 
+
+  .step1 .flexrow .flex span.wp span:nth-child(1) {
+    width: 35%;
+  }
+
+  .step1 .flexrow .flex span.wp span:nth-child(2),
+  .step1 .flexrow .flex span.wp span:nth-child(2).time {
+    width: 120px;
+  }
+
+  .step1 .flexrow .cycle {
+    flex-wrap: wrap;
+  }
+
+  .step1 .flexrow .cycle p {
+    margin: 2px;
+  }
+
   .imgWP {
     left: 47%;
   }
@@ -105,6 +263,10 @@
 }
 
 @media(max-width:700px) {
+  .step1 {
+    width: 95%;
+  }
+
   .step2 .searchBar .flex.mediadate {
     display: none;
   }
@@ -150,9 +312,10 @@
   .step4 .flexrow>div {
     width: 100%;
   }
+
 }
 
-@media(max-width:650px) {
+@media(max-width:656px) {
   .flex.paginationWP {
     flex-direction: column;
   }
@@ -169,15 +332,28 @@
   .step4 .flexrow {
     flex-direction: column;
   }
+
+  .step1 .dateTimeWP {
+    flex-direction: column;
+  }
+
+  .step1 .flexrow .flex {
+    margin-bottom: 10px;
+  }
+
+  .daterangepicker {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .step1 .flexrow .flex span.wp span:nth-child(1) {
+    width: 70px;
+  }
 }
 
 @media(max-width:600px) {
   .stepFlex {
     justify-content: space-between;
-  }
-
-  #main .contentBG {
-    padding: 14px;
   }
 
   .timeWP {

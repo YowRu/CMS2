@@ -65,7 +65,8 @@
           <div class="btn search"><input type="submit" value="查詢" /></div>
         </form>
         <div class="textInfo">
-          <span>排序</span><img src="img/table/textInfo.svg" alt=""><div class="info">點選紫色字體可進行排序</div>
+          <span>排序</span><img src="img/table/textInfo.svg" alt="">
+          <div class="info">點選紫色字體可進行排序</div>
         </div>
         <div class="btn add" onclick="add()">新增</div>
         <div class="table-responsive">
@@ -102,8 +103,10 @@
                   <td>23.06.18</td>
                   <td>--</td>
                   <td class="primaryColor">待審</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" onclick="view()">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                    </p>
                   </td>
                 </tr>
                 <tr>
@@ -114,15 +117,17 @@
                   <td>23.06.18</td>
                   <td>23.06.26</td>
                   <td class="red">退回</td>
-                  <td class="btnImg">
-                    <img src="img/table/Info.svg" alt="" class="edit">
+                  <td class="btnWP">
+                    <p class="btnImg">
+                      <i class="info"><img src="img/table/Info.svg" alt="" onclick="view()">查看</i>
+                    </p>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-        
+
         <div class="popup_bg add">
           <div class="popupWP add">
             <div class="titleWP">
@@ -225,7 +230,7 @@
                 </div>
                 <div class="flex imageWP show">
                   <!-- <img src="img/media/detail_Img.svg" class="show" alt=""> -->
-                  <video src="img/cat.mp4" controls ></video>
+                  <video src="img/cat.mp4" controls></video>
                 </div>
                 <div class="flex">
                   <p>副檔名</p><span>mp4</span>
