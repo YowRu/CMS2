@@ -528,10 +528,10 @@
       });
       //Minute change
       $('#startMinute').change(function () {
-        $('.step1 .submitInfo .startTime').attr('value',($('#startMinute').val()<10?'0'+$('#startMinute').val():$('#startMinute').val()) + ':' + ($(this).val()<10?'0'+$(this).val():$(this).val()));
+        $('.step1 .submitInfo .startTime').attr('value',($('#startHour').val()<10?'0'+$('#startHour').val():$('#startHour').val()) + ':' + ($(this).val()<10?'0'+$(this).val():$(this).val()));
       });
       $('#endMinute').change(function () {
-        $('.step1 .submitInfo .endTime').attr('value',($('#endMinute').val()<10?'0'+$('#endMinute').val():$('#endMinute').val()) + ':' + ($(this).val()<10?'0'+$(this).val():$(this).val()));
+        $('.step1 .submitInfo .endTime').attr('value',($('#endHour').val()<10?'0'+$('#endHour').val():$('#endHour').val()) + ':' + ($(this).val()<10?'0'+$(this).val():$(this).val()));
       });
 
       //cycle
